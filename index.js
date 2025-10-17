@@ -8,7 +8,7 @@ import './keywords/magic/Color.js';
 import './keywords/magic/ColorIdentity.js';
 // import './keywords/magic/Devotion.js';
 import './keywords/magic/FlavorText.js';
-// import './keywords/magic/KeywordAbility.js';
+import './keywords/magic/KeywordAbility.js';
 // import './keywords/magic/Language.js';
 // import './keywords/magic/ManaCost.js';
 // import './keywords/magic/ManaValue.js';
