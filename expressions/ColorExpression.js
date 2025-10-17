@@ -69,6 +69,10 @@ export default class ColorExpression {
         this.remainingStr = str.slice(match[0].length);
     }
 
+    includes(val) {
+        return this.colors.every(c => val.includes(c));
+    }
+
     equals(val) {
         return val.length === this.colors.length
             && val.every(c => this.colors.includes(c));
