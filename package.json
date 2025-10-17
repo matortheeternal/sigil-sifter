@@ -1,0 +1,21 @@
+{
+  "name": "sigil-sifter",
+  "version": "1.0.0",
+  "description": "Provides a scryfall-like api for filtering objects, such as cards.",
+  "keywords": [
+    "magic",
+    "mtg",
+    "scryfall",
+    "search",
+    "filter",
+    "compiler",
+    "language"
+  ],
+  "license": "MIT",
+  "author": "Mator",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  }
+}

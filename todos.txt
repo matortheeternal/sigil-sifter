@@ -1,0 +1,2 @@
+1. simplify compiled filter structure when possible (flatten single member groups)
+2. fix stack overflow bug
