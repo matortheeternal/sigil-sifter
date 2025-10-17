@@ -1,4 +1,6 @@
 import GroupParser from './parsers/GroupParser.js';
+import SearchSyntaxError from './SearchSyntaxError.js';
+
 import './keywords/Template.js';
 import './keywords/magic/Artist.js';
 import './keywords/magic/CardType.js';
@@ -16,7 +18,10 @@ import './keywords/magic/RulesText.js';
 import './keywords/magic/Watermark.js';
 
 export function compile(filterStr) {
-    return GroupParser.parse(filterStr);
+    const compiled = GroupParser.parse(filterStr);
+    if (compiled.remainingStr.length)
+        throw new SearchSyntaxError('Could not find parser to parse', compiled.remainingStr);
+    return compiled;
 }
 
 export function filter(objects, filterStr) {

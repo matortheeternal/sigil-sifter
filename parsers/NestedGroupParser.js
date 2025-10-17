@@ -13,6 +13,7 @@ export default class NestedGroupParser extends Parser {
     apply(filters) {
         const group = GroupParser.parse(this.remainingStr, true, true);
         this.remainingStr = group.remainingStr;
-        filters.push(group);
+        const filter = group.filters.length > 1 ? group : group.filters[0];
+        filters.push(filter);
     }
 }

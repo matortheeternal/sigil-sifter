@@ -76,7 +76,7 @@ const cards = [{
     manaCost: '7GG',
     superType: 'Creature',
     subType: 'Dinosaur Beast',
-    colors: [{ name: 'Green'}],
+    colors: ['G'],
     rarity: 'Uncommon',
     rulesText: [
         'Trample',

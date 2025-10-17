@@ -5,7 +5,7 @@ function strIfNum(val) {
 export default class StringExpression {
     static match(str) {
         return str.match(/^"(.*?)(?<!\\)"/)
-            || str.match(/^([^\s]+)/);
+            || str.match(/^([^)\s]+)/);
     }
 
     static parse(match, str) {
