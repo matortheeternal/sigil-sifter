@@ -1,0 +1,18 @@
+{
+  "name": "@sigil-sifter/magic",
+  "version": "1.0.0",
+  "description": "",
+  "license": "MIT",
+  "author": "mator",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
+  },
+  "peerDependencies": {
+    "sigil-sifter": "^1.0.0"
+  },
+  "devDependencies": {
+    "sigil-sifter": "^1.0.0"
+  }
+}
