@@ -13,6 +13,6 @@ export default class IncludesOperator {
     }
 
     testValue(val, expression) {
-        return expression.includes(val);
+        return expression.includes ? expression.includes(val) : expression.equals(val);
     }
 }

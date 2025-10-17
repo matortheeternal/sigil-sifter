@@ -6,7 +6,6 @@ import NestedGroupParser from './NestedGroupParser.js';
 import StringExpression from '../expressions/StringExpression.js';
 import ExactOperatorParser from './ExactOperatorParser.js';
 import IncludesOperator from '../operators/IncludesOperator.js';
-import SearchSyntaxError from '../SearchSyntaxError.js';
 import Parser from './Parser.js';
 import Name from '../keywords/magic/Name.js';
 
