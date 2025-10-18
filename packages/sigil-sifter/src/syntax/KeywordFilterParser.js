@@ -4,7 +4,7 @@ import Parser from './Parser.js';
 export default class KeywordFilterParser extends Parser {
     static match(str) {
         const m = str.match(/^\s*(\w+)/);
-        if (m && hasKeywordClass(m[1]))
+        if (m && hasKeywordClass(m[1].toLowerCase()))
             return m;
     }
 
@@ -14,7 +14,7 @@ export default class KeywordFilterParser extends Parser {
 
     constructor(match, str) {
         super(match, str);
-        this.keywordStr = match[1];
+        this.keywordStr = match[1].toLowerCase();
         const KeywordClass = getKeywordClass(this.keywordStr);
         this.keywordTester = KeywordClass.parse(this.remainingStr);
         this.remainingStr = this.keywordTester.remainingStr;

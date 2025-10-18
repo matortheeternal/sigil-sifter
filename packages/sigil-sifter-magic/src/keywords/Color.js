@@ -11,6 +11,7 @@ export default class Color extends Keyword {
     }
 
     test(obj) {
-        return this.operator.testValue(obj.colors || [], this.expression);
+        const colors = (obj.colors || []).map(c => c.toLowerCase());
+        return this.operator.testValue(colors, this.expression);
     }
 }

@@ -1,96 +1,155 @@
-import { sifter } from "sigil-sifter";
-import Magic from "@sigil-sifter/magic";
-import cards from "../fixtures/color.json";
+import { sifter } from 'sigil-sifter';
+import Magic from '@sigil-sifter/magic';
+import cards from '../fixtures/fixtures.json';
 
 beforeAll(() => {
     Magic(sifter);
 });
 
-describe("Color keyword", () => {
-    test("shorthand c: and full color: behave the same", () => {
-        const white1 = sifter.filter(cards, "c=w");
-        const white2 = sifter.filter(cards, "color=w");
+function expectCardNames(cards, expectedNames) {
+    const actualNames = cards.map(c => c.name);
+    for (const name of expectedNames)
+        expect(actualNames).toContain(name);
+}
+
+function printArray(items) {
+    console.log('[' + items.map(c => `'${c.name}'`).join(', ') + ']');
+}
+
+describe('Color keyword', () => {
+    test('shorthand c: and full color: behave the same', () => {
+        const white1 = sifter.filter(cards, 'c=w');
+        const white2 = sifter.filter(cards, 'color=w');
         expect(white1).toEqual(white2);
-        console.log(white1.map(c => [c.name, c.colors]));
+        expectCardNames(white1, [
+            'Smothering Tithe', 'Felidar Retreat', 'Balance',
+            'Stoneforge Mystic', 'Serra Angel', 'Esper Sentinel',
+            'Shalai, Voice of Plenty', 'All That Glitters',
+            'Swords to Plowshares', `Caretaker's Talent`,
+            'Ghostly Prison', 'Soul Warden'
+        ]);
     });
 
-    test("filters by individual color names (case-insensitive)", () => {
-        const blue = sifter.filter(cards, "c=blue");
-        const blueCaps = sifter.filter(cards, "C=BLUE");
+    test('filters by individual color names (case-insensitive)', () => {
+        const blue = sifter.filter(cards, 'c=blue');
+        const blueCaps = sifter.filter(cards, 'C=BLUE');
         expect(blue).toEqual(blueCaps);
-        console.log(blue.map(c => [c.name, c.colors]));
+        expectCardNames(blue,  [
+            'Wonder', 'Snapcaster Mage', 'Omniscience', 'Force of Will',
+            'Midnight Clock', 'Counterspell', 'Bident of Thassa',
+            'Pact of Negation'
+        ]);
     });
 
-    test("filters by guild (Golgari)", () => {
-        const golgari = sifter.filter(cards, "c=golgari");
-        console.log(golgari.map(c => [c.name, c.colors]));
+    test('filters by guild (Golgari)', () => {
+        const golgari = sifter.filter(cards, 'c=golgari');
+        expectCardNames(golgari, [
+            'Abrupt Decay', 'Deathrite Shaman', 'The Gitrog Monster'
+        ]);
     });
 
-    test("filters by wedge (Jund)", () => {
-        const jund = sifter.filter(cards, "c=jund");
-        console.log(jund.map(c => [c.name, c.colors]));
+    test('filters by wedge (Jund)', () => {
+        const jund = sifter.filter(cards, 'c=jund');
+        expectCardNames(jund, ['Korvold, Fae-Cursed King']);
     });
 
-    test("filters by shard (Esper)", () => {
-        const esper = sifter.filter(cards, "c=esper");
-        console.log(esper.map(c => [c.name, c.colors]));
+    test('filters by shard (Esper)', () => {
+        const esper = sifter.filter(cards, 'c=esper');
+        expectCardNames(esper, [
+            'Void Rend', 'Raffine, Scheming Seer', 'Trial // Error'
+        ]);
     });
 
-    test("filters by 4-color (Growth)", () => {
-        const growth = sifter.filter(cards, "c=growth");
-        console.log(growth.map(c => [c.name, c.colors]));
+    test('filters by 4-color (Growth)', () => {
+        const growth = sifter.filter(cards, 'c=growth');
+        expectCardNames(growth, [`Atraxa, Praetors' Voice`]);
     });
 
-    test("filters by all colors (WUBRG)", () => {
-        const fiveColor = sifter.filter(cards, "c=wubrg");
-        console.log(fiveColor.map(c => [c.name, c.colors]));
+    test('filters by all colors (WUBRG)', () => {
+        const fiveColor = sifter.filter(cards, 'c=wubrg');
+        expectCardNames(fiveColor,
+            ['Call the Spirit Dragons', 'Leyline of the Guildpact', 'Tiamat']
+        );
     });
 
-    test("filters by colorless", () => {
-        const colorless = sifter.filter(cards, "c=c");
+    test('filters by colorless', () => {
+        const colorless = sifter.filter(cards, 'c=c');
         console.log(colorless.map(c => [c.name, c.colors]));
+        printArray(colorless);
     });
 
-    test("OR operator works (R or B)", () => {
-        const wu = sifter.filter(cards, "c=r or c=b");
-        console.log(wu.map(c => [c.name, c.colors]));
+    test('OR operator works (R or B)', () => {
+        const rb = sifter.filter(cards, 'c=r or c=b');
+        expectCardNames(rb, [
+            'Diabolic Tutor', 'Ragavan, Nimble Pilferer', 'Lightning Bolt',
+            'Dark Ritual', 'Seething Song', 'Shivan Dragon', 'Blasphemous Act',
+            'Murder', 'Reanimate', 'Damnation', 'Sneak Attack',
+            'Goblin Bombardment', 'Phyrexian Arena', 'Griselbrand',
+            'Terror of the Peaks'
+        ]);
     });
 
-    test("multiple OR operators", () => {
-        const wub = sifter.filter(cards, "c=w or c=g or c=b");
-        console.log(wub.map(c => [c.name, c.colors]));
+    test('multiple OR operators', () => {
+        const wgb = sifter.filter(cards, 'c=w or c=g or c=b');
+        expectCardNames(wgb, [
+            'Doubling Season', 'Diabolic Tutor', 'Smothering Tithe',
+            'Felidar Retreat', 'Balance', 'Rampaging Baloths',
+            'Stoneforge Mystic', 'Tarmogoyf', 'Tarmogoyf', 'Serra Angel',
+            'Dark Ritual', 'Esper Sentinel', 'Llanowar Elves',
+            'Nature\'s Claim', 'The Great Henge', 'Murder', 'Rancor',
+            'Reanimate', 'Shalai, Voice of Plenty', 'Kenrith\'s Transformation',
+            'All That Glitters', 'Primeval Titan', 'Swords to Plowshares',
+            'Caretaker\'s Talent', 'Birds of Paradise', 'Damnation',
+            'Ghostly Prison', 'Llanowar Elves', 'Phyrexian Arena',
+            'Soul Warden', 'Griselbrand']);
     });
 
-    test("AND combination (G and U)", () => {
-        const wu = sifter.filter(cards, "c:g c:u");
-        console.log(wu.map(c => [c.name, c.colors]));
+    test('AND combination (G and U)', () => {
+        const gu = sifter.filter(cards, 'c:g c:u');
+        expectCardNames(gu, [
+            'Tatyova, Benthic Druid', 'Call the Spirit Dragons',
+            'Oko, Thief of Crowns', 'Leyline of the Guildpact',
+            'Tamiyo, Field Researcher', 'Muldrotha, the Gravetide',
+            'Temur Ascendancy', 'Tiamat'
+        ]);
     });
 
-    test("negation works (-c=r excludes red)", () => {
-        const notWhite = sifter.filter(cards, "-c=r");
-        console.log(notWhite.map(c => [c.name, c.colors]));
+    test('negation works (-c=r excludes red)', () => {
+        const notRed = sifter.filter(cards, '-c=r');
+        console.log(notRed.map(c => [c.name, c.colors]));
+        printArray(notRed);
     });
 
-    test("colon operator (:) means >= (supercolor sets)", () => {
-        const atLeastAzorius = sifter.filter(cards, "c:azorius");
-        console.log(atLeastAzorius.map(c => [c.name, c.colors]));
+    test('colon operator (:) means >= (supercolor sets)', () => {
+        const atLeastAzorius = sifter.filter(cards, 'c:azorius');
+        expectCardNames(atLeastAzorius, [
+            'Call the Spirit Dragons', 'Inspirit, Flagship Vessel',
+            'Leyline of the Guildpact', 'Void Rend',
+            'Tamiyo, Field Researcher', 'Teferi, Time Raveler', 'Tiamat'
+        ]);
     });
 
-    test("comparison operators (<, <=, >, >=)", () => {
-        const lessThanAzorius = sifter.filter(cards, "c<azorius");
+    test('comparison operators (<, <=, >, >=)', () => {
+        const lessThanAzorius = sifter.filter(cards, 'c<azorius');
         console.log(lessThanAzorius.map(c => [c.name, c.colors]));
+        printArray(lessThanAzorius);
 
-        const greaterThanAzorius = sifter.filter(cards, "c>azorius");
-        console.log(greaterThanAzorius.map(c => [c.name, c.colors]));
+        const greaterThanAzorius = sifter.filter(cards, 'c>azorius');
+        expectCardNames(greaterThanAzorius, [
+            'Call the Spirit Dragons', 'Inspirit, Flagship Vessel',
+            'Leyline of the Guildpact', 'Void Rend', 'Tamiyo, Field Researcher',
+            'Teferi, Time Raveler', 'Tiamat'
+        ]);
     });
 
-    test("empty results return cleanly", () => {
-        const results = sifter.filter(cards, "c=r c=u c=g");
+    test('empty results return cleanly', () => {
+        const results = sifter.filter(cards, 'c=r c=u c=g');
         expect(results).toEqual([]);
+        printArray(results);
     });
 
-    test("throws error if both colorless and colored given", () => {
-        expect(() => sifter.filter(cards, "c=cw"))
+    test('throws error if both colorless and colored given', () => {
+        expect(() => sifter.filter(cards, 'c=cw'))
             .toThrow(/cannot be both colorless and colored/i);
     });
 });

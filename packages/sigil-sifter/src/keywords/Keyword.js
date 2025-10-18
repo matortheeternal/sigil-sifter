@@ -16,7 +16,7 @@ export default class Keyword extends Node {
     static get supportedOperators() {
         return [
             IncludesOperator, EqualsOperator, NotEqualOperator,
-            GreaterThanOperator, LessThanOperator, GTEOperator, LTEOperator,
+            GTEOperator, LTEOperator, GreaterThanOperator, LessThanOperator,
         ];
     }
 
