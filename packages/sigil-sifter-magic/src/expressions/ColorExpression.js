@@ -20,18 +20,18 @@ export default class ColorExpression extends Expression {
     }
 
     includes(val) {
-        if (this.colorless) return val[0] === 'c';
+        if (this.colorless) return val.length === 0;
         return this.colors.every(c => val.includes(c));
     }
 
     equals(val) {
-        if (this.colorless) return val[0] === 'c';
+        if (this.colorless) return val.length === 0;
         return val.length === this.colors.length
             && val.every(c => this.colors.includes(c));
     }
 
     greaterThan(val) {
-        if (this.colorless) return val.length === 0;
+        if (this.colorless) return val.length > 0;
         return val.length > this.colors.length
             && this.colors.every(c => val.includes(c));
     }

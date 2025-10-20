@@ -21,9 +21,9 @@ export default class NegateParser extends Parser {
     }
 
     constructor(match, str) {
-        super();
-        this.remainingStr = str.slice(match[0].length);
+        super(match, str);
         this.filter = this.parseNext(this.remainingStr);
+        this.remainingStr = this.filter.remainingStr;
     }
 
     test(obj) {

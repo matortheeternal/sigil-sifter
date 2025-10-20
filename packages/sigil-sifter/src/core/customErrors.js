@@ -18,3 +18,9 @@ export class NoDefaultParserError extends Error {
         super(`No default parser configured, failed to parse ${expression.value}`);
     }
 }
+
+export class ParserDidNotParseError extends Error {
+    constructor(parser) {
+        super(`Parser ${parser.constructor.name} did not parse anything!`);
+    }
+}
