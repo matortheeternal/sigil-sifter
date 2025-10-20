@@ -6,6 +6,8 @@ export default class Name extends StringKeyword {
     }
 
     test(obj) {
-        return super.test(obj.name || '');
+        return this.constructor.getCardFaces(obj).some(face => {
+            return super.test(face.name);
+        });
     }
 }

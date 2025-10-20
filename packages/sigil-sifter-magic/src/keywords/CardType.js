@@ -6,7 +6,8 @@ export default class CardType extends StringKeyword {
     }
 
     test(obj) {
-        return super.test(obj.superType || '')
-            || super.test(obj.subType || '');
+        return this.constructor.getCardFaces(obj).some(face => {
+            return super.test(face.typeLine);
+        });
     }
 }

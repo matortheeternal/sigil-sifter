@@ -1,5 +1,5 @@
 {
-  "name": "@sigil-sifter/magic",
+  "name": "@sigil-sifter/magic-scryfall",
   "version": "1.0.0",
   "description": "",
   "license": "MIT",
@@ -9,14 +9,12 @@
   "scripts": {
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
   },
-  "exports": {
-    ".": "./src/index.js",
-    "./core": "./src/core/index.js"
-  },
   "peerDependencies": {
-    "sigil-sifter": "^1.0.0"
+    "sigil-sifter": "^1.0.0",
+    "sigil-sifter/magic": "^1.0.0"
   },
   "devDependencies": {
-    "sigil-sifter": "^1.0.0"
+    "sigil-sifter": "^1.0.0",
+    "sigil-sifter/magic": "^1.0.0"
   }
 }

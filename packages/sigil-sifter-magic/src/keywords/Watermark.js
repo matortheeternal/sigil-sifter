@@ -11,7 +11,8 @@ export default class Watermark extends StringKeyword {
     }
 
     test(obj) {
-        return (obj.watermarks || [])
-            .some(watermark => super.test(watermark));
+        return this.constructor.getCardFaces(obj).some(face => {
+            return face.watermarks.some(w => super.test(w));
+        });
     }
 }

@@ -6,6 +6,8 @@ export default class Artist extends StringKeyword {
     }
 
     test(obj) {
-        return super.test(obj.illustrator) || super.test(obj.illustrator2);
+        return this.constructor.getCardFaces(obj).some(face => {
+            return face.artists.some(a => super.test(a));
+        });
     }
 }

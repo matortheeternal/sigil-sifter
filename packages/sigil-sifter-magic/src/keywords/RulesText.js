@@ -6,6 +6,8 @@ export default class RulesText extends StringKeyword {
     }
 
     test(obj) {
-        return super.test(obj.rulesText);
+        return this.constructor.getCardFaces(obj).some(face => {
+            return super.test(face.rulesText);
+        });
     }
 }

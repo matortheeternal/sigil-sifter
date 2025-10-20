@@ -1,3 +1,4 @@
+import { Keyword } from 'sigil-sifter/keywords';
 import Artist from './keywords/Artist.js';
 import CardType from './keywords/CardType.js';
 import Color from './keywords/Color.js';
@@ -9,7 +10,10 @@ import Rarity from './keywords/Rarity.js';
 import RulesText from './keywords/RulesText.js';
 import Watermark from './keywords/Watermark.js';
 
-export default function register(sifter) {
+export default function register(sifter, CardFace) {
+    if (!CardFace || !CardFace.getCardFaces)
+        throw new Error('Valid CardFace class must be provided.');
+
     sifter.addKeywords([
         Artist,
         CardType,
@@ -25,4 +29,6 @@ export default function register(sifter) {
     sifter.setDefaultStringParser((operator, expression) => {
         return new Name(operator, expression);
     });
+
+   Keyword.getCardFaces = CardFace.getCardFaces;
 };

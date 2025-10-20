@@ -11,6 +11,8 @@ export default class KeywordAbility extends Keyword {
     }
 
     test(obj) {
-        return this.operator.testValue(obj.rulesText || '', this.expression);
+        return this.constructor.getCardFaces(obj).some(face => {
+            return this.operator.testValue(face.rulesText, this.expression);
+        });
     }
 }
