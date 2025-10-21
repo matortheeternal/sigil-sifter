@@ -10,10 +10,8 @@ export default class Color extends Keyword {
         return str === 'color' || str === 'c';
     }
 
-    test(obj) {
-        return this.constructor.getCardFaces(obj).some(face => {
-            const colors = face.colors.map(c => c.toLowerCase());
-            return this.operator.testValue(colors, this.expression);
-        });
+    test(card) {
+        const colors = card.colors.map(c => c.toLowerCase());
+        return this.operator.testValue(colors, this.expression);
     }
 }

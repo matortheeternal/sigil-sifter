@@ -10,9 +10,7 @@ export default class Watermark extends StringKeyword {
         return str === 'watermark' || str === 'w';
     }
 
-    test(obj) {
-        return this.constructor.getCardFaces(obj).some(face => {
-            return face.watermarks.some(w => super.test(w));
-        });
+    test(card) {
+        return card.watermarks.some(w => super.test(w));
     }
 }

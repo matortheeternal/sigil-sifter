@@ -10,9 +10,9 @@ export default class KeywordAbility extends Keyword {
         return str === 'keyword' || str === 'kw';
     }
 
-    test(obj) {
-        return this.constructor.getCardFaces(obj).some(face => {
-            return this.operator.testValue(face.rulesText, this.expression);
+    test(card) {
+        return card.rulesTexts.some(rulesText => {
+            return this.operator.testValue(rulesText, this.expression);
         });
     }
 }

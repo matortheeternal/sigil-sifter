@@ -1,3 +1,3 @@
-import MagicCardFace from './MagicCardFace.js';
+import MagicCard from './MagicCard.js';
 
-export { MagicCardFace };
+export { MagicCard };

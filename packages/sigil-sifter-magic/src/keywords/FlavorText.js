@@ -5,9 +5,7 @@ export default class FlavorText extends StringKeyword {
         return str === 'flavor' || str === 'ft';
     }
 
-    test(obj) {
-        return this.constructor.getCardFaces(obj).some(face => {
-            return super.test(face.flavorText);
-        });
+    test(card) {
+        return card.flavorTexts.some(flavorText => super.test(flavorText));
     }
 }

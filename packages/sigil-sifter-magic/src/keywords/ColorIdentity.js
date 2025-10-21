@@ -5,10 +5,8 @@ export default class ColorIdentity extends Color {
         return str === 'identity' || str === 'id';
     }
 
-    test(obj) {
-        return this.constructor.getCardFaces(obj).some(face => {
-            const colors = face.colorIdentity.map(c => c.toLowerCase());
-            return this.operator.testValue(colors, this.expression);
-        });
+    test(card) {
+        const colors = card.colorIdentity.map(c => c.toLowerCase());
+        return this.operator.testValue(colors, this.expression);
     }
 }

@@ -10,9 +10,7 @@ export default class Rarity extends Keyword {
         return str === 'rarity' || str === 'r';
     }
 
-    test(obj) {
-        return this.constructor.getCardFaces(obj).some(face => {
-            return super.test(face.rarity);
-        });
+    test(card) {
+        return super.test(card.rarity);
     }
 }

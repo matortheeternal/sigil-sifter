@@ -9,12 +9,15 @@
   "scripts": {
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
   },
+  "exports": {
+    ".": "./src/index.js"
+  },
   "peerDependencies": {
     "sigil-sifter": "^1.0.0",
-    "sigil-sifter/magic": "^1.0.0"
+    "@sigil-sifter/magic": "^1.0.0"
   },
   "devDependencies": {
     "sigil-sifter": "^1.0.0",
-    "sigil-sifter/magic": "^1.0.0"
+    "@sigil-sifter/magic": "^1.0.0"
   }
 }

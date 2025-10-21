@@ -1,44 +1,52 @@
-import { MagicCardFace } from '@sigil-sifter/magic/core';
+import { MagicCard } from '@sigil-sifter/magic/core';
 
-export default class ScryfallCardFace extends MagicCardFace {
-    static getCardFaces(obj) {
-        return (obj.card_faces || [obj]).map(face => {
-            return new ScryfallCardFace(face);
-        });
+export default class ScryfallCard extends MagicCard {
+    get faces() {
+        return this.card.card_faces
+            ? this.card.card_faces
+            : [this.card];
     }
 
     get artists() {
-        return [
-            this.face.illustrator || '',
-            this.face.illustrator2 || ''
-        ];
+        return this.faces.reduce((artists, face) => {
+            artists.push(face.artist)
+            if (face.artist2) artists.push(face.artist2);
+            return artists;
+        }, []);
     }
 
-    get typeLine() {
-        return this.face.type_line || '';
+    get typeLines() {
+        return this.faces.map(face => (face.type_line || ''));
     }
 
     get colors() {
-        return this.face.colors || [];
+        const colors = this.faces.reduce((colors, f) => {
+            return Array.prototype.concat(colors, f.colors || []);
+        }, []);
+        colors.push(...(this.card.colors || []));
+        return [...new Set(colors)];
     }
 
     get colorIdentity() {
-        return this.face.color_identity || [];
+        return this.card.colorIdentity;
     }
 
-    get flavorText() {
-        return this.face.flavor_text || '';
+    get flavorTexts() {
+        return this.faces.map(face => (face.flavor_text || ''));
     }
 
-    get rulesText() {
-        return this.face.oracle_text || '';
+    get rulesTexts() {
+        return this.faces.map(face => (face.oracle_text || ''));
     }
 
     get rarity() {
-        return this.face.rarity || '';
+        return this.card.rarity || '';
     }
 
     get watermarks() {
-        return this.face.watermarks || [];
+        return this.faces.reduce((watermarks, face) => {
+            watermarks.push(...face.watermarks)
+            return watermarks;
+        }, []);
     }
 }

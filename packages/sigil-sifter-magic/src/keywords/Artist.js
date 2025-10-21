@@ -5,9 +5,7 @@ export default class Artist extends StringKeyword {
         return str === 'artist' || str === 'a';
     }
 
-    test(obj) {
-        return this.constructor.getCardFaces(obj).some(face => {
-            return face.artists.some(a => super.test(a));
-        });
+    test(card) {
+        return card.artists.some(a => super.test(a));
     }
 }

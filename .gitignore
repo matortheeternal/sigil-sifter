@@ -4,4 +4,4 @@ fixtureCards.txt
 
 scripts/prepareFixtures.js
 
-scripts/test.js
+scripts/minitest.js

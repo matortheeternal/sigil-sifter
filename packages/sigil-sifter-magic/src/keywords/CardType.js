@@ -5,9 +5,7 @@ export default class CardType extends StringKeyword {
         return str === 'type' || str === 't';
     }
 
-    test(obj) {
-        return this.constructor.getCardFaces(obj).some(face => {
-            return super.test(face.typeLine);
-        });
+    test(card) {
+        return card.typeLines.some(t => super.test(t));
     }
 }

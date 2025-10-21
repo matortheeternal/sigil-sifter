@@ -16,7 +16,12 @@ class SigilSifter {
 
     filter(objects, filterStr) {
         const compiledFilter = this.compile(filterStr);
-        return objects.filter(obj => compiledFilter.test(obj));
+        return objects.filter(obj => {
+            const testObj = this.AdapterClass
+                ? new this.AdapterClass(obj)
+                : obj;
+            return compiledFilter.test(testObj)
+        });
     }
 
     addKeywords(keywords) {
@@ -26,6 +31,10 @@ class SigilSifter {
 
     setDefaultStringParser(callback) {
         Parser.ParseDefault = callback;
+    }
+
+    setInputAdapter(AdapterClass) {
+        this.AdapterClass = AdapterClass;
     }
 }
 
