@@ -4,12 +4,13 @@ import CardTypeKeyword from './keywords/CardTypeKeyword.js';
 import ColorKeyword from './keywords/ColorKeyword.js';
 import ColorIdentityKeyword from './keywords/ColorIdentityKeyword.js';
 import FlavorTextKeyword from './keywords/FlavorTextKeyword.js';
-import Name from './keywords/Name.js';
+import LoyaltyKeyword from './keywords/LoyaltyKeyword.js';
 import ManaValueKeyword from './keywords/ManaValueKeyword.js';
 import NameKeyword from './keywords/NameKeyword.js';
-import Watermark from './keywords/Watermark.js';
+import PowerKeyword from './keywords/PowerKeyword.js';
 import RarityKeyword from './keywords/RarityKeyword.js';
 import RulesTextKeyword from './keywords/RulesTextKeyword.js';
+import ToughnessKeyword from './keywords/ToughnessKeyword.js';
 import WatermarkKeyword from './keywords/WatermarkKeyword.js';
 import MagicCard from './core/MagicCard.js';
 
@@ -26,11 +27,13 @@ export default function register(sifter, Card) {
         ColorKeyword,
         ColorIdentityKeyword,
         FlavorTextKeyword,
-        Rarity,
+        LoyaltyKeyword,
         ManaValueKeyword,
         NameKeyword,
+        PowerKeyword,
         RarityKeyword,
         RulesTextKeyword,
+        ToughnessKeyword,
         WatermarkKeyword,
     ]);
 
