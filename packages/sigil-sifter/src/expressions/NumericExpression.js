@@ -14,6 +14,10 @@ export default class NumericExpression extends Expression {
         this.value = parseInt(match[1], 10);
     }
 
+    includes(val) {
+        return this.equals(val);
+    }
+
     equals(val) {
         return val === this.value;
     }
