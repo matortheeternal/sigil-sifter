@@ -25,6 +25,14 @@ export default class MagicCard {
         throw new NotImplementedError();
     }
 
+    get manaValues() {
+        throw new NotImplementedError();
+    }
+
+    get pts() {
+        throw new NotImplementedError();
+    }
+
     get rulesTexts() {
         throw new NotImplementedError();
     }
