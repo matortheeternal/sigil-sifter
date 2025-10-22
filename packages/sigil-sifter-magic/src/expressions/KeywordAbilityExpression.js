@@ -6,13 +6,8 @@ export default class KeywordAbilityExpression extends StringExpression {
         return new KeywordAbilityExpression(match, str);
     }
 
-    constructor(match, str) {
-        super(match, str);
-        this.expr = new RegExp(`(^${this.value}|\s${this.value})`, 'i');
-    }
-
     includes(val) {
-        return val.test(this.expr);
+        return val.includes(this.value);
     }
 
     equals(val) {

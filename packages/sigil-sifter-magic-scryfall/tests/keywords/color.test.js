@@ -2,20 +2,11 @@ import { sifter } from 'sigil-sifter';
 import Magic from '@sigil-sifter/magic';
 import cards from '../fixtures/fixtures.json';
 import ScryfallCard from '../../src';
+import { expectCardNames } from '../helpers';
 
 beforeAll(() => {
     Magic(sifter, ScryfallCard);
 });
-
-function expectCardNames(cards, expectedNames) {
-    const actualNames = cards.map(c => c.name);
-    for (const name of expectedNames)
-        expect(actualNames).toContain(name);
-}
-
-function printArray(items) {
-    console.log('[' + items.map(c => `'${c.name}'`).join(', ') + ']');
-}
 
 describe('Color keyword', () => {
     it('handles shorthand c: and full color: the same', () => {
@@ -182,7 +173,6 @@ describe('Color keyword', () => {
     it('returns empty results when nothing matches', () => {
         const results = sifter.filter(cards, 'c=r c=u c=g');
         expect(results).toEqual([]);
-        printArray(results);
     });
 
     it('throws error if both colorless and colored given', () => {

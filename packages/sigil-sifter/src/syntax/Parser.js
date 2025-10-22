@@ -10,7 +10,7 @@ export default class Parser extends Node {
 
     parseNext(str, options = {}, DefaultOperator = IncludesOperator) {
         const parsers = this.constructor.getParsersToTry(options);
-        const matchingParser = parsers[str[0]];
+        const matchingParser = parsers[str[0].toLowerCase()];
         const parsersToTry = (parsers.default || []).slice();
         if (matchingParser) parsersToTry.unshift(matchingParser);
         for (const parser of parsersToTry) {

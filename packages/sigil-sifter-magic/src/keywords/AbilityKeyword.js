@@ -11,8 +11,6 @@ export default class AbilityKeyword extends Keyword {
     }
 
     test(card) {
-        return card.rulesTexts.some(rulesText => {
-            return this.operator.testValue(rulesText, this.expression);
-        });
+        return this.operator.testValue(card.keywords, this.expression);
     }
 }

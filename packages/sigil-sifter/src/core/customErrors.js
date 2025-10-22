@@ -1,8 +1,7 @@
 export class NotImplementedError extends Error {
     constructor() {
         super();
-        const sender = this.stack.split('\n')[2].replace(' at ', '');
-        this.message = `The method ${sender} isn't implemented.`;
+        this.message = `Method not implemented.`;
     }
 }
 
