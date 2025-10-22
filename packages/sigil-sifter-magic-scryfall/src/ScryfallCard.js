@@ -28,7 +28,7 @@ export default class ScryfallCard extends MagicCard {
     }
 
     get colorIdentity() {
-        return this.card.colorIdentity;
+        return this.card.color_identity;
     }
 
     get flavorTexts() {
