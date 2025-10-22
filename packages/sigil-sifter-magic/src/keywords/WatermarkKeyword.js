@@ -2,12 +2,12 @@ import { StringKeyword } from 'sigil-sifter/keywords';
 import { IncludesOperator } from 'sigil-sifter/operators';
 
 export default class WatermarkKeyword extends StringKeyword {
-    static get supportedOperators() {
-        return [IncludesOperator];
+    static get keys() {
+        return ['watermark', 'w'];
     }
 
-    static match(str) {
-        return str === 'watermark' || str === 'w';
+    static get supportedOperators() {
+        return [IncludesOperator];
     }
 
     test(card) {

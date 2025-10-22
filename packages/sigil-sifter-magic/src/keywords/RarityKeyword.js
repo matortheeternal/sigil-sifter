@@ -2,12 +2,12 @@ import { Keyword } from 'sigil-sifter/keywords';
 import RarityExpression from '../expressions/RarityExpression.js';
 
 export default class RarityKeyword extends Keyword {
-    static get supportedExpressions() {
-        return [RarityExpression];
+    static get keys() {
+        return ['rarity', 'r'];
     }
 
-    static match(str) {
-        return str === 'rarity' || str === 'r';
+    static get supportedExpressions() {
+        return [RarityExpression];
     }
 
     test(card) {

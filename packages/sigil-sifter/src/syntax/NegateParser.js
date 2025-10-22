@@ -6,10 +6,11 @@ import Parser from './Parser.js';
 
 export default class NegateParser extends Parser {
     static getParsersToTry() {
-        return [
-            NestedGroupParser, KeywordFilterParser,
-            ExactParser, StringExpression
-        ];
+        return {
+            '(': NestedGroupParser,
+            '!': ExactParser,
+            default: [KeywordFilterParser, StringExpression]
+        };
     }
 
     static match(str) {
@@ -22,7 +23,7 @@ export default class NegateParser extends Parser {
 
     constructor(match, str) {
         super(match, str);
-        this.filter = this.parseNext(this.remainingStr);
+        this.filter = this.parseNext(this.remainingStr.trimLeft());
         this.remainingStr = this.filter.remainingStr;
     }
 

@@ -24,3 +24,11 @@ export class ParserDidNotParseError extends Error {
         super(`Parser ${parser.constructor.name} did not parse anything!`);
     }
 }
+
+export class KeyConflictError extends Error {
+    constructor(key, keywords, keywordClass) {
+        const kcName = keywordClass.name;
+        const regName = keywords[key].name;
+        super(`${key} for ${kcName} was already registered for ${regName}`);
+    }
+}

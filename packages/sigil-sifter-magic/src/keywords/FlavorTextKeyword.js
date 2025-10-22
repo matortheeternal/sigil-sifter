@@ -1,8 +1,8 @@
 import { StringKeyword } from 'sigil-sifter/keywords';
 
 export default class FlavorTextKeyword extends StringKeyword {
-    static match(str) {
-        return str === 'flavor' || str === 'ft';
+    static get keys() {
+        return ['flavor', 'ft'];
     }
 
     test(card) {

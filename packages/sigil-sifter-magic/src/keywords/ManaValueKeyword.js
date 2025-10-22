@@ -1,15 +1,14 @@
+import { Keyword } from 'sigil-sifter/keywords';
 import { NumericExpression } from 'sigil-sifter/expressions';
 import EvenOddExpression from '../expressions/EvenOddExpression.js';
 
 export default class ManaValueKeyword extends Keyword {
-    static get supportedExpressions() {
-        return [NumericExpression, EvenOddExpression];
+    static get keys() {
+        return  ['manavalue', 'mv', 'cmc'];
     }
 
-    static match(str) {
-        return str === 'manavalue'
-            || str === 'mv'
-            || str === 'cmc';
+    static get supportedExpressions() {
+        return [NumericExpression, EvenOddExpression];
     }
 
     test(card) {

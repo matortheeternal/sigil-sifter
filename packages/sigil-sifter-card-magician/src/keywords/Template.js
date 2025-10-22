@@ -1,8 +1,8 @@
 import { StringKeyword } from 'sigil-sifter/keywords';
 
 export default class Template extends StringKeyword {
-    static match(str) {
-        return str === 'template';
+    static get keys() {
+        return ['template'];
     }
 
     test(obj) {

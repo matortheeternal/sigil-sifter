@@ -39,6 +39,10 @@ export default class ScryfallCard extends MagicCard {
         return this.faces.map(face => (face.cmc || 0));
     }
 
+    get manaCosts() {
+        return this.faces.map(face => new ManaCost(face.mana_cost || ''));
+    }
+
     get pts() {
         return this.faces
             .filter(face => face.hasOwnProperty('power'))

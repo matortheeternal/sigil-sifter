@@ -4,7 +4,7 @@ import StringExpression from '../expressions/StringExpression.js';
 
 export default class ExactParser extends Parser {
     static getParsersToTry() {
-        return [StringExpression];
+        return { default: [StringExpression] };
     }
 
     static match(str) {
@@ -17,7 +17,7 @@ export default class ExactParser extends Parser {
 
     constructor(str, match) {
         super(str, match);
-        this.filter = this.parseNext(this.remainingStr, EqualsOperator);
+        this.filter = this.parseNext(this.remainingStr.trimLeft(), EqualsOperator);
         this.remainingStr = this.filter.remainingStr;
     }
 

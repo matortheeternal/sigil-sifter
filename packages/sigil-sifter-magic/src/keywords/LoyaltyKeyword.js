@@ -1,11 +1,12 @@
+import { Keyword } from 'sigil-sifter/keywords';
+
 export default class LoyaltyKeyword extends Keyword {
-    static get supportedExpressions() {
-        return [NumericExpression];
+    static get keys() {
+        return ['loyalty', 'loy'];
     }
 
-    static match(str) {
-        return str === 'loyalty'
-            || str === 'loy';
+    static get supportedExpressions() {
+        return [NumericExpression];
     }
 
     test(card) {

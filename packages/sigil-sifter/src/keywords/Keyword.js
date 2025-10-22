@@ -24,6 +24,10 @@ export default class Keyword extends Node {
         throw new NotImplementedError();
     }
 
+    static get keys() {
+        throw new NotImplementedError();
+    }
+
     static parse(str) {
         const operator = parseNext(str, this.supportedOperators);
         const expression = parseNext(

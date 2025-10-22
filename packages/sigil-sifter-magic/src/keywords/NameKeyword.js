@@ -1,8 +1,8 @@
 import { StringKeyword } from 'sigil-sifter/keywords';
 
 export default class NameKeyword extends StringKeyword {
-    static match(str) {
-        return str === 'name';
+    static get keys() {
+        return ['name'];
     }
 
     test(card) {

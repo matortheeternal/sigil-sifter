@@ -1,8 +1,8 @@
 import ColorKeyword from './ColorKeyword.js';
 
 export default class ColorIdentityKeyword extends ColorKeyword {
-    static match(str) {
-        return str === 'identity' || str === 'id';
+    static get keys() {
+        return ['identity', 'id'];
     }
 
     test(card) {

@@ -7,22 +7,22 @@ import ExactParser from './ExactParser.js';
 import OrParser from './OrParser.js';
 import Parser from './Parser.js';
 
-const BINARY_OPERATOR_PARSERS = [OrParser];
-
-const FILTER_PARSERS = [
-    NegateParser,
-    ExactParser,
-    NestedGroupParser,
-    KeywordFilterParser,
-    StringExpression
-];
+const BINARY_OPERATOR_PARSERS = { 'o': OrParser };
+const END_NESTING_PARSERS = { ')': EndNestedGroupParser };
 
 export default class GroupParser extends Parser {
     static getParsersToTry({ binaryOperators, nested }) {
-        const parsersToTry = FILTER_PARSERS.slice();
-        if (binaryOperators) parsersToTry.unshift(...BINARY_OPERATOR_PARSERS);
-        if (nested) parsersToTry.unshift(EndNestedGroupParser);
-        return parsersToTry;
+        return {
+            '-': NegateParser,
+            '!': ExactParser,
+            '(': NestedGroupParser,
+            ...(binaryOperators && BINARY_OPERATOR_PARSERS),
+            ...(nested && END_NESTING_PARSERS),
+            default: [
+                KeywordFilterParser,
+                StringExpression
+            ],
+        };
     }
 
     static parse(str, binaryOperators = true, nested = false) {
@@ -46,7 +46,7 @@ export default class GroupParser extends Parser {
             if (!parser) break;
             parser.apply(this.filters);
             if (this.remainingStr === parser.remainingStr) break;
-            this.remainingStr = parser.remainingStr;
+            this.remainingStr = parser.remainingStr.trimLeft();
             prevParser = parser;
             if (parser.endGroup) break;
             binaryOperators = true;
