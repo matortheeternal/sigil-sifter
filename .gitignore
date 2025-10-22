@@ -2,3 +2,4 @@ node_modules
 oracle-cards-*
 fixtureCards.txt
 scripts/
+coverage/
