@@ -18,7 +18,7 @@ function printArray(items) {
 }
 
 describe('Color keyword', () => {
-    it('shorthand c: and full color: behave the same', () => {
+    it('handles shorthand c: and full color: the same', () => {
         const white1 = sifter.filter(cards, 'c=w');
         const white2 = sifter.filter(cards, 'color=w');
         expect(white1).toEqual(white2);
@@ -44,6 +44,8 @@ describe('Color keyword', () => {
 
     it('filters by guild (Golgari)', () => {
         const golgari = sifter.filter(cards, 'c=golgari');
+        const gb = sifter.filter(cards, 'c=GB');
+        expect(golgari).toEqual(gb);
         expectCardNames(golgari, [
             'Abrupt Decay', 'Deathrite Shaman', 'The Gitrog Monster'
         ]);
@@ -51,11 +53,15 @@ describe('Color keyword', () => {
 
     it('filters by wedge (Jund)', () => {
         const jund = sifter.filter(cards, 'c=jund');
+        const gbr = sifter.filter(cards, 'c=gbr');
+        expect(jund).toEqual(gbr);
         expectCardNames(jund, ['Korvold, Fae-Cursed King']);
     });
 
     it('filters by shard (Esper)', () => {
         const esper = sifter.filter(cards, 'c=esper');
+        const wbu = sifter.filter(cards, 'c=WBU');
+        expect(esper).toEqual(wbu);
         expectCardNames(esper, [
             'Void Rend', 'Raffine, Scheming Seer', 'Trial // Error'
         ]);
@@ -63,18 +69,24 @@ describe('Color keyword', () => {
 
     it('filters by 4-color (Growth)', () => {
         const growth = sifter.filter(cards, 'c=growth');
+        const wubg = sifter.filter(cards, 'c=wubg');
+        expect(growth).toEqual(wubg);
         expectCardNames(growth, [`Atraxa, Praetors' Voice`]);
     });
 
     it('filters by all colors (WUBRG)', () => {
         const fiveColor = sifter.filter(cards, 'c=wubrg');
+        const wubrg = sifter.filter(cards, 'c=wubrg');
+        expect(fiveColor).toEqual(wubrg);
         expectCardNames(fiveColor,
             ['Call the Spirit Dragons', 'Leyline of the Guildpact', 'Tiamat']
         );
     });
 
     it('filters by colorless', () => {
-        const colorless = sifter.filter(cards, 'c=c');
+        const colorless = sifter.filter(cards, 'c=colorless');
+        const c = sifter.filter(cards, 'c=c');
+        expect(colorless).toEqual(c);
         expectCardNames(colorless, [
             'Solemn Simulacrum', 'Talisman of Creativity', 'The One Ring',
             'Black Lotus', 'Sol Ring', 'Gaea\'s Cradle', 'Mirror Universe',
@@ -83,7 +95,7 @@ describe('Color keyword', () => {
         ]);
     });
 
-    it('OR operator works (R or B)', () => {
+    it('works with OR operator', () => {
         const rb = sifter.filter(cards, 'c=r or c=b');
         expectCardNames(rb, [
             'Diabolic Tutor', 'Ragavan, Nimble Pilferer', 'Lightning Bolt',
@@ -94,7 +106,7 @@ describe('Color keyword', () => {
         ]);
     });
 
-    it('multiple OR operators', () => {
+    it('works with multiple OR operators', () => {
         const wgb = sifter.filter(cards, 'c=w or c=g or c=b');
         expectCardNames(wgb, [
             'Doubling Season', 'Diabolic Tutor', 'Smothering Tithe',
@@ -109,7 +121,7 @@ describe('Color keyword', () => {
             'Soul Warden', 'Griselbrand']);
     });
 
-    it('AND combination (G and U)', () => {
+    it('handles combinations', () => {
         const gu = sifter.filter(cards, 'c:g c:u');
         expectCardNames(gu, [
             'Tatyova, Benthic Druid', 'Call the Spirit Dragons',
@@ -119,7 +131,7 @@ describe('Color keyword', () => {
         ]);
     });
 
-    it('negation works (-c:r -c:g -c:w -c:b excludes red, green, white, and black)', () => {
+    it('handles the negation operator', () => {
         const notRed = sifter.filter(cards, '-c=r -c:g -c:w -c:b');
         expectCardNames(notRed,  [
             'Solemn Simulacrum', 'Talisman of Creativity', 'Wonder',
@@ -132,8 +144,10 @@ describe('Color keyword', () => {
         ]);
     });
 
-    it('colon operator (:) means >= (supercolor sets)', () => {
+    it('works with the colon operator, which is the same as >=', () => {
         const atLeastAzorius = sifter.filter(cards, 'c:azorius');
+        const gteUW = sifter.filter(cards, 'c>=UW');
+        expect(atLeastAzorius).toEqual(gteUW);
         expectCardNames(atLeastAzorius, [
             'Call the Spirit Dragons', 'The Kami War // O-Kagachi Made Manifest',
             'Inspirit, Flagship Vessel', 'Leyline of the Guildpact', 'Void Rend',
@@ -142,7 +156,7 @@ describe('Color keyword', () => {
         ]);
     });
 
-    it('comparison operators (<, <=, >, >=)', () => {
+    it('handles greater than and less than operators', () => {
         const lessThanAzorius = sifter.filter(cards, 'c<azorius');
         expectCardNames(lessThanAzorius, [
             'Solemn Simulacrum', 'Talisman of Creativity', 'Smothering Tithe',
@@ -165,7 +179,7 @@ describe('Color keyword', () => {
         ]);
     });
 
-    it('empty results return cleanly', () => {
+    it('returns empty results when nothing matches', () => {
         const results = sifter.filter(cards, 'c=r c=u c=g');
         expect(results).toEqual([]);
         printArray(results);
