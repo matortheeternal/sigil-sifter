@@ -1,7 +1,4 @@
 node_modules
 oracle-cards-*
 fixtureCards.txt
-
-scripts/prepareFixtures.js
-
-scripts/minitest.js
+scripts/
