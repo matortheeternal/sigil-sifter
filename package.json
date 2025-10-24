@@ -11,6 +11,6 @@
   "type": "module",
   "scripts": {
     "test": "jasmine --config=jasmine.json",
-    "coverage": "c8 --reporter=lcov --reporter=test-summary npm test"
+    "coverage": "c8 npm test"
   }
 }
