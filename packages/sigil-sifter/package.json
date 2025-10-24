@@ -21,8 +21,5 @@
     "./keywords": "./src/keywords/index.js",
     "./operators": "./src/operators/index.js",
     "./expressions": "./src/expressions/index.js"
-  },
-  "scripts": {
-    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
   }
 }

@@ -37,8 +37,12 @@ export default function register(sifter, Card) {
         WatermarkKeyword,
     ]);
 
-    sifter.setDefaultStringParser((operator, expression) => {
-        return new NameKeyword(operator, expression);
+    sifter.setBaseStringParser((sifter, operator, expression) => {
+        const keyword = new NameKeyword(sifter);
+        keyword.operator = operator;
+        keyword.expression = expression;
+        keyword.remainingStr = expression.remainingStr;
+        return keyword;
     });
 
     sifter.setInputAdapter(Card);

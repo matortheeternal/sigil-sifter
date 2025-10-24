@@ -2,8 +2,8 @@ import { SearchSyntaxError } from 'sigil-sifter/core';
 import { StringExpression } from 'sigil-sifter/expressions';
 
 export default class KeywordAbilityExpression extends StringExpression {
-    static parse(match, str) {
-        return new KeywordAbilityExpression(match, str);
+    static parse(sifter, match, str) {
+        return new KeywordAbilityExpression(sifter, match, str);
     }
 
     includes(val) {

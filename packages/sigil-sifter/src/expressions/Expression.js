@@ -2,11 +2,11 @@ import Node from '../core/Node.js';
 import { NotImplementedError } from '../core/customErrors.js';
 
 export default class Expression extends Node {
-    static match(str) {
+    static match(sifter, str) {
         throw new NotImplementedError();
     }
 
-    static parse(match, str) {
+    static parse(sifter, match, str) {
         throw new NotImplementedError();
     }
 

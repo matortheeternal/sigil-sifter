@@ -7,17 +7,14 @@ import ExactParser from './ExactParser.js';
 import OrParser from './OrParser.js';
 import Parser from './Parser.js';
 
-const BINARY_OPERATOR_PARSERS = { 'o': OrParser };
-const END_NESTING_PARSERS = { ')': EndNestedGroupParser };
-
 export default class GroupParser extends Parser {
-    static getParsersToTry({ binaryOperators, nested }) {
+    static getParsersToTry({ nested }) {
         return {
             '-': NegateParser,
             '!': ExactParser,
             '(': NestedGroupParser,
-            ...(binaryOperators && BINARY_OPERATOR_PARSERS),
-            ...(nested && END_NESTING_PARSERS),
+            'o': OrParser,
+            ...(nested && { ')': EndNestedGroupParser }),
             default: [
                 KeywordFilterParser,
                 StringExpression
@@ -25,31 +22,27 @@ export default class GroupParser extends Parser {
         };
     }
 
-    static parse(str, binaryOperators = true, nested = false) {
-        const group = new GroupParser([], str.trim(), { mode: 'AND' });
-        group.parseFilters(binaryOperators, nested);
+    static parse(sifter, str, options = {}) {
+        const group = new GroupParser(sifter, [], str.trim(), { mode: 'AND' });
+        group.parseFilters(options);
         return group;
     }
 
-    constructor(filters, remainingStr, options) {
-        super();
+    constructor(sifter, filters, remainingStr, options) {
+        super(sifter);
         this.filters = filters;
         this.remainingStr = remainingStr;
         this.options = options;
     }
 
-    parseFilters(binaryOperators, nested) {
-        let prevParser = null;
+    parseFilters(options) {
         while (this.remainingStr.length) {
-            const options = { prevParser, binaryOperators, nested };
             const parser = this.parseNext(this.remainingStr, options);
             if (!parser) break;
             parser.apply(this.filters);
             if (this.remainingStr === parser.remainingStr) break;
             this.remainingStr = parser.remainingStr.trimLeft();
-            prevParser = parser;
             if (parser.endGroup) break;
-            binaryOperators = true;
         }
     }
 

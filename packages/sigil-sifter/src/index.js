@@ -1,11 +1,15 @@
 import GroupParser from './syntax/GroupParser.js';
-import { SearchSyntaxError } from './core/index.js';
-import { registerKeyword } from './core/keywordRegistry.js';
-import Parser from './syntax/Parser.js';
+import {
+    SearchSyntaxError, NoDefaultParserError, KeyConflictError
+} from './core/customErrors.js';
 
-class SigilSifter {
+export default class SigilSifter {
+    constructor() {
+        this.keywords = {};
+    }
+
     compile(filterStr) {
-        const compiledFilter = GroupParser.parse(filterStr);
+        const compiledFilter = GroupParser.parse(this, filterStr);
         if (compiledFilter.remainingStr.length)
             throw new SearchSyntaxError(
                 'Could not find parser to parse',
@@ -24,18 +28,36 @@ class SigilSifter {
         });
     }
 
-    addKeywords(keywords) {
-        for (let keyword of keywords)
-            registerKeyword(keyword);
+    hasKeywordClass(str) {
+        return this.keywords.hasOwnProperty(str);
     }
 
-    setDefaultStringParser(callback) {
-        Parser.ParseDefault = callback;
+    getKeywordClass(str) {
+        return this.keywords[str];
+    }
+
+    addKeywords(keywords) {
+        for (let keyword of keywords)
+            this.registerKeyword(keyword);
+    }
+
+    registerKeyword(keywordClass) {
+        for (const key of keywordClass.keys) {
+            if (this.keywords.hasOwnProperty(key))
+                throw new KeyConflictError(key, keywords, keywordClass);
+            this.keywords[key] = keywordClass;
+        }
+    }
+
+    parseString(sifter, OperatorClass, expression) {
+        throw new NoDefaultParserError(expression);
+    }
+
+    setBaseStringParser(callback) {
+        this.parseString = callback;
     }
 
     setInputAdapter(AdapterClass) {
         this.AdapterClass = AdapterClass;
     }
 }
-
-export const sifter = new SigilSifter();

@@ -2,16 +2,16 @@ import { SearchSyntaxError } from 'sigil-sifter/core';
 import { Expression } from 'sigil-sifter/expressions';
 
 export default class EvenOddExpression extends Expression {
-    static match(str) {
+    static match(sifter, str) {
         return str.match(/^(even|odd)/i);
     }
 
-    static parse(match, str) {
-        return new EvenOddExpression(match, str);
+    static parse(sifter, match, str) {
+        return new EvenOddExpression(sifter, match, str);
     }
 
-    constructor(match, str) {
-        super(match, str);
+    constructor(sifter, match, str) {
+        super(sifter, match, str);
         const isOdd = match[1].toLowerCase() === 'odd';
         this.expectedRemainder = isOdd ? 1 : 0;
     }

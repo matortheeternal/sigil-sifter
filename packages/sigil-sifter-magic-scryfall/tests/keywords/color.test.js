@@ -1,12 +1,11 @@
-import { sifter } from 'sigil-sifter';
+import Sifter from 'sigil-sifter';
 import Magic from '@sigil-sifter/magic';
-import cards from '../fixtures/fixtures.json';
-import ScryfallCard from '../../src';
-import { expectCardNames } from '../helpers';
+import cards from '../fixtures/fixtures.json' with { type: 'json' };
+import ScryfallCard from '../../src/ScryfallCard.js';
+import { expectCardNames, expectNotCardNames } from '../helpers.js';
 
-beforeAll(() => {
-    Magic(sifter, ScryfallCard);
-});
+const sifter = new Sifter();
+Magic(sifter, ScryfallCard);
 
 describe('Color keyword', () => {
     it('handles shorthand c: and full color: the same', () => {
@@ -177,6 +176,6 @@ describe('Color keyword', () => {
 
     it('throws error if both colorless and colored given', () => {
         expect(() => sifter.filter(cards, 'c=cw'))
-            .toThrow(/cannot be both colorless and colored/i);
+            .toThrowError(/cannot be both colorless and colored/i);
     });
 });

@@ -1,5 +1,5 @@
 export default class ManaSymbol {
-    static match(str) {
+    static match(sifter, str) {
         return str.match(/^(\d+)/);
     }
 

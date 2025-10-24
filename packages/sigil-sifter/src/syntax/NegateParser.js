@@ -13,17 +13,17 @@ export default class NegateParser extends Parser {
         };
     }
 
-    static match(str) {
+    static match(sifter, str) {
         return str.match(/^\s*-/);
     }
 
-    static parse(match, str) {
-        return new NegateParser(match, str);
+    static parse(sifter, match, str) {
+        return new NegateParser(sifter, match, str);
     }
 
-    constructor(match, str) {
-        super(match, str);
-        this.filter = this.parseNext(this.remainingStr.trimLeft());
+    constructor(sifter, match, str) {
+        super(sifter, match, str);
+        this.filter = this.parseNext(this.remainingStr);
         this.remainingStr = this.filter.remainingStr;
     }
 

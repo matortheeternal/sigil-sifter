@@ -5,17 +5,17 @@ function strIfNum(val) {
 }
 
 export default class StringExpression extends Expression {
-    static match(str) {
+    static match(sifter, str) {
         return str.match(/^"(.*?)(?<!\\)"/)
             || str.match(/^([^)\s]+)/);
     }
 
-    static parse(match, str) {
-        return new StringExpression(match, str);
+    static parse(sifter, match, str) {
+        return new StringExpression(sifter, match, str);
     }
 
-    constructor(match, str) {
-        super(match, str);
+    constructor(sifter, match, str) {
+        super(sifter, match, str);
         this.value = match[1].toLowerCase();
     }
 

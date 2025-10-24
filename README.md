@@ -33,7 +33,7 @@ npm install sigil-sifter
 
 Here’s a practical example using the Magic: the Gathering module:
 ```js
-import { sifter } from 'sigil-sifter';
+import Sifter from 'sigil-sifter';
 import Magic from '@sigil-sifter/magic'; 
 import ScryfallCard from '@sigil-sifter/magic-scryfall';
 

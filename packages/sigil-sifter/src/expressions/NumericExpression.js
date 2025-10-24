@@ -1,16 +1,16 @@
 import Expression from './Expression.js';
 
 export default class NumericExpression extends Expression {
-    static match(str) {
+    static match(sifter, str) {
         return str.match(/^(\d+)/);
     }
 
-    static parse(match, str) {
-        return new NumericExpression(match, str);
+    static parse(sifter, match, str) {
+        return new NumericExpression(sifter, match, str);
     }
 
-    constructor(match, str) {
-        super(match, str);
+    constructor(sifter, match, str) {
+        super(sifter, match, str);
         this.value = parseInt(match[1], 10);
     }
 

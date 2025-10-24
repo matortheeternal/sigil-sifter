@@ -2,16 +2,16 @@ import { SearchSyntaxError } from 'sigil-sifter/core';
 import { Expression } from 'sigil-sifter/expressions';
 
 export default class PowTouExpression extends Expression {
-    static match(str) {
+    static match(sifter, str) {
         return str.match(/^(pow(er)?|tou(ghness)?)/i);
     }
 
-    static parse(match, str) {
-        return new PowTouExpression(match, str);
+    static parse(sifter, match, str) {
+        return new PowTouExpression(sifter, match, str);
     }
 
-    constructor(match, str) {
-        super(match, str);
+    constructor(sifter, match, str) {
+        super(sifter, match, str);
         const key = match[1].toLowerCase();
         this.powerMode = key === 'pow' || key === 'power';
     }

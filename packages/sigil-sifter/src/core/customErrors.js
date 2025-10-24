@@ -8,7 +8,7 @@ export class NotImplementedError extends Error {
 export class SearchSyntaxError extends Error {
     constructor(msg, context) {
         const nextSegment = context.slice(0, context.indexOf(' '));
-        super(`${msg} < ${nextSegment} >`)
+        super(`${msg} "${nextSegment}"`)
     }
 }
 
@@ -29,5 +29,6 @@ export class KeyConflictError extends Error {
         const kcName = keywordClass.name;
         const regName = keywords[key].name;
         super(`${key} for ${kcName} was already registered for ${regName}`);
+        console.error(keywords);
     }
 }

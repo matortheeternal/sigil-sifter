@@ -1,25 +1,38 @@
 import Node from '../core/Node.js';
 import IncludesOperator from '../operators/IncludesOperator.js';
 import StringExpression from '../expressions/StringExpression.js';
-import { NoDefaultParserError } from '../core/customErrors.js';
 
 export default class Parser extends Node {
-    static ParseDefault(DefaultOperator, expression) {
-        throw new NoDefaultParserError(expression);
+    static parse(sifter, match, str) {
+        return new this(sifter, match, str);
     }
 
-    parseNext(str, options = {}, DefaultOperator = IncludesOperator) {
+    getParsers(str, options) {
+        if (options.parsers) return options.parsers;
         const parsers = this.constructor.getParsersToTry(options);
-        const matchingParser = parsers[str[0].toLowerCase()];
-        const parsersToTry = (parsers.default || []).slice();
-        if (matchingParser) parsersToTry.unshift(matchingParser);
-        for (const parser of parsersToTry) {
-            const match = parser.match(str, options.prevParser);
-            if (match && parser === StringExpression) {
-                const expression = parser.parse(match, str);
-                return Parser.ParseDefault(DefaultOperator, expression);
-            }
-            if (match) return parser.parse(match, str);
+        const parserKey = str.toLowerCase()[0];
+        return [
+            ...(parsers.hasOwnProperty(parserKey) ? [parsers[parserKey]] : []),
+            ...(parsers.default || []),
+        ];
+    }
+
+    parseString(parser, match, str, DefaultOperator) {
+        return this.sifter.parseString(
+            this.sifter,
+            new DefaultOperator(this.sifter),
+            parser.parse(this.sifter, match, str)
+        );
+    }
+
+    parseNext(str, options = {}) {
+        const defaultOperator = options.DefaultOperator || IncludesOperator;
+        for (const parser of this.getParsers(str, options)) {
+            const match = parser.match(this.sifter, str, options);
+            if (!match) continue;
+            return (parser === StringExpression)
+                ? this.parseString(parser, match, str, defaultOperator)
+                : parser.parse(this.sifter, match, str);
         }
     }
 }

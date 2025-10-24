@@ -1,11 +1,11 @@
 import { Node, NotImplementedError } from '../core/index.js';
 
 export default class Operator extends Node {
-    static match(str) {
+    static match(sifter, str) {
         throw new NotImplementedError();
     }
 
-    static parse(match, str) {
+    static parse(sifter, match, str) {
         throw new NotImplementedError();
     }
 

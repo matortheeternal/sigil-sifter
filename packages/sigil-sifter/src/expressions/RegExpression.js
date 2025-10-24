@@ -1,16 +1,16 @@
 import Expression from './Expression.js';
 
 export default class RegExpression extends Expression {
-    static match(str) {
+    static match(sifter, str) {
         return str.match(/^\/(.*?)(?<!\\)\//);
     }
 
-    static parse(match, str) {
-        return new RegExpression(match, str);
+    static parse(sifter, match, str) {
+        return new RegExpression(sifter, match, str);
     }
 
-    constructor(match, str) {
-        super(match, str);
+    constructor(sifter, match, str) {
+        super(sifter, match, str);
         this.value = new RegExp(match[1], 'i');
     }
 

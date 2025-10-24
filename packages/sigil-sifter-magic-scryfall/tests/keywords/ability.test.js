@@ -1,12 +1,11 @@
-import { sifter } from 'sigil-sifter';
+import Sifter from 'sigil-sifter';
 import Magic from '@sigil-sifter/magic';
-import cards from '../fixtures/fixtures.json';
-import ScryfallCard from '../../src';
-import { expectCardNames } from '../helpers';
+import cards from '../fixtures/fixtures.json' with { type: 'json' };
+import ScryfallCard from '../../src/ScryfallCard.js';
+import { expectCardNames } from '../helpers.js';
 
-beforeAll(() => {
-    Magic(sifter, ScryfallCard);
-});
+const sifter = new Sifter();
+Magic(sifter, ScryfallCard);
 
 describe('AbilityKeyword keyword', () => {
     it('handles shorthand kw: and full keyword: the same', () => {

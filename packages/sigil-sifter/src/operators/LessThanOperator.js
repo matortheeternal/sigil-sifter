@@ -1,15 +1,15 @@
 import Operator from './Operator.js';
 
 export default class LessThanOperator extends Operator {
-    static match(str) {
+    static match(sifter, str) {
         return str.match(/^</);
     }
 
-    static parse(match, str) {
-        return new LessThanOperator(match, str);
+    static parse(sifter, match, str) {
+        return new LessThanOperator(sifter, match, str);
     }
 
     testValue(val, expression) {
-        return expression.lessThan(val);
+        return expression.greaterThan(val);
     }
 }

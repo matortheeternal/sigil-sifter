@@ -1,12 +1,12 @@
 import Operator from './Operator.js';
 
 export default class IncludesOperator extends Operator {
-    static match(str) {
+    static match(sifter, str) {
         return str.match(/^:/);
     }
 
-    static parse(match, str) {
-        return new IncludesOperator(match, str);
+    static parse(sifter, match, str) {
+        return new IncludesOperator(sifter, match, str);
     }
 
     testValue(val, expression) {

@@ -4,14 +4,6 @@ import {
     GreaterThanOperator, LessThanOperator, GTEOperator, LTEOperator
 } from '../operators/index.js';
 
-function parseNext(str, supportedParsers) {
-    for (const parser of supportedParsers) {
-        const match = parser.match(str);
-        if (match) return parser.parse(match, str);
-    }
-    throw new SearchSyntaxError('Could not find parser for', str);
-}
-
 export default class Keyword extends Node {
     static get supportedOperators() {
         return [
@@ -28,20 +20,22 @@ export default class Keyword extends Node {
         throw new NotImplementedError();
     }
 
-    static parse(str) {
-        const operator = parseNext(str, this.supportedOperators);
-        const expression = parseNext(
-            operator.remainingStr,
-            this.supportedExpressions
-        );
-        return new this(operator, expression);
+    static parse(sifter, match, str) {
+        const keyword = new this(sifter, match, str);
+        keyword.operator = keyword.parseNext(this.supportedOperators);
+        keyword.remainingStr = keyword.operator.remainingStr;
+        keyword.expression = keyword.parseNext(this.supportedExpressions);
+        keyword.remainingStr = keyword.expression.remainingStr;
+        return keyword;
     }
 
-    constructor(operator, expression) {
-        super();
-        this.operator = operator;
-        this.expression = expression;
-        this.remainingStr = expression.remainingStr;
+    parseNext(parsers) {
+        const str = this.remainingStr;
+        for (const parser of parsers) {
+            const match = parser.match(this.sifter, str);
+            if (match) return parser.parse(this.sifter, match, str);
+        }
+        throw new SearchSyntaxError('Expected to parse ', str);
     }
 
     test(value) {

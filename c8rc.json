@@ -1,0 +1,11 @@
+{
+  "reporter": ["lcov", "text-summary"],
+  "report-dir": "./coverage",
+  "exclude": [
+    "tests/fixtures/**",
+    "tests/support/**",
+    "node_modules/**"
+  ],
+  "all": true,
+  "check-coverage": false
+}

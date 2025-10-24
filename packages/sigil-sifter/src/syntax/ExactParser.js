@@ -7,17 +7,18 @@ export default class ExactParser extends Parser {
         return { default: [StringExpression] };
     }
 
-    static match(str) {
+    static match(sifter, str) {
         return str.match(/^\s*!/);
     }
 
-    static parse(match, str) {
-        return new ExactParser(match, str);
+    static parse(sifter, match, str) {
+        return new ExactParser(sifter, match, str);
     }
 
-    constructor(str, match) {
-        super(str, match);
-        this.filter = this.parseNext(this.remainingStr.trimLeft(), EqualsOperator);
+    constructor(sifter, str, match) {
+        super(sifter, str, match);
+        const options = { DefaultOperator: EqualsOperator };
+        this.filter = this.parseNext(this.remainingStr, options);
         this.remainingStr = this.filter.remainingStr;
     }
 
