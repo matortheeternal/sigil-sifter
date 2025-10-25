@@ -15,7 +15,9 @@ export default class SigilSifter {
                 'Could not find parser to parse',
                 compiledFilter.remainingStr
             );
-        return compiledFilter;
+        return compiledFilter.filters.length > 1
+            ? compiledFilter
+            : compiledFilter.filters[0];
     }
 
     filter(objects, filterStr) {
