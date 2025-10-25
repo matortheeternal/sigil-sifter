@@ -1,5 +1,5 @@
 {
-  "reporter": ["lcov", "text-summary"],
+  "reporter": ["lcov"],
   "report-dir": "./coverage",
   "exclude": [
     "tests/fixtures/**",
