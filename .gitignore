@@ -3,5 +3,3 @@ oracle-cards-*
 fixtureCards.txt
 scripts/
 coverage/
-pts.json
-rarity.json
