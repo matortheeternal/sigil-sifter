@@ -80,7 +80,6 @@ describe('Power keyword', () => {
     });
 
     it('supports pow>tou (power greater than toughness)', () => {
-        debugger;
         const res = sifter.filter(cards, 'pow>tou');
         expectCardNames(res, [
             'Snapcaster Mage', 'Ragavan, Nimble Pilferer',

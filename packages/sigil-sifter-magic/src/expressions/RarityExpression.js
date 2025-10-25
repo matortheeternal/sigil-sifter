@@ -3,9 +3,9 @@ import { getRarityGroup } from '../core/rarity.js';
 
 export default class RarityExpression extends StringExpression {
     static match(sifter, str) {
-        const m = super.match(str);
-        if (!m || !getRarityGroup(m[1])) return;
-        return m;
+        const matchData = super.match(sifter, str);
+        if (!matchData || !getRarityGroup(matchData[1])) return;
+        return matchData;
     }
 
     static parse(sifter, match, str) {
@@ -17,8 +17,12 @@ export default class RarityExpression extends StringExpression {
         this.group = getRarityGroup(match[1]);
     }
 
+    includes(val) {
+        return this.equals(val);
+    }
+
     equals(val) {
-        return this.group.name === val;
+        return this.group.name.toLowerCase() === val;
     }
 
     greaterThan(val) {

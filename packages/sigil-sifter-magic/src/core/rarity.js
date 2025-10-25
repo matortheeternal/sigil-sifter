@@ -1,33 +1,34 @@
 const rarityGroups = [{
-    char: 'B',
-    name: 'Basic',
-    aliases: ['Basic Land']
-}, {
+    index: 0,
     char: 'C',
     name: 'Common',
 }, {
+    index: 1,
     char: 'U',
     name: 'Uncommon',
 }, {
+    index: 2,
     char: 'R',
     name: 'Rare'
 }, {
+    index: 3,
     char: 'M',
-    name: 'Mythic',
-    aliases: ['Mythic Rare']
+    name: 'Mythic'
 }, {
+    index: 3,
     char: 'S',
     name: 'Special'
 }, {
-    char: 'S',
-    name: 'Masterpiece'
+    index: 4,
+    char: 'B',
+    name: 'Bonus'
 }];
 
-rarityGroups.forEach((g, index) => {
-    g.matches = Object.values(g).flat().map(s => s.toLowerCase());
-    g.index = index;
+rarityGroups.forEach(g => {
+    g.matches = [g.char.toLowerCase(), g.name.toLowerCase()];
 });
 
-export function getRarityGroup(valueToMatch) {
-    return rarityGroups.find(g => g.matches.includes(valueToMatch));
+export function getRarityGroup(value) {
+    const lcValue = value.toLowerCase();
+    return rarityGroups.find(g => g.matches.includes(lcValue));
 }
