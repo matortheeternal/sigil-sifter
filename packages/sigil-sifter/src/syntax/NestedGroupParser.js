@@ -7,14 +7,7 @@ export default class NestedGroupParser extends Parser {
     }
 
     static parse(sifter, match, str) {
-        return new NestedGroupParser(sifter, match, str);
-    }
-
-    apply(filters) {
-        const options = { nested: true };
-        const group = GroupParser.parse(this.sifter, this.remainingStr, options);
-        this.remainingStr = group.remainingStr;
-        const filter = group.filters.length > 1 ? group : group.filters[0];
-        filters.push(filter);
+        const remainingStr = str.slice(match[0].length);
+        return GroupParser.parse(sifter, remainingStr, { nested: true });
     }
 }

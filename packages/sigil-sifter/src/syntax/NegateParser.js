@@ -1,7 +1,8 @@
 import NestedGroupParser from './NestedGroupParser.js';
 import KeywordFilterParser from './KeywordFilterParser.js';
-import ExactParser from './ExactParser.js';
+import { SearchSyntaxError } from '../core/customErrors.js';
 import StringExpression from '../expressions/StringExpression.js';
+import ExactParser from './ExactParser.js';
 import Parser from './Parser.js';
 
 export default class NegateParser extends Parser {
@@ -24,6 +25,8 @@ export default class NegateParser extends Parser {
     constructor(sifter, match, str) {
         super(sifter, match, str);
         this.filter = this.parseNext(this.remainingStr);
+        if (!this.filter)
+            throw new SearchSyntaxError('Expected "-" to be followed by a filter.', str);
         this.remainingStr = this.filter.remainingStr;
     }
 

@@ -24,10 +24,14 @@ export default class OrParser extends Parser {
     apply(filters) {
         if (filters.length === 0)
             throw new SearchSyntaxError(`Invalid OR syntax at`, this.remainingStr);
-        const newGroup = new GroupParser(this.sifter, [
-            this.parseFirstGroup(filters),
-            this.parseSecondGroup()
-        ], '', { mode: 'OR' });
+        const firstGroup = this.parseFirstGroup(filters);
+        const secondGroup = this.parseSecondGroup();
+        const newGroup = new GroupParser(
+            this.sifter,
+            [firstGroup, secondGroup],
+            secondGroup.remainingStr,
+            { mode: 'OR' }
+        );
         filters.splice(0, filters.length, newGroup);
     }
 }
