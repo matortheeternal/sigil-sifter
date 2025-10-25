@@ -1,23 +1,28 @@
 import GroupParser from './syntax/GroupParser.js';
 import {
-    SearchSyntaxError, NoDefaultParserError, KeyConflictError
+    SearchSyntaxError, SearchLengthError,
+    NoDefaultParserError, KeyConflictError
 } from './core/customErrors.js';
 
+const DEFAULT_CONFIG = {
+    queryMaxLength: 1024
+};
+
 export default class SigilSifter {
-    constructor() {
+    constructor(config = {}) {
         this.keywords = {};
+        this.AdapterClass = null;
+        this.config = { ...DEFAULT_CONFIG, ...config };
     }
 
     compile(filterStr) {
-        const compiledFilter = GroupParser.parse(this, filterStr);
-        if (compiledFilter.remainingStr.length)
-            throw new SearchSyntaxError(
-                'Could not find parser to parse',
-                compiledFilter.remainingStr
-            );
-        return compiledFilter.filters.length > 1
-            ? compiledFilter
-            : compiledFilter.filters[0];
+        if (filterStr.length > this.config.queryMaxLength)
+            throw new SearchLengthError(filterStr, this.config.queryMaxLength);
+        const compiled = GroupParser.parse(this, filterStr);
+        const str = compiled.remainingStr;
+        if (str.length)
+            throw new SearchSyntaxError('Failed to parse', str);
+        return compiled.filters.length > 1 ? compiled : compiled.filters[0];
     }
 
     filter(objects, filterStr) {

@@ -6,8 +6,8 @@ function strIfNum(val) {
 
 export default class StringExpression extends Expression {
     static match(sifter, str) {
-        return str.match(/^"(.*?)(?<!\\)"/)
-            || str.match(/^([^)\s]+)/);
+        return str.match(/^"((?:[^"\\]|\\.)*)"/)
+            || str.match(/^([^\s)]+)/);
     }
 
     static parse(sifter, match, str) {

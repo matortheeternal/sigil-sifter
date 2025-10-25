@@ -11,6 +11,15 @@ export class SearchSyntaxError extends Error {
     }
 }
 
+export class SearchLengthError extends Error {
+    constructor(str, maxLen) {
+        super(
+            `Provided search string has length ${str.length}, `+
+            `which exceeds the maximum allowed length of ${maxLen}`
+        );
+    }
+}
+
 export class NoDefaultParserError extends Error {
     constructor(expression) {
         super(`No default parser configured, failed to parse ${expression.value}`);

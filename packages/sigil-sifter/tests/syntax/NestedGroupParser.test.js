@@ -1,5 +1,6 @@
 import Sifter from 'sigil-sifter';
 import Module from '../support/module/index.js';
+import { runFilterInWorker } from '../helpers/worker.js';
 import items from '../fixtures/items.json' with { type: 'json' };
 import { SearchSyntaxError } from '../../src/core/index.js';
 
@@ -29,7 +30,7 @@ describe('NestedGroupParser', () => {
 
     it('throws an error on extra closing parenthesis', () => {
         expect(() => sifter.filter(items, '("Coffee Mug"))'))
-            .toThrowError(SearchSyntaxError, /could not find parser to parse/i);
+            .toThrowError(SearchSyntaxError, /failed to parse/i);
     });
 
     it('matches multiple terms in a group', () => {
@@ -61,5 +62,17 @@ describe('NestedGroupParser', () => {
         expect(names).toContain('Coffee Mug');
         expect(names).toContain('Bookcase');
         expect(names).toContain('Desk Lamp');
+    });
+
+    it('handles many open parens without throwing', async () => {
+        const query = '('.repeat(1024);
+        const result = await runFilterInWorker(items, query);
+        expect(Array.isArray(result)).toBeTrue();
+    });
+
+    it('handles many balanced parens without throwing', async () => {
+        const query = '('.repeat(511) + ')'.repeat(511);
+        const result = await runFilterInWorker(items, query);
+        expect(Array.isArray(result)).toBeTrue();
     });
 });

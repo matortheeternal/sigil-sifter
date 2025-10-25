@@ -2,7 +2,7 @@ import Expression from './Expression.js';
 
 export default class RegExpression extends Expression {
     static match(sifter, str) {
-        return str.match(/^\/(.*?)(?<!\\)\//);
+        return str.match(/^\/((?:[^\/\\]|\\.)*)\//);
     }
 
     static parse(sifter, match, str) {
