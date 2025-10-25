@@ -80,11 +80,6 @@
     "sold": false
   },
   {
-    "name": "Multi Word Name With Spaces",
-    "price": "$55.55",
-    "sold": true
-  },
-  {
     "name": "Zero Dollar Promo",
     "price": "$0.00",
     "sold": false
