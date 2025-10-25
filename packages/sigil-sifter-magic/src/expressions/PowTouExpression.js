@@ -29,13 +29,13 @@ export default class PowTouExpression extends Expression {
 
     greaterThan({ power, toughness }) {
         return this.powerMode
-            ? toughness > power
-            : power > toughness;
+            ? power > toughness
+            : toughness > power;
     }
 
     lessThan({ power, toughness }) {
         return this.powerMode
-            ? toughness < power
-            : power < toughness;
+            ? power < toughness
+            : toughness < power;
     }
 }

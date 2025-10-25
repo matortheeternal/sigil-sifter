@@ -59,8 +59,8 @@ export default class ScryfallCard extends MagicCard {
         return this.faces
             .filter(face => face.hasOwnProperty('power'))
             .map(face => ({
-                power: parseInt(face.power),
-                toughness: parseInt(face.toughness)
+                power: parseInt(face.power) || 0,
+                toughness: parseInt(face.toughness) || 0
             }));
     }
 

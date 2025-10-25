@@ -10,6 +10,7 @@ export default class LessThanOperator extends Operator {
     }
 
     testValue(val, expression) {
+        // this is inverted because the expression comes second
         return expression.greaterThan(val);
     }
 }
