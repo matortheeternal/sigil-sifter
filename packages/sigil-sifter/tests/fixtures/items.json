@@ -1,0 +1,112 @@
+[
+  {
+    "name": "Hair Dryer",
+    "price": "$19.99",
+    "sold": false
+  },
+  {
+    "name": "Coffee Mug",
+    "price": "$4.50",
+    "sold": true
+  },
+  {
+    "name": "Vacuum Cleaner",
+    "price": "$89.00",
+    "sold": false
+  },
+  {
+    "name": "Laptop Pro X200",
+    "price": "$1099.99",
+    "sold": true
+  },
+  {
+    "name": "Headphones (Noise-Cancelling)",
+    "price": "$59.99",
+    "sold": true
+  },
+  {
+    "name": "Desk Lamp",
+    "price": "$24.75",
+    "sold": false
+  },
+  {
+    "name": "bookcase",
+    "price": "$59.00",
+    "sold": false
+  },
+  {
+    "name": "Bookcase",
+    "price": "$60.00",
+    "sold": true
+  },
+  {
+    "name": "Bookcase - Tall",
+    "price": "$120.00",
+    "sold": true
+  },
+  {
+    "name": "Office Chair",
+    "price": "$149.99",
+    "sold": false
+  },
+  {
+    "name": "Gaming Mouse",
+    "price": "$39.95",
+    "sold": true
+  },
+  {
+    "name": "Notebook",
+    "price": "$2.99",
+    "sold": false
+  },
+  {
+    "name": "Children's Toy",
+    "price": "$0.00",
+    "sold": true
+  },
+  {
+    "name": "Antique Vase",
+    "price": "$9999.99",
+    "sold": false
+  },
+  {
+    "name": "\"Quoted\" Name Item",
+    "price": "$77.77",
+    "sold": true
+  },
+  {
+    "name": "Emoji 😀 Lamp",
+    "price": "$13.37",
+    "sold": false
+  },
+  {
+    "name": "Multi Word Name With Spaces",
+    "price": "$55.55",
+    "sold": true
+  },
+  {
+    "name": "Zero Dollar Promo",
+    "price": "$0.00",
+    "sold": false
+  },
+  {
+    "name": "Negative Price Error",
+    "price": "$-5.00",
+    "sold": true
+  },
+  {
+    "name": "UpperCase NAME",
+    "price": "$42.42",
+    "sold": false
+  },
+  {
+    "name": "lowercase name",
+    "price": "$42.42",
+    "sold": true
+  },
+  {
+    "name": "Weird Characters !@#$%^&*()",
+    "price": "$12.34",
+    "sold": false
+  }
+]
