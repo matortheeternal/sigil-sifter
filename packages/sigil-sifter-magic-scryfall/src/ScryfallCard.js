@@ -84,7 +84,7 @@ export default class ScryfallCard extends MagicCard {
 
     get watermarks() {
         return this.faces.reduce((watermarks, face) => {
-            watermarks.push(...face.watermarks)
+            if (face.watermark) watermarks.push(face.watermark)
             return watermarks;
         }, []);
     }

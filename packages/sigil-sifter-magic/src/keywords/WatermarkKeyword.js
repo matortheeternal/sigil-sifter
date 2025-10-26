@@ -3,7 +3,7 @@ import { IncludesOperator } from 'sigil-sifter/operators';
 
 export default class WatermarkKeyword extends StringKeyword {
     static get keys() {
-        return ['watermark', 'w'];
+        return ['watermark'];
     }
 
     static get supportedOperators() {
