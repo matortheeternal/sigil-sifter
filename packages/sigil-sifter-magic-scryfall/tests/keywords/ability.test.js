@@ -8,7 +8,7 @@ import {SearchSyntaxError} from 'sigil-sifter/core';
 const sifter = new Sifter();
 Magic(sifter, ScryfallCard);
 
-describe('AbilityKeyword keyword', () => {
+describe('Ability keyword', () => {
     it('handles shorthand kw: and full keyword: the same', () => {
         const flying1 = sifter.filter(cards, 'kw:flying');
         const flying2 = sifter.filter(cards, 'keyword:flying');
@@ -27,9 +27,9 @@ describe('AbilityKeyword keyword', () => {
         expectCardNames(haste, ['Aurelia, the Warleader']);
     });
 
-    it('is case-insensitive for keyword names', () => {
-        const vigilance1 = sifter.filter(cards, 'kw:vigilance');
-        const vigilance2 = sifter.filter(cards, 'kw:VIGILANCE');
+    it('is case-insensitive for keyword names and values', () => {
+        const vigilance1 = sifter.filter(cards, 'KeYwOrD:vigilance');
+        const vigilance2 = sifter.filter(cards, 'KW:VIGILANCE');
         expect(vigilance1).toEqual(vigilance2);
         expectCardNames(vigilance1, [
             'Aurelia, the Warleader', 'Zacama, Primal Calamity',
@@ -47,18 +47,18 @@ describe('AbilityKeyword keyword', () => {
         ]);
     });
 
+    it('supports multiple keywords', () => {
+        const hasteAndTrample = sifter.filter(cards, 'kw:flying kw:vigilance');
+        expectCardNames(hasteAndTrample, [
+            'Aurelia, the Warleader', 'Serra Angel', 'Atraxa, Praetors\' Voice'
+        ]);
+    });
+
     it('supports multiple keywords with OR', () => {
         const hasteOrTrample = sifter.filter(cards, 'kw:haste OR kw:trample');
         expectCardNames(hasteOrTrample, [
             'Aurelia, the Warleader', 'Zacama, Primal Calamity', 'Rampaging Baloths',
             'Primeval Titan', 'Blightsteel Colossus'
-        ]);
-    });
-
-    it('supports multiple keywords with AND', () => {
-        const hasteAndTrample = sifter.filter(cards, 'kw:flying kw:vigilance');
-        expectCardNames(hasteAndTrample, [
-            'Aurelia, the Warleader', 'Serra Angel', 'Atraxa, Praetors\' Voice'
         ]);
     });
 
