@@ -1,4 +1,5 @@
 import { Keyword } from 'sigil-sifter/keywords';
+import { NumericExpression } from 'sigil-sifter/expressions';
 
 export default class LoyaltyKeyword extends Keyword {
     static get keys() {
@@ -10,6 +11,6 @@ export default class LoyaltyKeyword extends Keyword {
     }
 
     test(card) {
-        return card.loyalties.some(loy => super.test(loy));
+        return super.test(card.loyalty);
     }
 }

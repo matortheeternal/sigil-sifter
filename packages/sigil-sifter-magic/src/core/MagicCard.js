@@ -29,6 +29,10 @@ export default class MagicCard {
         throw new NotImplementedError();
     }
 
+    get loyalty() {
+        throw new NotImplementedError();
+    }
+
     get manaValues() {
         throw new NotImplementedError();
     }
