@@ -3,6 +3,7 @@ import Magic from '@sigil-sifter/magic';
 import cards from '../fixtures/fixtures.json' with { type: 'json' };
 import ScryfallCard from '../../src/ScryfallCard.js';
 import { expectCardNames } from '../helpers.js';
+import {SearchSyntaxError} from 'sigil-sifter/core';
 
 const sifter = new Sifter();
 Magic(sifter, ScryfallCard);
@@ -64,5 +65,19 @@ describe('AbilityKeyword keyword', () => {
     it('handles unknown keyword gracefully', () => {
         const bogus = sifter.filter(cards, 'kw:notARealKeyword');
         expect(bogus).toEqual([]);
+    });
+
+    it('throws with =, >, < operators', () => {
+        const test = function(search) {
+            expect(() => sifter.filter(cards, search))
+                .toThrowError(
+                    SearchSyntaxError,
+                    /Keyword expressions do not support the .+ operator/i
+                );
+        };
+
+        test('kw=flying');
+        test('kw>flying');
+        test('kw<flying');
     });
 });
