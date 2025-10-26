@@ -10,10 +10,6 @@ export default class Expression extends Node {
         throw new NotImplementedError();
     }
 
-    includes(val) {
-        throw new NotImplementedError();
-    }
-
     equals(val) {
         throw new NotImplementedError();
     }
