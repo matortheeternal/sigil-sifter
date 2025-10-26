@@ -11,6 +11,7 @@
   "type": "module",
   "scripts": {
     "test": "jasmine --config=jasmine.json",
-    "coverage": "c8 npm test"
+    "coverage": "c8 npm test",
+    "debug:test": "node --inspect-brk node_modules/jasmine/bin/jasmine.js --config=jasmine.json"
   }
 }
