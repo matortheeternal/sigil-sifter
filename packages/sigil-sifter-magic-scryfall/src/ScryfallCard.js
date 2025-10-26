@@ -49,7 +49,10 @@ export default class ScryfallCard extends MagicCard {
     }
 
     get names() {
-        return this.faces.map(face => (face.name || ''));
+        return [
+            ...(this.card.hasOwnProperty('name') ? [this.card.name] : []),
+            ...this.faces.map(face => (face.name || ''))
+        ];
     }
 
     get manaValues() {
