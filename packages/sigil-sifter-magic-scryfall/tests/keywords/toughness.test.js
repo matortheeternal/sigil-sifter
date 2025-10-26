@@ -5,7 +5,7 @@ import ScryfallCard from '../../src/ScryfallCard.js';
 import { expectCardNames } from '../helpers.js';
 import {SearchSyntaxError} from 'sigil-sifter/core';
 
-describe('Power keyword', () => {
+describe('Toughness keyword', () => {
     let sifter;
 
     beforeAll(() => {
@@ -13,14 +13,14 @@ describe('Power keyword', () => {
         Magic(sifter, ScryfallCard);
     });
 
-    it('works with pow and power', () => {
-        const res1 = sifter.filter(cards, 'pow>8');
-        const res2 = sifter.filter(cards, 'power>8');
+    it('works with tou and toughness', () => {
+        const res1 = sifter.filter(cards, 'tou>8');
+        const res2 = sifter.filter(cards, 'toughness>8');
         expect(res1).toEqual(res2);
     });
 
     it('supports greater than (>) operator', () => {
-        const res = sifter.filter(cards, 'power>5');
+        const res = sifter.filter(cards, 'toughness>5');
         expectCardNames(res, [
             'Zacama, Primal Calamity', 'Blightsteel Colossus', 'Tiamat',
             'Griselbrand', 'Primeval Titan', 'The Gitrog Monster',
@@ -30,15 +30,15 @@ describe('Power keyword', () => {
     });
 
     it('supports less than (<) operator', () => {
-        const res = sifter.filter(cards, 'power<2');
+        const res = sifter.filter(cards, 'toughness<2');
         expectCardNames(res, [
-            'Llanowar Elves', 'Birds of Paradise', 'Stoneforge Mystic',
-            'Esper Sentinel', 'Soul Warden', 'Deathrite Shaman'
+            'Llanowar Elves', 'Birds of Paradise', 'Esper Sentinel',
+            'Ragavan, Nimble Pilferer', 'Soul Warden'
         ]);
     });
 
     it('supports greater than or equal to (>=) operator', () => {
-        const res = sifter.filter(cards, 'power>=4');
+        const res = sifter.filter(cards, 'toughness>=4');
         expectCardNames(res, [
             'Serra Angel', 'Atraxa, Praetors\' Voice', 'Savage Ventmaw',
             'Korvold, Fae-Cursed King', 'Platinum Angel', 'Shivan Dragon',
@@ -52,61 +52,60 @@ describe('Power keyword', () => {
     });
 
     it('supports less than or equal to (<=) operator', () => {
-        const res = sifter.filter(cards, 'power<=1');
+        const res = sifter.filter(cards, 'tou<=1');
         expectCardNames(res, [
-            'Llanowar Elves', 'Birds of Paradise', 'Stoneforge Mystic',
-            'Esper Sentinel', 'Soul Warden', 'Deathrite Shaman'
+            'Llanowar Elves', 'Birds of Paradise',
+            'Esper Sentinel', 'Soul Warden'
         ]);
     });
 
     it('supports not equal (!=) operator', () => {
-        const res = sifter.filter(cards, 'power!=2 power!=1 power!=3');
+        const res = sifter.filter(cards, 'tou!=2 tou!=1 tou!=3');
         expectCardNames(res, [
-            'Birds of Paradise', 'Serra Angel', 'Atraxa, Praetors\' Voice',
-            'Savage Ventmaw', 'Korvold, Fae-Cursed King', 'Platinum Angel',
+            'Serra Angel', 'Atraxa, Praetors\' Voice', 'Savage Ventmaw',
+            'Korvold, Fae-Cursed King', 'Platinum Angel', 'Jegantha, the Wellspring',
             'Shivan Dragon', 'Inspirit, Flagship Vessel', 'Xenagos, God of Revels',
             'Terror of the Peaks', 'Rampaging Baloths', 'Zacama, Primal Calamity',
             'Primeval Titan', 'The Gitrog Monster', 'Morophon, the Boundless',
             'Muldrotha, the Gravetide', 'Blightsteel Colossus', 'Tiamat',
             'Griselbrand', 'The Kami War // O-Kagachi Made Manifest',
-            'Jegantha, the Wellspring'
         ]);
     });
 
     it('supports equal (=) operator', () => {
-        const res = sifter.filter(cards, 'power=2');
+        const res = sifter.filter(cards, 'tou=2');
         expectCardNames(res, [
-            'Solemn Simulacrum', 'Wonder', 'Snapcaster Mage', 'Ragavan, Nimble Pilferer'
+            'Solemn Simulacrum', 'Wonder', 'Stoneforge Mystic'
         ]);
     });
 
-    it('supports pow>tou (power greater than toughness)', () => {
-        const res = sifter.filter(cards, 'pow>tou');
+    it('supports tou>pow', () => {
+        const res = sifter.filter(cards, 'toughness>power');
         expectCardNames(res, [
-            'Snapcaster Mage', 'Ragavan, Nimble Pilferer',
-            'Xenagos, God of Revels', 'Terror of the Peaks'
+            'Birds of Paradise', 'Shalai, Voice of Plenty',
+            'Raffine, Scheming Seer', 'Stoneforge Mystic',
+            'Deathrite Shaman', 'Aurelia, the Warleader'
         ]);
     });
 
-    it('throws with pow:tou', () => {
-        expect(() => sifter.filter(cards, 'pow:tou'))
+    it('throws with tou:pow', () => {
+        expect(() => sifter.filter(cards, 'toughness:power'))
             .toThrowError(
                 SearchSyntaxError,
                 /includes operator is not supported/i
             );
     });
 
-    it('supports pow<tou (power less than or equal to toughness)', () => {
-        const res = sifter.filter(cards, 'pow<=tou');
+    it('supports toughness<=power', () => {
+        const res = sifter.filter(cards, 'toughness<=power');
         expectCardNames(res, [
-            'Deathrite Shaman', 'Wonder', 'Zacama, Primal Calamity',
-            'Raffine, Scheming Seer', 'Shalai, Voice of Plenty', 'Birds of Paradise',
-            'Tarmogoyf'
+            'Wonder', 'Zacama, Primal Calamity', 'Snapcaster Mage',
+            'Xenagos, God of Revels', 'Terror of the Peaks'
         ]);
     });
 
-    it('supports pow=tou (power equals toughness)', () => {
-        const res = sifter.filter(cards, 'pow=tou');
+    it('supports toughness=power', () => {
+        const res = sifter.filter(cards, 'toughness=power');
         expectCardNames(res, [
             'Solemn Simulacrum', 'Wonder', 'Zacama, Primal Calamity', 'Rampaging Baloths',
             'Serra Angel', 'Atraxa, Praetors\' Voice', 'Korvold, Fae-Cursed King',
