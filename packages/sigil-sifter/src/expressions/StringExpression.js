@@ -28,12 +28,14 @@ export default class StringExpression extends Expression {
     }
 
     greaterThan(val) {
-        const fixedVal = strIfNum(val).toLowerCase();
-        return fixedVal.includes(this.value) && !this.equals(fixedVal);
+        throw new SearchSyntaxError(
+            'String expressions do not support the greater than operator'
+        );
     }
 
     lessThan(val) {
-        const fixedVal = strIfNum(val).toLowerCase();
-        return !fixedVal.includes(this.value);
+        throw new SearchSyntaxError(
+            'String expressions do not support the less than operator'
+        );
     }
 }
