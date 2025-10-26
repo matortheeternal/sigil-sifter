@@ -2,8 +2,7 @@
   "reporter": ["lcov", "text"],
   "report-dir": "./coverage",
   "exclude": [
-    "tests/fixtures/**",
-    "tests/support/**",
+    "**/tests/**",
     "node_modules/**",
     "scripts/**"
   ],
