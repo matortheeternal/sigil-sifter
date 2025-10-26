@@ -35,10 +35,6 @@ export default class SigilSifter {
         });
     }
 
-    hasKeywordClass(str) {
-        return this.keywords.hasOwnProperty(str);
-    }
-
     getKeywordClass(str) {
         return this.keywords[str];
     }
