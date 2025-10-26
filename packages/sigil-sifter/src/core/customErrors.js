@@ -36,7 +36,6 @@ export class KeyConflictError extends Error {
     constructor(key, keywords, keywordClass) {
         const kcName = keywordClass.name;
         const regName = keywords[key].name;
-        super(`${key} for ${kcName} was already registered for ${regName}`);
-        console.error(keywords);
+        super(`Key "${key}" for ${kcName} was already registered for ${regName}`);
     }
 }

@@ -51,7 +51,7 @@ export default class SigilSifter {
     registerKeyword(keywordClass) {
         for (const key of keywordClass.keys) {
             if (this.keywords.hasOwnProperty(key))
-                throw new KeyConflictError(key, keywords, keywordClass);
+                throw new KeyConflictError(key, this.keywords, keywordClass);
             this.keywords[key] = keywordClass;
         }
     }
