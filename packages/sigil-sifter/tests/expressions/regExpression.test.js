@@ -4,6 +4,24 @@ import items from '../fixtures/items.json' with { type: 'json' };
 describe('RegExpression', () => {
     const makeItems = (name, count) => Array(count).fill({ name });
 
+    describe('operators', () => {
+        it('treats includes and equals operators the same', async () => {
+            const q1 = 'name:/book/';
+            const q2 = 'name=/book/';
+            const res1 = await runFilterInWorker(items, q1);
+            const res2 = await runFilterInWorker(items, q2);
+            expect(res1.length).toBeGreaterThan(0);
+            expect(res1).toEqual(res2);
+        });
+
+        it('throws with comparison operators', async () => {
+            const q1 = 'name>=/book/';
+            const q2 = 'name<=/book/';
+            await expectAsync(runFilterInWorker(items, q1)).toBeRejected();
+            await expectAsync(runFilterInWorker(items, q2)).toBeRejected();
+        });
+    });
+
     describe('basic expressions', () => {
         it('handles simple literal patterns', async () => {
             const items = makeItems('hello world', 500);
