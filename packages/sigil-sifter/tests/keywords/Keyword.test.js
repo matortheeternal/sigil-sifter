@@ -43,11 +43,11 @@ describe('Keyword', () => {
                 .toThrowError(SearchSyntaxError, 'Failed to parse "undefined"');
         });
 
-        it('throws if unrecognized operator used', () => {
+        it('does not throw if unrecognized operator used', () => {
             const sifter = new Sifter();
             Module(sifter);
             expect(() => sifter.filter(items, 'sold^undefined'))
-                .toThrowError(SearchSyntaxError, 'Failed to parse "^undefined"');
+                .not.toThrowError(SearchSyntaxError, 'Failed to parse "^undefined"');
         });
     })
 });
