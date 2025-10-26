@@ -22,7 +22,7 @@ export class SearchLengthError extends Error {
 
 export class NoDefaultParserError extends Error {
     constructor(expression) {
-        super(`No default parser configured, failed to parse ${expression.value}`);
+        super(`No default parser configured, failed to parse "${expression.value}"`);
     }
 }
 
