@@ -1,14 +1,14 @@
 import Sifter from '../../src/index.js';
 import { NotImplementedError } from '../../src/core/index.js';
 import {
-    MatchableKeyword, PartialKeyword, UnimplementedKeyword
+    MatchableExKeyword, PartialExKeyword, UnimplementedExKeyword
 } from '../support/incompleteImplementations.js';
 
 describe('Expression', () => {
     describe('matching', () => {
         it('throws if unimplemented', () => {
             const sifter = new Sifter();
-            sifter.addKeywords([UnimplementedKeyword]);
+            sifter.addKeywords([UnimplementedExKeyword]);
             expect(() => sifter.filter([{}], 'u:test'))
                 .toThrowError(NotImplementedError);
         });
@@ -17,7 +17,7 @@ describe('Expression', () => {
     describe('parsing', () => {
         it('throws if unimplemented', () => {
             const sifter = new Sifter();
-            sifter.addKeywords([MatchableKeyword]);
+            sifter.addKeywords([MatchableExKeyword]);
             expect(() => sifter.filter([{}], 'm:test'))
                 .toThrowError(NotImplementedError);
         });
@@ -26,7 +26,7 @@ describe('Expression', () => {
     describe('includes operator', () => {
         it('throws if unimplemented', () => {
             const sifter = new Sifter();
-            sifter.addKeywords([PartialKeyword]);
+            sifter.addKeywords([PartialExKeyword]);
             expect(() => sifter.filter([{}], 'p:test'))
                 .toThrowError(NotImplementedError);
         });
@@ -35,7 +35,7 @@ describe('Expression', () => {
     describe('equals operator', () => {
         it('throws if unimplemented', () => {
             const sifter = new Sifter();
-            sifter.addKeywords([PartialKeyword]);
+            sifter.addKeywords([PartialExKeyword]);
             expect(() => sifter.filter([{}], 'p=test'))
                 .toThrowError(NotImplementedError);
         });
@@ -44,7 +44,7 @@ describe('Expression', () => {
     describe('greaterThan operator', () => {
         it('throws if unimplemented', () => {
             const sifter = new Sifter();
-            sifter.addKeywords([PartialKeyword]);
+            sifter.addKeywords([PartialExKeyword]);
             expect(() => sifter.filter([{}], 'p>test'))
                 .toThrowError(NotImplementedError);
         });
@@ -53,7 +53,7 @@ describe('Expression', () => {
     describe('lessThan operator', () => {
         it('throws if unimplemented', () => {
             const sifter = new Sifter();
-            sifter.addKeywords([PartialKeyword]);
+            sifter.addKeywords([PartialExKeyword]);
             expect(() => sifter.filter([{}], 'p<test'))
                 .toThrowError(NotImplementedError);
         });

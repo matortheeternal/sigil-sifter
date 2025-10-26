@@ -26,12 +26,6 @@ export class NoDefaultParserError extends Error {
     }
 }
 
-export class ParserDidNotParseError extends Error {
-    constructor(parser) {
-        super(`Parser ${parser.constructor.name} did not parse anything!`);
-    }
-}
-
 export class KeyConflictError extends Error {
     constructor(key, keywords, keywordClass) {
         const kcName = keywordClass.name;

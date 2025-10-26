@@ -3,6 +3,8 @@ import { Keyword } from '../../src/keywords/index.js';
 import Operator from '../../src/operators/Operator.js';
 import StringKeyword from '../../src/keywords/StringKeyword.js';
 
+export class UnimplementedKeyword extends Keyword {}
+
 export class UnimplmentedExpression extends Expression {}
 export class MatchableExpression extends Expression {
     static match(sifter, str) {
@@ -10,7 +12,7 @@ export class MatchableExpression extends Expression {
     }
 }
 
-export class UnimplementedKeyword extends Keyword {
+export class UnimplementedExKeyword extends Keyword {
     static get supportedExpressions() {
         return [UnimplmentedExpression];
     }
@@ -20,7 +22,7 @@ export class UnimplementedKeyword extends Keyword {
     }
 }
 
-export class MatchableKeyword extends Keyword {
+export class MatchableExKeyword extends Keyword {
     static get supportedExpressions() {
         return [MatchableExpression];
     }
@@ -40,7 +42,7 @@ export class PartialExpression extends Expression {
     }
 }
 
-export class PartialKeyword extends Keyword {
+export class PartialExKeyword extends Keyword {
     static get supportedExpressions() {
         return [PartialExpression];
     }

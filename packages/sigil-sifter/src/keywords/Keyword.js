@@ -5,6 +5,10 @@ import {
 } from '../operators/index.js';
 
 export default class Keyword extends Node {
+    static get keys() {
+        throw new NotImplementedError();
+    }
+
     static get supportedOperators() {
         return [
             IncludesOperator, EqualsOperator, NotEqualOperator,
@@ -13,10 +17,6 @@ export default class Keyword extends Node {
     }
 
     static get supportedExpressions() {
-        throw new NotImplementedError();
-    }
-
-    static get keys() {
         throw new NotImplementedError();
     }
 
@@ -35,7 +35,7 @@ export default class Keyword extends Node {
             const match = parser.match(this.sifter, str);
             if (match) return parser.parse(this.sifter, match, str);
         }
-        throw new SearchSyntaxError('Expected to parse ', str);
+        throw new SearchSyntaxError('Failed to parse', str);
     }
 
     test(value) {
