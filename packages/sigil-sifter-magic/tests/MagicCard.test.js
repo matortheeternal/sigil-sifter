@@ -8,8 +8,8 @@ describe('MagicCard abstract API', () => {
 
     const props = [
         'artists', 'typeLines', 'colors', 'colorIdentity',
-        'flavorTexts', 'keywords', 'manaValues', 'pts',
-        'rulesTexts', 'rarity', 'watermarks'
+        'flavorTexts', 'keywords', 'loyalty', 'manaValues',
+        'pts', 'rulesTexts', 'rarity', 'watermarks'
     ];
 
     for (const prop of props) {
