@@ -4,7 +4,7 @@ import { ManaCost } from 'mana-scribe';
 
 export default class ManaExpression extends StringExpression {
     static parse(sifter, match, str) {
-        return new ManaExpression(sifter, match, str);
+        return new this(sifter, match, str);
     }
 
     constructor(sifter, match, str) {

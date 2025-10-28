@@ -1,5 +1,15 @@
 import { NotImplementedError } from 'sigil-sifter/core';
 
+const permanentTypes = [
+    'land', 'creature', 'artifact', 'enchantment',
+    'planeswalker', 'battle', 'summon', 'eaturecray'
+];
+
+const spellTypes = [
+    'instant', 'sorcery', 'creature', 'artifact', 'enchantment',
+    'planeswalker', 'battle', 'summon', 'eaturecray'
+];
+
 export default class MagicCard {
     constructor(card) {
         this.card = card;
@@ -12,12 +22,26 @@ export default class MagicCard {
         return this._cache[key];
     }
 
+    get isPermanent() {
+        return this.typeParts.some(part => permanentTypes.includes(part));
+    }
+
+    get isSpell() {
+        return this.typeParts.some(part => spellTypes.includes(part));
+    }
+
     get artists() {
         throw new NotImplementedError();
     }
 
     get typeLines() {
         throw new NotImplementedError();
+    }
+
+    get typeParts() {
+        return this.typeLines.flatMap(typeLine => {
+            return typeLine.toLowerCase().split(/\s+/);
+        });
     }
 
     get colors() {

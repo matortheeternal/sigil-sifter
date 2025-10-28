@@ -13,8 +13,7 @@ describe('ManaCost keyword', () => {
     });
 
     it('compares strictly fewer symbols as less than', () => {
-        debugger;
-        const res = sifter.filter(cards, 'mana<{R}{R}');
+        const res = sifter.filter(cards, 'mana<{r}{r}');
         expectCardNames(res, ['Ragavan, Nimble Pilferer', 'Lightning Bolt']);
     });
 
