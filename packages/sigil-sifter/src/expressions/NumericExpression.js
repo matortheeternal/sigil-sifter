@@ -23,10 +23,10 @@ export default class NumericExpression extends Expression {
     }
 
     greaterThan(val) {
-        return this.value > val;
+        return val > this.value;
     }
 
     lessThan(val) {
-        return this.value < val;
+        return val < this.value;
     }
 }

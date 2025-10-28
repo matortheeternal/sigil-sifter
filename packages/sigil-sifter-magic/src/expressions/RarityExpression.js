@@ -27,11 +27,11 @@ export default class RarityExpression extends StringExpression {
 
     greaterThan(val) {
         const valGroup = getRarityGroup(val);
-        return this.group.index > valGroup.index;
+        return this.group.index < valGroup.index;
     }
 
     lessThan(val) {
         const valGroup = getRarityGroup(val);
-        return this.group.index < valGroup.index;
+        return this.group.index > valGroup.index;
     }
 }

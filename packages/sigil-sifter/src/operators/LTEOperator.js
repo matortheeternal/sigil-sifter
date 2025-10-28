@@ -10,7 +10,7 @@ export default class LTEOperator extends Operator {
     }
 
     testValue(val, expression) {
-        // this is inverted because the expression comes second
-        return expression.greaterThan(val) || expression.equals(val);
+        // tests val <= expression
+        return expression.lessThan(val) || expression.equals(val);
     }
 }
