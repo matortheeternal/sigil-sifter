@@ -5,6 +5,7 @@ import ColorKeyword from './keywords/ColorKeyword.js';
 import ColorIdentityKeyword from './keywords/ColorIdentityKeyword.js';
 import FlavorTextKeyword from './keywords/FlavorTextKeyword.js';
 import LoyaltyKeyword from './keywords/LoyaltyKeyword.js';
+import ManaCostKeyword from './keywords/ManaCostKeyword.js';
 import ManaValueKeyword from './keywords/ManaValueKeyword.js';
 import NameKeyword from './keywords/NameKeyword.js';
 import PowerKeyword from './keywords/PowerKeyword.js';
@@ -28,6 +29,7 @@ export default function register(sifter, Card) {
         ColorIdentityKeyword,
         FlavorTextKeyword,
         LoyaltyKeyword,
+        ManaCostKeyword,
         ManaValueKeyword,
         NameKeyword,
         PowerKeyword,

@@ -3,6 +3,13 @@ import { NotImplementedError } from 'sigil-sifter/core';
 export default class MagicCard {
     constructor(card) {
         this.card = card;
+        this._cache = {};
+    }
+
+    cache(key, initFn) {
+        if (!this._cache.hasOwnProperty(key))
+            this._cache[key] = initFn();
+        return this._cache[key];
     }
 
     get artists() {
