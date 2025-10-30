@@ -15,18 +15,18 @@ export default class SigilSifter {
         this.config = { ...DEFAULT_CONFIG, ...config };
     }
 
-    compile(filterStr) {
-        if (filterStr.length > this.config.queryMaxLength)
-            throw new SearchLengthError(filterStr, this.config.queryMaxLength);
-        const compiled = GroupParser.parse(this, filterStr);
+    compile(query) {
+        if (query.length > this.config.queryMaxLength)
+            throw new SearchLengthError(query, this.config.queryMaxLength);
+        const compiled = GroupParser.parse(this, query);
         const str = compiled.remainingStr;
         if (str.length)
             throw new SearchSyntaxError('Failed to parse', str);
         return compiled.filters.length > 1 ? compiled : compiled.filters[0];
     }
 
-    filter(objects, filterStr) {
-        const compiledFilter = this.compile(filterStr);
+    filter(objects, query) {
+        const compiledFilter = this.compile(query);
         return objects.filter(obj => {
             const testObj = this.AdapterClass
                 ? new this.AdapterClass(obj)
