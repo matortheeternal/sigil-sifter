@@ -1,13 +1,13 @@
 const color = (id, name) => ({
     id,
     name,
-    expr: new RegExp(name, 'i'),
+    expr: new RegExp('^' + name + '$', 'i'),
     colorChars: [id]
 });
 
 const colorCombo = (name, colors) => ({
     name,
-    expr: new RegExp(name, 'i'),
+    expr: new RegExp('^' + name + '$', 'i'),
     colorChars: colors.split('')
 });
 
