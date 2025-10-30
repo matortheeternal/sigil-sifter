@@ -4,6 +4,7 @@ const language = (acronym, name, expr) => ({
     expr: expr || new RegExp('^' + name + '$', 'i')
 });
 
+// https://cran.r-project.org/web/packages/scryr/vignettes/languages.html
 const languages = [
     language('en', 'English'),
     language('es', 'Spanish'),
