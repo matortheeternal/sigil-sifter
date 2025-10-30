@@ -65,6 +65,10 @@ export default class ScryfallCard extends MagicCard {
         return this.faces.map(face => face.mana_cost || '');
     }
 
+    get produces() {
+        return this.faces.flatMap(face => face.produced_mana || []);
+    }
+
     get pts() {
         return this.faces
             .filter(face => face.hasOwnProperty('power'))

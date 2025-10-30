@@ -68,6 +68,10 @@ export default class MagicCard {
         throw new NotImplementedError();
     }
 
+    get produces() {
+        throw new NotImplementedError();
+    }
+
     get pts() {
         throw new NotImplementedError();
     }

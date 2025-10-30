@@ -10,6 +10,7 @@ import ManaCostKeyword from './keywords/ManaCostKeyword.js';
 import ManaValueKeyword from './keywords/ManaValueKeyword.js';
 import NameKeyword from './keywords/NameKeyword.js';
 import PowerKeyword from './keywords/PowerKeyword.js';
+import ProducesKeyword from './keywords/ProducesKeyword.js';
 import RarityKeyword from './keywords/RarityKeyword.js';
 import RulesTextKeyword from './keywords/RulesTextKeyword.js';
 import ToughnessKeyword from './keywords/ToughnessKeyword.js';
@@ -35,6 +36,7 @@ export default function register(sifter, Card) {
         ManaValueKeyword,
         NameKeyword,
         PowerKeyword,
+        ProducesKeyword,
         RarityKeyword,
         RulesTextKeyword,
         ToughnessKeyword,
