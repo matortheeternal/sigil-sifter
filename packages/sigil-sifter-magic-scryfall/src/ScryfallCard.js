@@ -43,6 +43,10 @@ export default class ScryfallCard extends MagicCard {
         return keywords;
     }
 
+    get language() {
+        return this.card.lang;
+    }
+
     get loyalty() {
         const value = this.faces[0].loyalty;
         return value === undefined ? NaN : parseInt(value);
