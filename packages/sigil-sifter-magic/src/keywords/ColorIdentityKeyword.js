@@ -6,7 +6,6 @@ export default class ColorIdentityKeyword extends ColorKeyword {
     }
 
     test(card) {
-        const colors = card.colorIdentity.map(c => c.toLowerCase());
-        return this.operator.testValue(colors, this.expression);
+        return this.operator.testValue(card.colorIdentity, this.expression);
     }
 }

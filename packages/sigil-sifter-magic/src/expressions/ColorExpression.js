@@ -12,9 +12,9 @@ export default class ColorExpression extends Expression {
 
     constructor(sifter, match, str) {
         super(sifter, match, str);
-        this.value = match[1].toLowerCase();
+        this.value = match[0];
         this.colors = getColors(this.value);
-        this.colorless = this.colors.includes('c');
+        this.colorless = this.colors.includes('C');
         if (this.colorless && this.colors.length > 1)
             throw new Error('A card cannot be both colorless and colored.');
     }

@@ -11,7 +11,6 @@ export default class ColorKeyword extends Keyword {
     }
 
     test(card) {
-        const colors = card.colors.map(c => c.toLowerCase());
-        return this.operator.testValue(colors, this.expression);
+        return this.operator.testValue(card.colors, this.expression);
     }
 }

@@ -20,10 +20,10 @@ export default class ScryfallCard extends MagicCard {
     }
 
     get colors() {
-        const colors = this.faces.reduce((colors, f) => {
-            return Array.prototype.concat(colors, f.colors || []);
-        }, []);
-        colors.push(...(this.card.colors || []));
+        const colors = [
+            ...(this.card.colors || []),
+            ...this.faces.flatMap(f => f.colors || [])
+        ];
         return [...new Set(colors)];
     }
 
