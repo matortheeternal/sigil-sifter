@@ -80,6 +80,10 @@ export default class MagicCard {
         throw new NotImplementedError();
     }
 
+    get set() {
+        throw new NotImplementedError();
+    }
+
     get watermarks() {
         throw new NotImplementedError();
     }

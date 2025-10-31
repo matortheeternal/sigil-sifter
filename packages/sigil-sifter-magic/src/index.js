@@ -3,6 +3,7 @@ import ColorExtension from './extensions/ColorExtension.js';
 import KeywordExtension from './extensions/KeywordExtension.js';
 import LanguageExtension from './extensions/LanguageExtension.js';
 import RarityExtension from './extensions/RarityExtension.js';
+import SetExtension from './extensions/SetExtension.js';
 import * as keywords from './keywords/index.js';
 
 export default function register(sifter, Card, data = {}) {
@@ -26,5 +27,6 @@ export default function register(sifter, Card, data = {}) {
     sifter.extend(ColorExtension, data);
     sifter.extend(KeywordExtension, data);
     sifter.extend(LanguageExtension, data);
+    sifter.extend(SetExtension, data);
     sifter.extend(RarityExtension, data);
 };

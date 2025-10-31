@@ -96,6 +96,13 @@ export default class ScryfallCard extends MagicCard {
         return this.card.rarity || '';
     }
 
+    get set() {
+        return {
+            code: this.card.set,
+            name: this.card.set_name
+        };
+    }
+
     get watermarks() {
         return this.faces.reduce((watermarks, face) => {
             if (face.watermark) watermarks.push(face.watermark)
