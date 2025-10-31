@@ -30,14 +30,8 @@ export default class MagicCard {
         throw new NotImplementedError();
     }
 
-    get typeLines() {
+    get collectorNumber() {
         throw new NotImplementedError();
-    }
-
-    get typeParts() {
-        return this.typeLines.flatMap(typeLine => {
-            return typeLine.toLowerCase().split(/\s+/);
-        });
     }
 
     get colors() {
@@ -86,6 +80,16 @@ export default class MagicCard {
 
     get setType() {
         throw new NotImplementedError();
+    }
+
+    get typeLines() {
+        throw new NotImplementedError();
+    }
+
+    get typeParts() {
+        return this.typeLines.flatMap(typeLine => {
+            return typeLine.toLowerCase().split(/\s+/);
+        });
     }
 
     get watermarks() {

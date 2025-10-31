@@ -1,6 +1,7 @@
 import AbilityKeyword from './AbilityKeyword.js';
 import ArtistKeyword from './ArtistKeyword.js';
 import CardTypeKeyword from './CardTypeKeyword.js';
+import CollectorNumberKeyword from './CollectorNumberKeyword.js';
 import ColorKeyword from './ColorKeyword.js';
 import ColorIdentityKeyword from './ColorIdentityKeyword.js';
 import DevotionKeyword from './DevotionKeyword.js';
@@ -25,6 +26,7 @@ export {
     AbilityKeyword,
     ArtistKeyword,
     CardTypeKeyword,
+    CollectorNumberKeyword,
     ColorKeyword,
     ColorIdentityKeyword,
     DevotionKeyword,

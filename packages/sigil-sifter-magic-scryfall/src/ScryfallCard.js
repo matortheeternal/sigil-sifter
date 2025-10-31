@@ -21,8 +21,8 @@ export default class ScryfallCard extends MagicCard {
         }, []);
     }
 
-    get typeLines() {
-        return this.faces.map(face => (face.type_line || ''));
+    get collectorNumber() {
+        return parseInt(this.card.collector_number || '0');
     }
 
     get colors() {
@@ -105,6 +105,10 @@ export default class ScryfallCard extends MagicCard {
 
     get setType() {
         return this.card.set_type;
+    }
+
+    get typeLines() {
+        return this.faces.map(face => (face.type_line || ''));
     }
 
     get watermarks() {
