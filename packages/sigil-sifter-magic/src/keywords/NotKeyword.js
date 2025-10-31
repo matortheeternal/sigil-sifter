@@ -2,9 +2,9 @@ import { Keyword } from 'sigil-sifter/keywords';
 import { IncludesOperator } from 'sigil-sifter/operators';
 import * as booleanExpressions from '../expressions/is/index.js';
 
-export default class IsKeyword extends Keyword {
+export default class NotKeyword extends Keyword {
     static get keys() {
-        return ['is'];
+        return ['not'];
     }
 
     static get supportedOperators() {
@@ -13,5 +13,9 @@ export default class IsKeyword extends Keyword {
 
     static get supportedExpressions() {
         return Object.values(booleanExpressions);
+    }
+
+    test(card) {
+        return !super.test(card);
     }
 }

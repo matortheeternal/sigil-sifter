@@ -13,6 +13,7 @@ import LoyaltyKeyword from './LoyaltyKeyword.js';
 import ManaCostKeyword from './ManaCostKeyword.js';
 import ManaValueKeyword from './ManaValueKeyword.js';
 import NameKeyword from './NameKeyword.js';
+import NotKeyword from './NotKeyword.js';
 import PowerKeyword from './PowerKeyword.js';
 import ProducesKeyword from './ProducesKeyword.js';
 import RarityKeyword from './RarityKeyword.js';
@@ -38,6 +39,7 @@ export {
     ManaCostKeyword,
     ManaValueKeyword,
     NameKeyword,
+    NotKeyword,
     PowerKeyword,
     ProducesKeyword,
     RarityKeyword,
