@@ -3,6 +3,7 @@ import Magic from '@sigil-sifter/magic';
 import cards from '../fixtures/fixtures.json' with { type: 'json' };
 import ScryfallCard from '../../src/ScryfallCard.js';
 import { expectCardNames, expectNotCardNames } from '../helpers.js';
+import { SearchSyntaxError } from 'sigil-sifter/core';
 
 describe('ManaCost keyword', () => {
     let sifter;
@@ -93,5 +94,13 @@ describe('ManaCost keyword', () => {
         const res = sifter.filter(cards, 'm<{0}');
         expectCardNames(res, ['Gaea\'s Cradle', 'Arena']);
         expectNotCardNames(res, ['Black Lotus', 'Pact of Negation']);
+    })
+
+    it('throws with invalid mana expression', () => {
+        expect(() => sifter.filter(cards, 'm<{%}'))
+            .toThrowError(
+                SearchSyntaxError,
+                'Failed to parse mana cost "{%}"'
+            );
     });
 });

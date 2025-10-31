@@ -1,5 +1,4 @@
 import { MagicCard } from '@sigil-sifter/magic/core';
-import { NotImplementedError } from 'sigil-sifter/core';
 
 export default class ScryfallCard extends MagicCard {
     get faces() {
