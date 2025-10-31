@@ -220,4 +220,9 @@ export default class ScryfallCard extends MagicCard {
     get isTransform() {
         return this.card.layout === 'transform';
     }
+
+    get isUniversesBeyond() {
+        const pt = this.card.promo_types;
+        return pt && pt.includes('universesbeyond');
+    }
 }

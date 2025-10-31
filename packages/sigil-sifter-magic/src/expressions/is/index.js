@@ -23,6 +23,7 @@ import SplitExpression from './SplitExpression.js';
 import SpotlightExpression from './SpotlightExpression.js';
 import TextlessExpression from './TextlessExpression.js';
 import TransformExpression from './TransformExpression.js';
+import UniversesBeyondExpression from './UniversesBeyondExpression.js';
 import VanillaExpression from './VanillaExpression.js';
 
 export {
@@ -51,5 +52,6 @@ export {
     SpotlightExpression,
     TextlessExpression,
     TransformExpression,
+    UniversesBeyondExpression,
     VanillaExpression,
 }

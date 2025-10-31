@@ -205,4 +205,11 @@ describe('is: keyword', () => {
         const res = sifter.filter(extras, 'is:textless');
         expectCardNames(res, ['Tidings']);
     });
+
+    it('handles is:ub', () => {
+        const res1 = sifter.filter(cards, 'is:ub');
+        const res2 = sifter.filter(cards, 'is:universesbeyond');
+        expect(res1).toEqual(res2);
+        expectCardNames(res1, ['The One Ring']);
+    });
 });

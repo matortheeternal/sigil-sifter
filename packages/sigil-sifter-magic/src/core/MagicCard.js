@@ -204,6 +204,10 @@ export default class MagicCard {
         throw new NotImplementedError();
     }
 
+    get isUniversesBeyond() {
+        throw new NotImplementedError();
+    }
+
     get isVanilla() {
         return this.rulesTexts.some(rt => rt === '');
     }
