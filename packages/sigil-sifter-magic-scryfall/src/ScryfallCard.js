@@ -122,12 +122,24 @@ export default class ScryfallCard extends MagicCard {
         return this.card.hasOwnProperty('color_indicator');
     }
 
+    get isBooster() {
+        return this.card.booster;
+    }
+
     get isDFC() {
         return this.faces.length > 1;
     }
 
+    get isEtched() {
+        return this.card.etched;
+    }
+
     get isFlip() {
         return this.card.layout === 'flip';
+    }
+
+    get isFoil() {
+        return this.card.foil;
     }
 
     get isFrenchVanilla() {
@@ -140,6 +152,14 @@ export default class ScryfallCard extends MagicCard {
             const lines = f.oracle_text.split('\n');
             return lines.every(line => kwExpr.test(line));
         });
+    }
+
+    get isFullArt() {
+        return this.card.full_art;
+    }
+
+    get isGlossy() {
+        return this.card.glossy;
     }
 
     get isHybrid() {
@@ -163,6 +183,10 @@ export default class ScryfallCard extends MagicCard {
         }) || this.keywords.includes('spree');
     }
 
+    get isNonFoil() {
+        return this.card.nonfoil;
+    }
+
     get isPhyrexian() {
         return this.manaCosts.some(cost => {
             return cost.includes('P');
@@ -171,8 +195,24 @@ export default class ScryfallCard extends MagicCard {
         });
     }
 
+    get isPromo() {
+        return this.card.promo;
+    }
+
+    get isReprint() {
+        return this.card.reprint;
+    }
+
     get isSplit() {
         return this.card.layout === 'split';
+    }
+
+    get isSpotlight() {
+        return this.card.story_spotlight;
+    }
+
+    get isTextless() {
+        return this.card.textless;
     }
 
     get isTransform() {

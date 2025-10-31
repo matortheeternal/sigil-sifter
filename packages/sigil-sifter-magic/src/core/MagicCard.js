@@ -104,7 +104,15 @@ export default class MagicCard {
         return this.watermarks.length > 0;
     }
 
+    get isBooster() {
+        throw new NotImplementedError();
+    }
+
     get isDFC() {
+        throw new NotImplementedError();
+    }
+
+    get isEtched() {
         throw new NotImplementedError();
     }
 
@@ -112,7 +120,19 @@ export default class MagicCard {
         throw new NotImplementedError();
     }
 
+    get isFoil() {
+        throw new NotImplementedError();
+    }
+
     get isFrenchVanilla() {
+        throw new NotImplementedError();
+    }
+
+    get isFullArt() {
+        throw new NotImplementedError();
+    }
+
+    get isGlossy() {
         throw new NotImplementedError();
     }
 
@@ -140,6 +160,10 @@ export default class MagicCard {
         throw new NotImplementedError();
     }
 
+    get isNonFoil() {
+        throw new NotImplementedError();
+    }
+
     get isParty() {
         return this.typeParts.some(part => partyTypes.includes(part));
     }
@@ -152,11 +176,27 @@ export default class MagicCard {
         throw new NotImplementedError();
     }
 
+    get isPromo() {
+        throw new NotImplementedError();
+    }
+
+    get isReprint() {
+        throw new NotImplementedError();
+    }
+
     get isSpell() {
         return this.typeParts.some(part => spellTypes.includes(part));
     }
 
     get isSplit() {
+        throw new NotImplementedError();
+    }
+
+    get isSpotlight() {
+        throw new NotImplementedError();
+    }
+
+    get isTextless() {
         throw new NotImplementedError();
     }
 

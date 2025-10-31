@@ -1,6 +1,7 @@
 import Sifter from 'sigil-sifter';
 import Magic from '@sigil-sifter/magic';
 import cards from '../fixtures/cards.json' with { type: 'json' };
+import textlessCards from '../fixtures/textless.json' with { type: 'json' };
 import ScryfallCard from '../../src/ScryfallCard.js';
 import { expectCardNames, expectNotCardNames } from '../helpers.js';
 
@@ -11,7 +12,7 @@ beforeAll(() => {
 });
 
 describe('is: keyword', () => {
-    it('matches double-faced cards (is:dfc)', () => {
+    it('handles is:dfc', () => {
         const res = sifter.filter(cards, 'is:dfc');
         expectCardNames(res, [
             'Fell the Profane // Fell Mire', 'Wear // Tear', 'Crime // Punishment',
@@ -20,7 +21,7 @@ describe('is: keyword', () => {
         expectNotCardNames(res, ['Solemn Simulacrum', 'Lightning Bolt']);
     });
 
-    it('matches modal double-faced cards (is:mdfc)', () => {
+    it('handles is:mdfc', () => {
         const res = sifter.filter(cards, 'is:mdfc');
         expectCardNames(res, [
             'Fell the Profane // Fell Mire',
@@ -29,13 +30,13 @@ describe('is: keyword', () => {
         expectNotCardNames(res, ['Crime // Punishment']);
     });
 
-    it('matches transform cards (is:transform)', () => {
+    it('handles is:transform', () => {
         const res = sifter.filter(cards, 'is:transform');
         expectCardNames(res, ['The Kami War // O-Kagachi Made Manifest']);
         expectNotCardNames(res, ['Fell the Profane // Fell Mire']);
     });
 
-    it('matches split cards (is:split)', () => {
+    it('handles is:split', () => {
         const res = sifter.filter(cards, 'is:split');
         expectCardNames(res, [
             'Wear // Tear', 'Trial // Error',
@@ -44,7 +45,7 @@ describe('is: keyword', () => {
         expectNotCardNames(res, ['The Kami War // O-Kagachi Made Manifest']);
     });
 
-    it('matches hybrid cards (is:hybrid)', () => {
+    it('handles is:hybrid', () => {
         const res = sifter.filter(cards, 'is:hybrid');
         expectCardNames(res, [
             'Deathrite Shaman', 'Leyline of the Guildpact',
@@ -53,14 +54,14 @@ describe('is: keyword', () => {
         expectNotCardNames(res, ['Lightning Bolt']);
     });
 
-    it('matches modal cards (is:modal)', () => {
+    it('handles is:modal', () => {
         const res = sifter.filter(cards, 'is:modal');
         // TODO spree
         expectCardNames(res, ['Felidar Retreat', 'Rakdos Charm']);
         expectNotCardNames(res, ['Balance']);
     });
 
-    it('matches historic cards (is:historic)', () => {
+    it('handles is:historic', () => {
         const res = sifter.filter(cards, 'is:historic');
         // TODO: sagas
         expectCardNames(res, [
@@ -70,7 +71,7 @@ describe('is: keyword', () => {
         expectNotCardNames(res, ['Lightning Bolt']);
     });
 
-    it('matches permanents (is:permanent)', () => {
+    it('handles is:permanent', () => {
         const res = sifter.filter(cards, 'is:permanent');
         expectCardNames(res, [
             'Solemn Simulacrum', 'Arena', 'Tatyova, Benthic Druid',
@@ -79,7 +80,7 @@ describe('is: keyword', () => {
         expectNotCardNames(res, ['Balance', 'Counterspell']);
     });
 
-    it('matches spells (is:spell)', () => {
+    it('handles is:spell', () => {
         const res = sifter.filter(cards, 'is:spell');
         expectCardNames(res, [
             'Lightning Bolt', 'Counterspell', 'Reanimate', 'Sol Ring',
@@ -89,7 +90,7 @@ describe('is: keyword', () => {
         expectNotCardNames(res, ['Arena', 'City of Brass']);
     });
 
-    it('matches party cards (is:party)', () => {
+    it('handles is:party', () => {
         const res = sifter.filter(cards, 'is:party');
         expectCardNames(res, [
             'Snapcaster Mage', 'Soul Warden',
@@ -112,7 +113,7 @@ describe('is: keyword', () => {
         ]);
     });
 
-    it('matches phyrexian cards (is:phyrexian)', () => {
+    it('handles is:phyrexian', () => {
         const res = sifter.filter(cards, 'is:phyrexian');
         expectCardNames(res, [
             'Gitaxian Probe',
@@ -122,7 +123,7 @@ describe('is: keyword', () => {
         expectNotCardNames(res, ['Lightning Bolt', 'Time Vault']);
     });
 
-    it('matches flip cards (is:flip)', () => {
+    it('handles is:flip', () => {
         const res = sifter.filter(cards, 'is:flip');
         expectCardNames(res, ['Budoka Gardener // Dokai, Weaver of Life']);
         expectNotCardNames(res, [
@@ -130,21 +131,68 @@ describe('is: keyword', () => {
         ]);
     });
 
-    it('matches meld cards (is:meld)', () => {
+    it('handles is:meld', () => {
         const res = sifter.filter(cards, 'is:meld');
         expectCardNames(res, ['Titania, Voice of Gaea']);
         expectNotCardNames(res, ['Lightning Bolt']);
     });
 
-    it('matches leveler cards (is:leveler)', () => {
+    it('handles is:leveler', () => {
         const res = sifter.filter(cards, 'is:leveler');
         expectCardNames(res, ['Transcendent Master']);
         expectNotCardNames(res, ['Felidar Retreat']);
     });
 
-    it('matches vanilla cards (is:vanilla)', () => {
+    it('handles is:vanilla', () => {
         const res = sifter.filter(cards, 'is:vanilla');
         expectCardNames(res, ['Grizzly Bears']);
         expectNotCardNames(res, ['Aurelia, the Warleader']);
+    });
+
+    it('handles is:booster', () => {
+        const res = sifter.filter(cards, 'is:booster');
+        expectCardNames(res, ['Doubling Season', 'Balance', 'Smothering Tithe']);
+        expectNotCardNames(res, ['Solemn Simulacrum', 'Akroma, Angel of Wrath']);
+    });
+
+    it('handles is:foil', () => {
+        const res = sifter.filter(cards, 'is:foil');
+        expectCardNames(res, ['Doubling Season', 'Arena', 'Snapcaster Mage']);
+        expectNotCardNames(res, ['Zacama, Primal Calamity', 'Wonder']);
+    });
+
+    it('handles is:nonfoil', () => {
+        const res = sifter.filter(cards, 'is:nonfoil');
+        expectCardNames(res, ['Solemn Simulacrum', 'Felidar Retreat']);
+    });
+
+    it('handles is:fullart and alias is:full', () => {
+        const res1 = sifter.filter(cards, 'is:fullart');
+        const res2 = sifter.filter(cards, 'is:full');
+        expect(res1).toEqual(res2);
+        expectCardNames(res1, ['Inspirit, Flagship Vessel']);
+        expectNotCardNames(res1, ['Doubling Season', 'Arena']);
+    });
+
+    it('handles is:promo', () => {
+        const res = sifter.filter(cards, 'is:promo');
+        expectCardNames(res, ['Baldur\'s Gate Wilderness']);
+    });
+
+    it('handles is:reprint', () => {
+        const res = sifter.filter(cards, 'is:reprint');
+        expectCardNames(res, ['Solemn Simulacrum', 'Doubling Season', 'Omniscience']);
+        expectNotCardNames(res, ['Ruinous Ultimatum', 'Uro, Titan of Nature\'s Wrath']);
+    });
+
+    it('handles is:spotlight', () => {
+        const res = sifter.filter(cards, 'is:spotlight');
+        expectCardNames(res, ['Call the Spirit Dragons']);
+        expectNotCardNames(res, ['Tatyova, Benthic Druid', 'Balance']);
+    });
+
+    it('handles is:textless', () => {
+        const res = sifter.filter(textlessCards, 'is:textless');
+        expectCardNames(res, ['Tidings']);
     });
 });
