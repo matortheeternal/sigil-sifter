@@ -131,7 +131,7 @@ export default class ScryfallCard extends MagicCard {
     }
 
     get isEtched() {
-        return this.card.etched;
+        return this.card.finishes.includes('etched');
     }
 
     get isFlip() {
@@ -159,7 +159,9 @@ export default class ScryfallCard extends MagicCard {
     }
 
     get isGlossy() {
-        return this.card.glossy;
+        const pt = this.card.promo_types;
+        return this.card.set === 'ps19'
+            || (pt && pt.includes('glossy'));
     }
 
     get isHybrid() {

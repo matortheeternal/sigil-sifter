@@ -1,0 +1,380 @@
+[
+  {
+    "object": "card",
+    "id": "68d77020-b313-429f-9005-a36ecf8caa05",
+    "oracle_id": "72897780-094d-4a21-8b1c-419a9defd2fb",
+    "multiverse_ids": [],
+    "tcgplayer_id": 38340,
+    "cardmarket_id": 18827,
+    "name": "Tidings",
+    "lang": "en",
+    "released_at": "2008-01-01",
+    "uri": "https://api.scryfall.com/cards/68d77020-b313-429f-9005-a36ecf8caa05",
+    "scryfall_uri": "https://scryfall.com/card/p08/2/tidings?utm_source=api",
+    "layout": "normal",
+    "highres_image": true,
+    "image_status": "highres_scan",
+    "image_uris": {
+      "small": "https://cards.scryfall.io/small/front/6/8/68d77020-b313-429f-9005-a36ecf8caa05.jpg?1561757338",
+      "normal": "https://cards.scryfall.io/normal/front/6/8/68d77020-b313-429f-9005-a36ecf8caa05.jpg?1561757338",
+      "large": "https://cards.scryfall.io/large/front/6/8/68d77020-b313-429f-9005-a36ecf8caa05.jpg?1561757338",
+      "png": "https://cards.scryfall.io/png/front/6/8/68d77020-b313-429f-9005-a36ecf8caa05.png?1561757338",
+      "art_crop": "https://cards.scryfall.io/art_crop/front/6/8/68d77020-b313-429f-9005-a36ecf8caa05.jpg?1561757338",
+      "border_crop": "https://cards.scryfall.io/border_crop/front/6/8/68d77020-b313-429f-9005-a36ecf8caa05.jpg?1561757338"
+    },
+    "mana_cost": "{3}{U}{U}",
+    "cmc": 5.0,
+    "type_line": "Sorcery",
+    "oracle_text": "Draw four cards.",
+    "colors": [
+      "U"
+    ],
+    "color_identity": [
+      "U"
+    ],
+    "keywords": [],
+    "legalities": {
+      "standard": "not_legal",
+      "future": "not_legal",
+      "historic": "not_legal",
+      "timeless": "not_legal",
+      "gladiator": "not_legal",
+      "pioneer": "not_legal",
+      "modern": "legal",
+      "legacy": "legal",
+      "pauper": "not_legal",
+      "vintage": "legal",
+      "penny": "not_legal",
+      "commander": "legal",
+      "oathbreaker": "legal",
+      "standardbrawl": "not_legal",
+      "brawl": "not_legal",
+      "alchemy": "not_legal",
+      "paupercommander": "not_legal",
+      "duel": "legal",
+      "oldschool": "not_legal",
+      "premodern": "not_legal",
+      "predh": "legal"
+    },
+    "games": [
+      "paper"
+    ],
+    "reserved": false,
+    "game_changer": false,
+    "foil": false,
+    "nonfoil": true,
+    "finishes": [
+      "nonfoil"
+    ],
+    "oversized": false,
+    "promo": true,
+    "reprint": true,
+    "variation": false,
+    "set_id": "6c1d0a31-b5d2-421d-95f4-5816382f764f",
+    "set": "p08",
+    "set_name": "Magic Player Rewards 2008",
+    "set_type": "promo",
+    "set_uri": "https://api.scryfall.com/sets/6c1d0a31-b5d2-421d-95f4-5816382f764f",
+    "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Ap08&unique=prints",
+    "scryfall_set_uri": "https://scryfall.com/sets/p08?utm_source=api",
+    "rulings_uri": "https://api.scryfall.com/cards/68d77020-b313-429f-9005-a36ecf8caa05/rulings",
+    "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A72897780-094d-4a21-8b1c-419a9defd2fb&unique=prints",
+    "collector_number": "2",
+    "digital": false,
+    "rarity": "rare",
+    "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+    "artist": "Michael Komarck",
+    "artist_ids": [
+      "96a53b95-fe5f-4fbb-9411-ccf4ee150aca"
+    ],
+    "illustration_id": "c60572ca-5ff7-43ec-b8a2-dc9cf6cf4d23",
+    "border_color": "black",
+    "frame": "2003",
+    "full_art": true,
+    "textless": true,
+    "booster": false,
+    "story_spotlight": false,
+    "promo_types": [
+      "playerrewards"
+    ],
+    "edhrec_rank": 15390,
+    "penny_rank": 8738,
+    "prices": {
+      "usd": "1.07",
+      "usd_foil": null,
+      "usd_etched": null,
+      "eur": "0.41",
+      "eur_foil": null,
+      "tix": null
+    },
+    "related_uris": {
+      "tcgplayer_infinite_articles": "https://partner.tcgplayer.com/c/4931599/1830156/21018?subId1=api&trafcat=tcgplayer.com%2Fsearch%2Farticles&u=https%3A%2F%2Fwww.tcgplayer.com%2Fsearch%2Farticles%3FproductLineName%3Dmagic%26q%3DTidings",
+      "tcgplayer_infinite_decks": "https://partner.tcgplayer.com/c/4931599/1830156/21018?subId1=api&trafcat=tcgplayer.com%2Fsearch%2Fdecks&u=https%3A%2F%2Fwww.tcgplayer.com%2Fsearch%2Fdecks%3FproductLineName%3Dmagic%26q%3DTidings",
+      "edhrec": "https://edhrec.com/route/?cc=Tidings"
+    },
+    "purchase_uris": {
+      "tcgplayer": "https://partner.tcgplayer.com/c/4931599/1830156/21018?subId1=api&u=https%3A%2F%2Fwww.tcgplayer.com%2Fproduct%2F38340%3Fpage%3D1",
+      "cardmarket": "https://www.cardmarket.com/en/Magic/Products?idProduct=18827&referrer=scryfall&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+      "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Tidings&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+    }
+  },
+  {
+    "object": "card",
+    "id": "4889a668-0f01-4447-ad2e-91b329258f22",
+    "oracle_id": "41d11144-32fc-4e45-a8db-3edb9dc0ce80",
+    "multiverse_ids": [],
+    "tcgplayer_id": 193821,
+    "cardmarket_id": 380328,
+    "name": "God-Eternal Kefnet",
+    "lang": "en",
+    "released_at": "2019-07-18",
+    "uri": "https://api.scryfall.com/cards/4889a668-0f01-4447-ad2e-91b329258f22",
+    "scryfall_uri": "https://scryfall.com/card/ps19/53/god-eternal-kefnet?utm_source=api",
+    "layout": "normal",
+    "highres_image": true,
+    "image_status": "highres_scan",
+    "image_uris": {
+      "small": "https://cards.scryfall.io/small/front/4/8/4889a668-0f01-4447-ad2e-91b329258f22.jpg?1739044038",
+      "normal": "https://cards.scryfall.io/normal/front/4/8/4889a668-0f01-4447-ad2e-91b329258f22.jpg?1739044038",
+      "large": "https://cards.scryfall.io/large/front/4/8/4889a668-0f01-4447-ad2e-91b329258f22.jpg?1739044038",
+      "png": "https://cards.scryfall.io/png/front/4/8/4889a668-0f01-4447-ad2e-91b329258f22.png?1739044038",
+      "art_crop": "https://cards.scryfall.io/art_crop/front/4/8/4889a668-0f01-4447-ad2e-91b329258f22.jpg?1739044038",
+      "border_crop": "https://cards.scryfall.io/border_crop/front/4/8/4889a668-0f01-4447-ad2e-91b329258f22.jpg?1739044038"
+    },
+    "mana_cost": "{2}{U}{U}",
+    "cmc": 4.0,
+    "type_line": "Legendary Creature — Zombie God",
+    "oracle_text": "Flying\nYou may reveal the first card you draw each turn as you draw it. Whenever you reveal an instant or sorcery card this way, copy that card and you may cast the copy. That copy costs {2} less to cast.\nWhen God-Eternal Kefnet dies or is put into exile from the battlefield, you may put it into its owner's library third from the top.",
+    "power": "4",
+    "toughness": "5",
+    "colors": [
+      "U"
+    ],
+    "color_identity": [
+      "U"
+    ],
+    "keywords": [
+      "Flying"
+    ],
+    "legalities": {
+      "standard": "not_legal",
+      "future": "not_legal",
+      "historic": "legal",
+      "timeless": "legal",
+      "gladiator": "legal",
+      "pioneer": "legal",
+      "modern": "legal",
+      "legacy": "legal",
+      "pauper": "not_legal",
+      "vintage": "legal",
+      "penny": "legal",
+      "commander": "legal",
+      "oathbreaker": "legal",
+      "standardbrawl": "not_legal",
+      "brawl": "legal",
+      "alchemy": "not_legal",
+      "paupercommander": "not_legal",
+      "duel": "legal",
+      "oldschool": "not_legal",
+      "premodern": "not_legal",
+      "predh": "not_legal"
+    },
+    "games": [
+      "paper"
+    ],
+    "reserved": false,
+    "game_changer": false,
+    "foil": false,
+    "nonfoil": true,
+    "finishes": [
+      "nonfoil"
+    ],
+    "oversized": false,
+    "promo": true,
+    "reprint": true,
+    "variation": false,
+    "set_id": "9e585a9c-2bba-4310-94a9-036329ee264c",
+    "set": "ps19",
+    "set_name": "San Diego Comic-Con 2019",
+    "set_type": "promo",
+    "set_uri": "https://api.scryfall.com/sets/9e585a9c-2bba-4310-94a9-036329ee264c",
+    "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Aps19&unique=prints",
+    "scryfall_set_uri": "https://scryfall.com/sets/ps19?utm_source=api",
+    "rulings_uri": "https://api.scryfall.com/cards/4889a668-0f01-4447-ad2e-91b329258f22/rulings",
+    "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A41d11144-32fc-4e45-a8db-3edb9dc0ce80&unique=prints",
+    "collector_number": "53",
+    "digital": false,
+    "rarity": "mythic",
+    "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+    "artist": "Adam Paquette",
+    "artist_ids": [
+      "89023dad-e6c0-41e0-83fb-eb2bfbbdc3f2"
+    ],
+    "illustration_id": "6779dcb0-81c8-49b2-96aa-2bff41d55212",
+    "border_color": "borderless",
+    "frame": "2015",
+    "frame_effects": [
+      "legendary",
+      "inverted"
+    ],
+    "security_stamp": "oval",
+    "full_art": true,
+    "textless": false,
+    "booster": false,
+    "story_spotlight": false,
+    "promo_types": [
+      "convention",
+      "glossy"
+    ],
+    "edhrec_rank": 7580,
+    "penny_rank": 7544,
+    "preview": {
+      "source": "Gizmodo",
+      "source_uri": "https://io9.gizmodo.com/magic-the-gatherings-comic-con-exclusive-brings-forth-1835871979",
+      "previewed_at": "2019-06-26"
+    },
+    "prices": {
+      "usd": "21.08",
+      "usd_foil": null,
+      "usd_etched": null,
+      "eur": "16.63",
+      "eur_foil": null,
+      "tix": null
+    },
+    "related_uris": {
+      "tcgplayer_infinite_articles": "https://partner.tcgplayer.com/c/4931599/1830156/21018?subId1=api&trafcat=tcgplayer.com%2Fsearch%2Farticles&u=https%3A%2F%2Fwww.tcgplayer.com%2Fsearch%2Farticles%3FproductLineName%3Dmagic%26q%3DGod-Eternal%2BKefnet",
+      "tcgplayer_infinite_decks": "https://partner.tcgplayer.com/c/4931599/1830156/21018?subId1=api&trafcat=tcgplayer.com%2Fsearch%2Fdecks&u=https%3A%2F%2Fwww.tcgplayer.com%2Fsearch%2Fdecks%3FproductLineName%3Dmagic%26q%3DGod-Eternal%2BKefnet",
+      "edhrec": "https://edhrec.com/route/?cc=God-Eternal+Kefnet"
+    },
+    "purchase_uris": {
+      "tcgplayer": "https://partner.tcgplayer.com/c/4931599/1830156/21018?subId1=api&u=https%3A%2F%2Fwww.tcgplayer.com%2Fproduct%2F193821%3Fpage%3D1",
+      "cardmarket": "https://www.cardmarket.com/en/Magic/Products?idProduct=380328&referrer=scryfall&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+      "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=God-Eternal+Kefnet&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+    }
+  },
+  {
+    "object": "card",
+    "id": "eb35ff06-c5bf-460e-8a79-422bda257cfe",
+    "oracle_id": "6b75b94e-83b7-457e-ac41-7ca90b5a59aa",
+    "multiverse_ids": [],
+    "tcgplayer_id": 263739,
+    "cardmarket_id": 609885,
+    "name": "Battlefield Forge",
+    "lang": "en",
+    "released_at": "2021-11-20",
+    "uri": "https://api.scryfall.com/cards/eb35ff06-c5bf-460e-8a79-422bda257cfe",
+    "scryfall_uri": "https://scryfall.com/card/sld/669/battlefield-forge?utm_source=api",
+    "layout": "normal",
+    "highres_image": true,
+    "image_status": "highres_scan",
+    "image_uris": {
+      "small": "https://cards.scryfall.io/small/front/e/b/eb35ff06-c5bf-460e-8a79-422bda257cfe.jpg?1645536151",
+      "normal": "https://cards.scryfall.io/normal/front/e/b/eb35ff06-c5bf-460e-8a79-422bda257cfe.jpg?1645536151",
+      "large": "https://cards.scryfall.io/large/front/e/b/eb35ff06-c5bf-460e-8a79-422bda257cfe.jpg?1645536151",
+      "png": "https://cards.scryfall.io/png/front/e/b/eb35ff06-c5bf-460e-8a79-422bda257cfe.png?1645536151",
+      "art_crop": "https://cards.scryfall.io/art_crop/front/e/b/eb35ff06-c5bf-460e-8a79-422bda257cfe.jpg?1645536151",
+      "border_crop": "https://cards.scryfall.io/border_crop/front/e/b/eb35ff06-c5bf-460e-8a79-422bda257cfe.jpg?1645536151"
+    },
+    "mana_cost": "",
+    "cmc": 0.0,
+    "type_line": "Land",
+    "oracle_text": "{T}: Add {C}.\n{T}: Add {R} or {W}. This land deals 1 damage to you.",
+    "colors": [],
+    "color_identity": [
+      "R",
+      "W"
+    ],
+    "keywords": [],
+    "produced_mana": [
+      "C",
+      "R",
+      "W"
+    ],
+    "legalities": {
+      "standard": "not_legal",
+      "future": "not_legal",
+      "historic": "legal",
+      "timeless": "legal",
+      "gladiator": "legal",
+      "pioneer": "legal",
+      "modern": "legal",
+      "legacy": "legal",
+      "pauper": "not_legal",
+      "vintage": "legal",
+      "penny": "legal",
+      "commander": "legal",
+      "oathbreaker": "legal",
+      "standardbrawl": "not_legal",
+      "brawl": "legal",
+      "alchemy": "not_legal",
+      "paupercommander": "not_legal",
+      "duel": "legal",
+      "oldschool": "not_legal",
+      "premodern": "legal",
+      "predh": "legal"
+    },
+    "games": [
+      "paper"
+    ],
+    "reserved": false,
+    "game_changer": false,
+    "foil": true,
+    "nonfoil": false,
+    "finishes": [
+      "foil"
+    ],
+    "oversized": false,
+    "promo": false,
+    "reprint": true,
+    "variation": false,
+    "set_id": "4d92a8a7-ccb0-437d-abdc-9d70fc5ed672",
+    "set": "sld",
+    "set_name": "Secret Lair Drop",
+    "set_type": "box",
+    "set_uri": "https://api.scryfall.com/sets/4d92a8a7-ccb0-437d-abdc-9d70fc5ed672",
+    "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Asld&unique=prints",
+    "scryfall_set_uri": "https://scryfall.com/sets/sld?utm_source=api",
+    "rulings_uri": "https://api.scryfall.com/cards/eb35ff06-c5bf-460e-8a79-422bda257cfe/rulings",
+    "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3A6b75b94e-83b7-457e-ac41-7ca90b5a59aa&unique=prints",
+    "collector_number": "669",
+    "digital": false,
+    "rarity": "rare",
+    "flavor_text": "Golf Sucks Now And Has Always Sucked",
+    "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+    "artist": "MSCHF",
+    "artist_ids": [
+      "6d831e65-b8be-475f-844d-3cc7049e5834"
+    ],
+    "illustration_id": "c6ffd901-110d-40bf-b57c-f029f1fc64c1",
+    "border_color": "black",
+    "frame": "2015",
+    "full_art": true,
+    "textless": false,
+    "booster": false,
+    "story_spotlight": false,
+    "promo_types": [
+      "sldbonus",
+      "glossy"
+    ],
+    "edhrec_rank": 126,
+    "penny_rank": 158,
+    "prices": {
+      "usd": null,
+      "usd_foil": "7.54",
+      "usd_etched": null,
+      "eur": null,
+      "eur_foil": "5.87",
+      "tix": null
+    },
+    "related_uris": {
+      "tcgplayer_infinite_articles": "https://partner.tcgplayer.com/c/4931599/1830156/21018?subId1=api&trafcat=tcgplayer.com%2Fsearch%2Farticles&u=https%3A%2F%2Fwww.tcgplayer.com%2Fsearch%2Farticles%3FproductLineName%3Dmagic%26q%3DBattlefield%2BForge",
+      "tcgplayer_infinite_decks": "https://partner.tcgplayer.com/c/4931599/1830156/21018?subId1=api&trafcat=tcgplayer.com%2Fsearch%2Fdecks&u=https%3A%2F%2Fwww.tcgplayer.com%2Fsearch%2Fdecks%3FproductLineName%3Dmagic%26q%3DBattlefield%2BForge",
+      "edhrec": "https://edhrec.com/route/?cc=Battlefield+Forge"
+    },
+    "purchase_uris": {
+      "tcgplayer": "https://partner.tcgplayer.com/c/4931599/1830156/21018?subId1=api&u=https%3A%2F%2Fwww.tcgplayer.com%2Fproduct%2F263739%3Fpage%3D1",
+      "cardmarket": "https://www.cardmarket.com/en/Magic/Products?idProduct=609885&referrer=scryfall&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+      "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Battlefield+Forge&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+    }
+  }
+]

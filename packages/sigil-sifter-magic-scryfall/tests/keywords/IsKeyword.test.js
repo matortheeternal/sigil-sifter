@@ -1,7 +1,7 @@
 import Sifter from 'sigil-sifter';
 import Magic from '@sigil-sifter/magic';
 import cards from '../fixtures/cards.json' with { type: 'json' };
-import textlessCards from '../fixtures/textless.json' with { type: 'json' };
+import extras from '../fixtures/extras.json' with { type: 'json' };
 import ScryfallCard from '../../src/ScryfallCard.js';
 import { expectCardNames, expectNotCardNames } from '../helpers.js';
 
@@ -166,6 +166,16 @@ describe('is: keyword', () => {
         expectCardNames(res, ['Solemn Simulacrum', 'Felidar Retreat']);
     });
 
+    it('handles is:etched', () => {
+        const res = sifter.filter(cards, 'is:etched');
+        expectCardNames(res, ['Braids, Cabal Minion', 'Goblin Bombardment']);
+    });
+
+    it('handles is:glossy', () => {
+        const res = sifter.filter(extras, 'is:glossy');
+        expectCardNames(res, ['God-Eternal Kefnet', 'Battlefield Forge']);
+    });
+
     it('handles is:fullart and alias is:full', () => {
         const res1 = sifter.filter(cards, 'is:fullart');
         const res2 = sifter.filter(cards, 'is:full');
@@ -192,7 +202,7 @@ describe('is: keyword', () => {
     });
 
     it('handles is:textless', () => {
-        const res = sifter.filter(textlessCards, 'is:textless');
+        const res = sifter.filter(extras, 'is:textless');
         expectCardNames(res, ['Tidings']);
     });
 });
