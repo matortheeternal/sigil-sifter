@@ -8,10 +8,52 @@ const sifter = new Sifter();
 Magic(sifter, ScryfallCard);
 
 describe('Color keyword', () => {
-    it('handles shorthand c: and full color: the same', () => {
+    describe('color count', () => {
+        it('works with equal and includes', () => {
+            const res1 = sifter.filter(cards, 'colors=1');
+            const res2 = sifter.filter(cards, 'c=5');
+            expectCardNames(res1, [
+                'Serra Angel', 'Shalai, Voice of Plenty',
+                'Bident of Thassa', 'Pact of Negation',
+                'Dark Ritual', 'Seething Song', 'Llanowar Elves',
+            ]);
+            expectNotCardNames(res1, [
+                'Deathrite Shaman', 'Void Rend',
+                'Atraxa, Praetors\' Voice',
+                'Leyline of the Guildpact'
+            ]);
+            expectCardNames(res2, [
+                'Call the Spirit Dragons', 'Leyline of the Guildpact', 'Tiamat'
+            ]);
+        });
+
+        it('works with greater than', () => {
+            const res = sifter.filter(cards, 'colors>3');
+            expectCardNames(res, ['Atraxa, Praetors\' Voice', 'Tiamat']);
+        });
+
+        it('works with less than', () => {
+            const res = sifter.filter(cards, 'colors<1');
+            expectCardNames(res, [
+                'Blightsteel Colossus', 'City of Brass', 'Timeless Lotus'
+            ]);
+            expectNotCardNames(res, [
+                'Serra Angel', 'Shalai, Voice of Plenty',
+                'Bident of Thassa', 'Pact of Negation',
+                'Dark Ritual', 'Seething Song', 'Llanowar Elves',
+                'Deathrite Shaman', 'Void Rend',
+                'Atraxa, Praetors\' Voice',
+                'Leyline of the Guildpact'
+            ]);
+        });
+    });
+
+    it('handles c, color, and colors the same', () => {
         const white1 = sifter.filter(cards, 'c=w');
         const white2 = sifter.filter(cards, 'color=w');
+        const white3 = sifter.filter(cards, 'colors=w');
         expect(white1).toEqual(white2);
+        expect(white2).toEqual(white3);
         expectCardNames(white1, [
             'Smothering Tithe', 'Felidar Retreat', 'Balance',
             'Stoneforge Mystic', 'Serra Angel', 'Esper Sentinel',
@@ -61,7 +103,7 @@ describe('Color keyword', () => {
         const growth = sifter.filter(cards, 'c=growth');
         const wubg = sifter.filter(cards, 'c=wubg');
         expect(growth).toEqual(wubg);
-        expectCardNames(growth, [`Atraxa, Praetors' Voice`]);
+        expectCardNames(growth, ['Atraxa, Praetors\' Voice']);
     });
 
     it('filters by all colors (WUBRG)', () => {
@@ -101,7 +143,7 @@ describe('Color keyword', () => {
         expectCardNames(wgb, [
             'Doubling Season', 'Diabolic Tutor', 'Smothering Tithe',
             'Felidar Retreat', 'Balance', 'Rampaging Baloths',
-            'Stoneforge Mystic', 'Tarmogoyf', 'Tarmogoyf', 'Serra Angel',
+            'Stoneforge Mystic', 'Tarmogoyf', 'Serra Angel',
             'Dark Ritual', 'Esper Sentinel', 'Llanowar Elves',
             'Nature\'s Claim', 'The Great Henge', 'Murder', 'Rancor',
             'Reanimate', 'Shalai, Voice of Plenty', 'Kenrith\'s Transformation',
