@@ -1,4 +1,5 @@
 import { MagicCard } from '@sigil-sifter/magic/core';
+import { hasAbilityWord } from './abilityWords.js';
 
 export default class ScryfallCard extends MagicCard {
     get faces() {
@@ -111,15 +112,19 @@ export default class ScryfallCard extends MagicCard {
 
     get isFrenchVanilla() {
         return this.faces.some(f => {
+            if (f.oracle_text === '' || !/creature/i.test(f.type_line))
+                return false;
+            if (!f.keywords || !f.keywords.length || hasAbilityWord(f.keywords))
+                return false;
             const kwExpr = new RegExp(`^(${f.keywords.join('|')})`, 'i');
             const lines = f.oracle_text.split('\n');
-            return lines.some(line => !line.match(kwExpr));
+            return lines.every(line => kwExpr.test(line));
         });
     }
 
     get isHybrid() {
         return this.manaCosts.some(cost => {
-            return cost.symbols.some(sym => sym.isHybrid());
+            return cost.includes('/');
         });
     }
 
@@ -135,12 +140,12 @@ export default class ScryfallCard extends MagicCard {
         return this.rulesTexts.some(rt => {
             return rt.includes('\n•')
                 || rt.includes('{P}');
-        }) || this.keywords.includes('Spree');
+        }) || this.keywords.includes('spree');
     }
 
     get isPhyrexian() {
-        return this.manaCosts.some(manaCost => {
-            return manaCost.symbols.some(sym => sym.isPhyrexian());
+        return this.manaCosts.some(cost => {
+            return cost.includes('P');
         }) || this.rulesTexts.some(rt => {
             return /{[\/WUBRG]+P}/g.test(rt);
         });

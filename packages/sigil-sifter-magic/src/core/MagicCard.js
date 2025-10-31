@@ -112,7 +112,7 @@ export default class MagicCard {
     }
 
     get isLeveler() {
-        return this.keywords.includes('Level up');
+        return this.keywords.includes('level up');
     }
 
     get isMDFC() {
