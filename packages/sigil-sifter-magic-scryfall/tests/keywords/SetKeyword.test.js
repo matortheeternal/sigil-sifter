@@ -80,4 +80,9 @@ describe('Set keyword', () => {
             'Ragavan, Nimble Pilferer'
         ]);
     });
+
+    it('returns an empty array for non-existent sets', () => {
+        const res = sifter.filter(cards, 'set:notarealset');
+        expect(res.length).toEqual(0);
+    });
 });

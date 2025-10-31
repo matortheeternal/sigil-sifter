@@ -2,9 +2,9 @@ import { Keyword } from 'sigil-sifter/keywords';
 import SimpleStringExpression from '../expressions/SimpleStringExpression.js';
 import { EqualsOperator, IncludesOperator } from 'sigil-sifter/operators';
 
-export default class SetKeyword extends Keyword {
+export default class SetTypeKeyword extends Keyword {
     static get keys() {
-        return ['set', 'edition', 's', 'e'];
+        return ['settype', 'st'];
     }
 
     static get supportedOperators() {
@@ -16,6 +16,6 @@ export default class SetKeyword extends Keyword {
     }
 
     test(card) {
-        return super.test(card.set.code) || super.test(card.set.name);
+        return super.test(card.setType);
     }
 }

@@ -17,6 +17,7 @@ import ProducesKeyword from './ProducesKeyword.js';
 import RarityKeyword from './RarityKeyword.js';
 import RulesTextKeyword from './RulesTextKeyword.js';
 import SetKeyword from './SetKeyword.js';
+import SetTypeKeyword from './SetTypeKeyword.js';
 import ToughnessKeyword from './ToughnessKeyword.js';
 import WatermarkKeyword from './WatermarkKeyword.js';
 
@@ -40,6 +41,7 @@ export {
     RarityKeyword,
     RulesTextKeyword,
     SetKeyword,
+    SetTypeKeyword,
     ToughnessKeyword,
     WatermarkKeyword,
 }
