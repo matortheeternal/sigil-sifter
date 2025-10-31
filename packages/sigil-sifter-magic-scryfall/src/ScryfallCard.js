@@ -1,4 +1,5 @@
 import { MagicCard } from '@sigil-sifter/magic/core';
+import { NotImplementedError } from 'sigil-sifter/core';
 
 export default class ScryfallCard extends MagicCard {
     get faces() {
@@ -95,5 +96,62 @@ export default class ScryfallCard extends MagicCard {
             if (face.watermark) watermarks.push(face.watermark)
             return watermarks;
         }, []);
+    }
+
+    get hasIndicator() {
+        return this.card.hasOwnProperty('color_indicator');
+    }
+
+    get isDFC() {
+        return this.faces.length > 1;
+    }
+
+    get isFlip() {
+        return this.card.layout === 'flip';
+    }
+
+    get isFrenchVanilla() {
+        return this.faces.some(f => {
+            const kwExpr = new RegExp(`^(${f.keywords.join('|')})`, 'i');
+            const lines = f.oracle_text.split('\n');
+            return lines.some(line => !line.match(kwExpr));
+        });
+    }
+
+    get isHybrid() {
+        return this.manaCosts.some(cost => {
+            return cost.symbols.some(sym => sym.isHybrid());
+        });
+    }
+
+    get isMDFC() {
+        return this.card.layout === 'modal_dfc';
+    }
+
+    get isMeld() {
+        return this.card.layout === 'meld';
+    }
+
+    get isModal() {
+        return this.rulesTexts.some(rt => {
+            return rt.includes('\n•')
+                || rt.includes('{P}');
+        }) || this.keywords.includes('Spree');
+    }
+
+    get isPhyrexian() {
+        return this.manaCosts.some(manaCost => {
+            return manaCost.symbols.some(sym => sym.isPhyrexian());
+        }) || this.rulesTexts.some(rt => {
+            return /{[\/WUBRG]+P}/g.test(rt);
+        });
+    }
+
+    get isSplit() {
+        return this.card.layout === 'split';
+    }
+
+    get isTransform() {
+        return this.card.layout === 'transform';
     }
 }

@@ -7,7 +7,7 @@ export default class Expression extends Node {
     }
 
     static parse(sifter, match, str) {
-        throw new NotImplementedError();
+        return new this(sifter, match, str);
     }
 
     equals(val) {

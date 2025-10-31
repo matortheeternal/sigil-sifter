@@ -10,6 +10,9 @@ const spellTypes = [
     'planeswalker', 'battle', 'summon', 'eaturecray'
 ];
 
+const historicTypes = ['artifact', 'saga', 'legendary'];
+const partyTypes = ['wizard', 'rogue', 'warrior', 'cleric', 'rogue'];
+
 export default class MagicCard {
     constructor(card) {
         this.card = card;
@@ -20,14 +23,6 @@ export default class MagicCard {
         if (!this._cache.hasOwnProperty(key))
             this._cache[key] = initFn();
         return this._cache[key];
-    }
-
-    get isPermanent() {
-        return this.typeParts.some(part => permanentTypes.includes(part));
-    }
-
-    get isSpell() {
-        return this.typeParts.some(part => spellTypes.includes(part));
     }
 
     get artists() {
@@ -86,5 +81,77 @@ export default class MagicCard {
 
     get watermarks() {
         throw new NotImplementedError();
+    }
+
+    get hasIndicator() {
+        throw new NotImplementedError();
+    }
+
+    get hasWatermark() {
+        return this.watermarks.length > 0;
+    }
+
+    get isDFC() {
+        throw new NotImplementedError();
+    }
+
+    get isFlip() {
+        throw new NotImplementedError();
+    }
+
+    get isFrenchVanilla() {
+        throw new NotImplementedError();
+    }
+
+    get isHistoric() {
+        return this.typeParts.some(part => historicTypes.includes(part));
+    }
+
+    get isHybrid() {
+        throw new NotImplementedError();
+    }
+
+    get isLeveler() {
+        return this.keywords.includes('Level up');
+    }
+
+    get isMDFC() {
+        throw new NotImplementedError();
+    }
+
+    get isMeld() {
+        throw new NotImplementedError();
+    }
+
+    get isModal() {
+        throw new NotImplementedError();
+    }
+
+    get isParty() {
+        return this.typeParts.some(part => partyTypes.includes(part));
+    }
+
+    get isPermanent() {
+        return this.typeParts.some(part => permanentTypes.includes(part));
+    }
+
+    get isPhyrexian() {
+        throw new NotImplementedError();
+    }
+
+    get isSpell() {
+        return this.typeParts.some(part => spellTypes.includes(part));
+    }
+
+    get isSplit() {
+        throw new NotImplementedError();
+    }
+
+    get isTransform() {
+        throw new NotImplementedError();
+    }
+
+    get isVanilla() {
+        return this.rulesTexts.some(rt => rt === '');
     }
 }
