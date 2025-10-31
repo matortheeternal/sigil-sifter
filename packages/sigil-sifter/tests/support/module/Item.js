@@ -1,5 +1,6 @@
 export default class Item {
-    constructor(obj) {
+    constructor(sifter, obj) {
+        this.sifter = sifter;
         this.item = obj;
     }
 

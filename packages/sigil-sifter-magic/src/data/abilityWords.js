@@ -1,4 +1,4 @@
-const abilityWords = [
+export default [
     "Eerie",
     "Battalion",
     "Bloodrush",
@@ -64,7 +64,3 @@ const abilityWords = [
     "Start your engines!",
     "Renew"
 ];
-
-export function hasAbilityWord(keywords) {
-    return keywords.some(kw => abilityWords.includes(kw));
-}

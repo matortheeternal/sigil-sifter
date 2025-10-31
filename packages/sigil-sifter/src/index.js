@@ -1,7 +1,7 @@
 import GroupParser from './syntax/GroupParser.js';
 import {
-    SearchSyntaxError, SearchLengthError,
-    NoDefaultParserError, KeyConflictError
+    SearchSyntaxError, SearchLengthError, NoDefaultParserError,
+    KeyConflictError, ExtensionCollisionError
 } from './core/customErrors.js';
 
 const DEFAULT_CONFIG = {
@@ -29,7 +29,7 @@ export default class SigilSifter {
         const compiledFilter = this.compile(query);
         return objects.filter(obj => {
             const testObj = this.AdapterClass
-                ? new this.AdapterClass(obj)
+                ? new this.AdapterClass(this, obj)
                 : obj;
             return compiledFilter.test(testObj)
         });
@@ -42,6 +42,12 @@ export default class SigilSifter {
     addKeywords(keywords) {
         for (let keyword of keywords)
             this.registerKeyword(keyword);
+    }
+
+    extend(Extension, ...args) {
+        if (this.hasOwnProperty(Extension.name))
+            throw new ExtensionCollisionError(Extension.name);
+        this[Extension.name] = new Extension(...args);
     }
 
     registerKeyword(keywordClass) {

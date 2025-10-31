@@ -5,7 +5,7 @@ const language = (acronym, name, expr) => ({
 });
 
 // https://cran.r-project.org/web/packages/scryr/vignettes/languages.html
-const languages = [
+export default [
     language('en', 'English'),
     language('es', 'Spanish'),
     language('fr', 'French'),
@@ -28,11 +28,3 @@ const languages = [
     language('sa', 'Sanskrit'),
     language('ph', 'Phyrexian')
 ];
-
-export function getLanguage(str) {
-    const lcStr = str.toLowerCase();
-    return languages.find(lang => {
-        return lang.acronyms.includes(lcStr)
-            || lang.expr.test(str);
-    });
-}

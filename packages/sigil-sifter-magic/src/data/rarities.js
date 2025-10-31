@@ -1,4 +1,4 @@
-const rarityGroups = [{
+export default [{
     index: 0,
     char: 'C',
     name: 'Common',
@@ -23,12 +23,3 @@ const rarityGroups = [{
     char: 'B',
     name: 'Bonus'
 }];
-
-rarityGroups.forEach(g => {
-    g.matches = [g.char.toLowerCase(), g.name.toLowerCase()];
-});
-
-export function getRarityGroup(value) {
-    const lcValue = value.toLowerCase();
-    return rarityGroups.find(g => g.matches.includes(lcValue));
-}

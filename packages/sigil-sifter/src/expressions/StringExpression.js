@@ -11,7 +11,7 @@ export default class StringExpression extends Expression {
     }
 
     static parse(sifter, match, str) {
-        return new StringExpression(sifter, match, str);
+        return new this(sifter, match, str);
     }
 
     constructor(sifter, match, str) {

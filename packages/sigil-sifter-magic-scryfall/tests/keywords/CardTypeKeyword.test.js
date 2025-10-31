@@ -1,6 +1,6 @@
 import Sifter from 'sigil-sifter';
 import Magic from '@sigil-sifter/magic';
-import cards from '../fixtures/fixtures.json' with { type: 'json' };
+import cards from '../fixtures/cards.json' with { type: 'json' };
 import ScryfallCard from '../../src/ScryfallCard.js';
 import { expectCardNames, expectNotCardNames } from '../helpers.js';
 

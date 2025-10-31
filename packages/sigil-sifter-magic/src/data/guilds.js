@@ -1,26 +1,10 @@
-const color = (id, name) => ({
-    id,
-    name,
-    expr: new RegExp('^' + name + '$', 'i'),
-    colorChars: [id]
-});
-
 const colorCombo = (name, colors) => ({
     name,
     expr: new RegExp('^' + name + '$', 'i'),
     colorChars: colors.split('')
 });
 
-const colors = [
-    color('W', 'White'),
-    color('U', 'Blue'),
-    color('B', 'Black'),
-    color('R', 'Red'),
-    color('G', 'Green'),
-    color('C', 'Colorless'),
-];
-
-const colorCombos = [
+export default [
     colorCombo('Azorius', 'WU'),
     colorCombo('Dimir', 'UB'),
     colorCombo('Rakdos', 'BR'),
@@ -47,18 +31,3 @@ const colorCombos = [
     colorCombo('Growth', 'WUBG'),
     colorCombo('Artifice', 'WUBR'),
 ];
-
-const colorNames = [...colors, ...colorCombos].map(c => c.name);
-export const colorNamesExpr = new RegExp(`^(${colorNames.join('|')})`, 'i');
-
-export function getColors(str) {
-    const allOptions = colors.concat(colorCombos);
-    const colorByName = allOptions.find(c => c.expr.test(str));
-    return colorByName
-        ? colorByName.colorChars
-        : [...new Set(str.toUpperCase().split(''))];
-}
-
-export function matchColorNames(str) {
-    return str.match(colorNamesExpr);
-}

@@ -1,5 +1,10 @@
 import { MagicCard } from '@sigil-sifter/magic/core';
-import { hasAbilityWord } from './abilityWords.js';
+
+const hasKeywords = f => f.keywords && f.keywords.length;
+
+function hasAbilityWord(sifter, keywords) {
+    return keywords.some(kw => sifter.KeywordExtension.isAbilityWord(kw));
+}
 
 export default class ScryfallCard extends MagicCard {
     get faces() {
@@ -114,7 +119,7 @@ export default class ScryfallCard extends MagicCard {
         return this.faces.some(f => {
             if (f.oracle_text === '' || !/creature/i.test(f.type_line))
                 return false;
-            if (!f.keywords || !f.keywords.length || hasAbilityWord(f.keywords))
+            if (!hasKeywords(f) || hasAbilityWord(this.sifter, f.keywords))
                 return false;
             const kwExpr = new RegExp(`^(${f.keywords.join('|')})`, 'i');
             const lines = f.oracle_text.split('\n');

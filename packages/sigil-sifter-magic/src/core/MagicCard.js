@@ -14,7 +14,8 @@ const historicTypes = ['artifact', 'saga', 'legendary'];
 const partyTypes = ['wizard', 'rogue', 'warrior', 'cleric', 'rogue'];
 
 export default class MagicCard {
-    constructor(card) {
+    constructor(sifter, card) {
+        this.sifter = sifter;
         this.card = card;
         this._cache = {};
     }

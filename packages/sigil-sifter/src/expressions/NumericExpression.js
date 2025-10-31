@@ -6,7 +6,7 @@ export default class NumericExpression extends Expression {
     }
 
     static parse(sifter, match, str) {
-        return new NumericExpression(sifter, match, str);
+        return new this(sifter, match, str);
     }
 
     constructor(sifter, match, str) {

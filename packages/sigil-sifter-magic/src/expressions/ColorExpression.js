@@ -1,19 +1,15 @@
 import { Expression } from 'sigil-sifter/expressions';
-import { getColors, matchColorNames } from '../core/colors.js';
 
 export default class ColorExpression extends Expression {
     static match(sifter, str) {
-        return matchColorNames(str) || str.match(/^([wubrgc]+)/i);
-    }
-
-    static parse(sifter, match, str) {
-        return new ColorExpression(sifter, match, str);
+        return str.match(sifter.ColorExtension.colorNamesExpr)
+            || str.match(/^([wubrgc]+)/i);
     }
 
     constructor(sifter, match, str) {
         super(sifter, match, str);
         this.value = match[0];
-        this.colors = getColors(this.value);
+        this.colors = sifter.ColorExtension.resolveColors(this.value);
         this.colorless = this.colors.includes('C');
         if (this.colorless && this.colors.length > 1)
             throw new Error('A card cannot be both colorless and colored.');

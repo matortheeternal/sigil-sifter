@@ -1,7 +1,7 @@
 import Sifter from 'sigil-sifter';
 import Magic from '@sigil-sifter/magic';
 import ScryfallCard from '../../src/ScryfallCard.js';
-import cards from '../fixtures/fixtures.json' with { type: 'json' };
+import cards from '../fixtures/cards.json' with { type: 'json' };
 import { expectCardNames } from '../helpers.js';
 import {SearchSyntaxError} from 'sigil-sifter/core';
 

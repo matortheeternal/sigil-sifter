@@ -1,16 +1,11 @@
 import { SearchSyntaxError } from 'sigil-sifter/core';
 import { StringExpression } from 'sigil-sifter/expressions';
-import { getLanguage } from '../core/languages.js';
 
 export default class LanguageExpression extends StringExpression {
-    static parse(sifter, match, str) {
-        return new this(sifter, match, str);
-    }
-
     constructor(sifter, match, str) {
         super(sifter, match, str);
         this.value = match[1];
-        this.language = getLanguage(this.value);
+        this.language = sifter.LanguageExtension.resolveLanguage(this.value);
         if (!this.language)
             throw new SearchSyntaxError('Unknown language', this.value);
     }
