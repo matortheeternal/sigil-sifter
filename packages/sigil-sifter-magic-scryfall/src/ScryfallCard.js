@@ -41,6 +41,14 @@ export default class ScryfallCard extends MagicCard {
         return this.faces.map(face => (face.flavor_text || ''));
     }
 
+    get frame() {
+        return this.card.frame;
+    }
+
+    get frameEffects() {
+        return this.card.frame_effects || [];
+    }
+
     get keywords() {
         const keywords = [];
         for (const face of this.faces)

@@ -46,6 +46,14 @@ export default class MagicCard {
         throw new NotImplementedError();
     }
 
+    get frame() {
+        throw new NotImplementedError();
+    }
+
+    get frameEffects() {
+        throw new NotImplementedError();
+    }
+
     get keywords() {
         throw new NotImplementedError();
     }
