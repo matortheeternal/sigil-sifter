@@ -1,5 +1,6 @@
 import AbilityKeyword from './AbilityKeyword.js';
 import ArtistKeyword from './ArtistKeyword.js';
+import BorderKeyword from './BorderKeyword.js';
 import CardTypeKeyword from './CardTypeKeyword.js';
 import CollectorNumberKeyword from './CollectorNumberKeyword.js';
 import ColorKeyword from './ColorKeyword.js';
@@ -27,6 +28,7 @@ import WatermarkKeyword from './WatermarkKeyword.js';
 export {
     AbilityKeyword,
     ArtistKeyword,
+    BorderKeyword,
     CardTypeKeyword,
     CollectorNumberKeyword,
     ColorKeyword,

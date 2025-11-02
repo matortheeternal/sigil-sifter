@@ -30,6 +30,10 @@ export default class MagicCard {
         throw new NotImplementedError();
     }
 
+    get border() {
+        throw new NotImplementedError();
+    }
+
     get collectorNumber() {
         throw new NotImplementedError();
     }

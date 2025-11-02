@@ -1,4 +1,5 @@
 import { MagicCard } from '@sigil-sifter/magic/core';
+import { NotImplementedError } from 'sigil-sifter/core';
 
 const hasKeywords = f => f.keywords && f.keywords.length;
 
@@ -19,6 +20,10 @@ export default class ScryfallCard extends MagicCard {
             if (face.artist2) artists.push(face.artist2);
             return artists;
         }, []);
+    }
+
+    get border() {
+        return this.card.border_color;
     }
 
     get collectorNumber() {
