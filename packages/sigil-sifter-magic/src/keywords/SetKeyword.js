@@ -1,5 +1,5 @@
 import { Keyword } from 'sigil-sifter/keywords';
-import SimpleStringExpression from '../expressions/SimpleStringExpression.js';
+import ExactStringExpression from '../expressions/ExactStringExpression.js';
 import { EqualsOperator, IncludesOperator } from 'sigil-sifter/operators';
 
 export default class SetKeyword extends Keyword {
@@ -12,7 +12,7 @@ export default class SetKeyword extends Keyword {
     }
 
     static get supportedExpressions() {
-        return [SimpleStringExpression];
+        return [ExactStringExpression];
     }
 
     test(card) {

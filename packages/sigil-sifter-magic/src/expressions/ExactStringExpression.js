@@ -1,6 +1,6 @@
 import { StringExpression } from 'sigil-sifter/expressions';
 
-export default class SimpleStringExpression extends StringExpression {
+export default class ExactStringExpression extends StringExpression {
     includes(value) {
         return this.equals(value);
     }
