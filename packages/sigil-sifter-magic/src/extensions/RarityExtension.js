@@ -4,6 +4,7 @@ export default class RarityExtension {
     constructor(data) {
         this.rarities = data.rarities || defaultRarities;
         this.rarities.forEach(r => {
+            if (r.expr) return;
             r.expr = new RegExp(`^(${r.char}|${r.name})$`, 'i')
         });
     }

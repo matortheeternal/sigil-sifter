@@ -58,6 +58,10 @@ export default class MagicCard {
         throw new NotImplementedError();
     }
 
+    get game() {
+        throw new NotImplementedError();
+    }
+
     get keywords() {
         throw new NotImplementedError();
     }

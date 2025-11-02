@@ -54,6 +54,10 @@ export default class ScryfallCard extends MagicCard {
         return this.card.frame_effects || [];
     }
 
+    get games() {
+        return this.card.games;
+    }
+
     get keywords() {
         const keywords = [];
         for (const face of this.faces)
