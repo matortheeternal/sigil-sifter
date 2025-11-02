@@ -200,6 +200,10 @@ export default class MagicCard {
         throw new NotImplementedError();
     }
 
+    get isReserved() {
+        throw new NotImplementedError();
+    }
+
     get isSpell() {
         return this.typeParts.some(part => spellTypes.includes(part));
     }

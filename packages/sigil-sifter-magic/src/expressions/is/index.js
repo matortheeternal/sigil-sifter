@@ -18,6 +18,7 @@ import PermanentExpression from './PermanentExpression.js';
 import PhyrexianExpression from './PhyrexianExpression.js';
 import PromoExpression from './PromoExpression.js';
 import ReprintExpression from './ReprintExpression.js';
+import ReservedExpression from './ReservedExpression.js';
 import SpellExpression from './SpellExpression.js';
 import SplitExpression from './SplitExpression.js';
 import SpotlightExpression from './SpotlightExpression.js';
@@ -47,6 +48,7 @@ export {
     PhyrexianExpression,
     PromoExpression,
     ReprintExpression,
+    ReservedExpression,
     SpellExpression,
     SplitExpression,
     SpotlightExpression,

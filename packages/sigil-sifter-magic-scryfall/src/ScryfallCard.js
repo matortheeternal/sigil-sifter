@@ -222,6 +222,10 @@ export default class ScryfallCard extends MagicCard {
         return this.card.reprint;
     }
 
+    get isReserved() {
+        return this.card.reserved;
+    }
+
     get isSplit() {
         return this.card.layout === 'split';
     }

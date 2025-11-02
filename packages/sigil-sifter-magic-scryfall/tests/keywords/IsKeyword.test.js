@@ -212,4 +212,12 @@ describe('is: keyword', () => {
         expect(res1).toEqual(res2);
         expectCardNames(res1, ['The One Ring']);
     });
+
+    it('handles is:reserved', () => {
+        const res = sifter.filter(cards, 'is:reserved');
+        expectCardNames(res, [
+            'Black Lotus', 'Gaea\'s Cradle',
+            'Mirror Universe', 'Time Vault'
+        ]);
+    });
 });

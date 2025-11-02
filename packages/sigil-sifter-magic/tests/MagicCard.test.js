@@ -8,16 +8,16 @@ describe('MagicCard abstract API', () => {
 
     const props = [
         'artists', 'typeLines', 'colors', 'colorIdentity',
-        'frame', 'frameEffects', 'flavorTexts', 'keywords',
-        'loyalty', 'manaValues', 'produces', 'pts', 'rulesTexts',
-        'rarity', 'set', 'setType', 'watermarks',
+        'frame', 'frameEffects', 'flavorTexts', 'game',
+        'keywords', 'loyalty', 'manaValues', 'produces', 'pts',
+        'rulesTexts', 'rarity', 'set', 'setType', 'watermarks',
         'hasIndicator', 'hasWatermark',
         'isBooster', 'isDFC', 'isEtched', 'isFlip', 'isFoil',
         'isFrenchVanilla', 'isFullArt', 'isGlossy', 'isHistoric',
         'isHybrid', 'isLeveler', 'isMDFC', 'isMeld', 'isModal',
         'isNonFoil', 'isParty', 'isPermanent', 'isPhyrexian',
-        'isPromo', 'isReprint', 'isSpell', 'isSplit', 'isSpotlight',
-        'isTextless', 'isTransform', 'isVanilla'
+        'isPromo', 'isReprint', 'isReserved', 'isSpell', 'isSplit',
+        'isSpotlight', 'isTextless', 'isTransform', 'isVanilla'
     ];
 
     for (const prop of props) {
