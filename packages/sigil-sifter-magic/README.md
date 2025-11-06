@@ -46,10 +46,17 @@ const cards = [{
 sifter.filter(cards, 'black lotus'); 
 ```
 
+## implemented keywords
+Pretty much every keyword defined on the [scryfall search syntax](https://scryfall.com/docs/syntax) page is implemented by this module. You can use the `@sigil-sifter/magic-scryfall` module with this module to search downloaded scryfall card data directly.
+
 ## unimplemented keywords
 - fulloracle, ~ support in oracle text
 - artists
 - illustrations
+
+**TAGGING**
+- otag/oracletag/function
+- art/atag/arttag
 
 **PRICING**
 - usd
@@ -66,3 +73,23 @@ sifter.filter(cards, 'black lotus');
 - sets
 - cheapest
 - prints
+
+**OTHERS**
+- is:hires
+- new
+- is:reserved
+- is:duelcommander
+- is:commander
+- is:brawler
+- is:companion
+- cube
+- is:\[product]
+- include:extras
+- is:funny
+- is:bear
+- is:\[landgroup]
+- is:masterpiece
+- order
+- prefer
+- direction
+- unique
