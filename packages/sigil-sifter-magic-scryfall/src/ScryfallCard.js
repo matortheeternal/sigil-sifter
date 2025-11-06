@@ -1,5 +1,4 @@
 import { MagicCard } from '@sigil-sifter/magic/core';
-import { NotImplementedError } from 'sigil-sifter/core';
 
 const hasKeywords = f => f.keywords && f.keywords.length;
 
@@ -46,6 +45,14 @@ export default class ScryfallCard extends MagicCard {
         return this.faces.map(face => (face.flavor_text || ''));
     }
 
+    get formats() {
+        return Object.keys(this.card.legalities)
+            .filter(key => {
+                const legality = this.card.legalities[key];
+                return legality === 'legal' || legality === 'restricted';
+            });
+    }
+
     get frame() {
         return this.card.frame;
     }
@@ -59,11 +66,9 @@ export default class ScryfallCard extends MagicCard {
     }
 
     get keywords() {
-        const keywords = [];
-        for (const face of this.faces)
-            for (const kw of (face.keywords || []))
-                keywords.push(kw.toLowerCase());
-        return keywords;
+        return this.faces.flatMap(face =>
+            (face.keywords || []).map(kw => kw.toLowerCase())
+        );
     }
 
     get language() {
@@ -182,9 +187,7 @@ export default class ScryfallCard extends MagicCard {
     }
 
     get isHybrid() {
-        return this.manaCosts.some(cost => {
-            return cost.includes('/');
-        });
+        return this.manaCosts.some(cost => cost.includes('/'));
     }
 
     get isMDFC() {

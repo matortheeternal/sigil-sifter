@@ -7,6 +7,7 @@ import ColorKeyword from './ColorKeyword.js';
 import ColorIdentityKeyword from './ColorIdentityKeyword.js';
 import DevotionKeyword from './DevotionKeyword.js';
 import FlavorTextKeyword from './FlavorTextKeyword.js';
+import FormatKeyword from './FormatKeyword.js';
 import FrameKeyword from './FrameKeyword.js';
 import GameKeyword from './GameKeyword.js';
 import HasKeyword from './HasKeyword.js';
@@ -36,6 +37,7 @@ export {
     ColorIdentityKeyword,
     DevotionKeyword,
     FlavorTextKeyword,
+    FormatKeyword,
     FrameKeyword,
     GameKeyword,
     HasKeyword,

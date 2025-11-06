@@ -50,6 +50,10 @@ export default class MagicCard {
         throw new NotImplementedError();
     }
 
+    get formats() {
+        throw new NotImplementedError();
+    }
+
     get frame() {
         throw new NotImplementedError();
     }

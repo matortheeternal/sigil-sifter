@@ -1,0 +1,25 @@
+const format = (name) => ({ name });
+
+export default [
+    format('standard'),
+    format('future'),
+    format('historic'),
+    format('timeless'),
+    format('gladiator'),
+    format('pioneer'),
+    format('modern'),
+    format('legacy'),
+    format('pauper'),
+    format('vintage'),
+    format('penny'),
+    format('commander'),
+    format('oathbreaker'),
+    format('standardbrawl'),
+    format('brawl'),
+    format('alchemy'),
+    format('paupercommander'),
+    format('duel'),
+    format('oldschool'),
+    format('premodern'),
+    format('predh'),
+];

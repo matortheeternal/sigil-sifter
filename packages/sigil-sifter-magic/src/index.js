@@ -1,5 +1,6 @@
 import MagicCard from './core/MagicCard.js';
 import ColorExtension from './extensions/ColorExtension.js';
+import FormatExtension from './extensions/FormatExtension.js';
 import GameExtension from './extensions/GameExtension.js';
 import KeywordExtension from './extensions/KeywordExtension.js';
 import LanguageExtension from './extensions/LanguageExtension.js';
@@ -26,6 +27,7 @@ export default function register(sifter, Card, data = {}) {
     sifter.setInputAdapter(Card);
 
     sifter.extend(ColorExtension, data);
+    sifter.extend(FormatExtension, data);
     sifter.extend(GameExtension, data);
     sifter.extend(KeywordExtension, data);
     sifter.extend(LanguageExtension, data);
