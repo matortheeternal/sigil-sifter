@@ -110,6 +110,10 @@ export default class MagicCard {
         throw new NotImplementedError();
     }
 
+    get stamp() {
+        throw new NotImplementedError();
+    }
+
     get typeLines() {
         throw new NotImplementedError();
     }

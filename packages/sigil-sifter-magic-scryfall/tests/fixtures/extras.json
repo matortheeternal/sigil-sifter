@@ -376,5 +376,404 @@
       "cardmarket": "https://www.cardmarket.com/en/Magic/Products?idProduct=609885&referrer=scryfall&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
       "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Battlefield+Forge&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
     }
+  },
+  {
+    "object": "card",
+    "id": "a6975357-5d6c-41c8-8fd5-c1bfb34a1e84",
+    "oracle_id": "b77dcee1-f42e-4c9d-b6b7-6d5885826060",
+    "multiverse_ids": [
+      677417
+    ],
+    "tcgplayer_id": 562492,
+    "cardmarket_id": 789152,
+    "name": "Oracle of the Alpha",
+    "lang": "en",
+    "released_at": "2024-08-02",
+    "uri": "https://api.scryfall.com/cards/a6975357-5d6c-41c8-8fd5-c1bfb34a1e84",
+    "scryfall_uri": "https://scryfall.com/card/mb2/259/oracle-of-the-alpha?utm_source=api",
+    "layout": "normal",
+    "highres_image": true,
+    "image_status": "highres_scan",
+    "image_uris": {
+      "small": "https://cards.scryfall.io/small/front/a/6/a6975357-5d6c-41c8-8fd5-c1bfb34a1e84.jpg?1739659383",
+      "normal": "https://cards.scryfall.io/normal/front/a/6/a6975357-5d6c-41c8-8fd5-c1bfb34a1e84.jpg?1739659383",
+      "large": "https://cards.scryfall.io/large/front/a/6/a6975357-5d6c-41c8-8fd5-c1bfb34a1e84.jpg?1739659383",
+      "png": "https://cards.scryfall.io/png/front/a/6/a6975357-5d6c-41c8-8fd5-c1bfb34a1e84.png?1739659383",
+      "art_crop": "https://cards.scryfall.io/art_crop/front/a/6/a6975357-5d6c-41c8-8fd5-c1bfb34a1e84.jpg?1739659383",
+      "border_crop": "https://cards.scryfall.io/border_crop/front/a/6/a6975357-5d6c-41c8-8fd5-c1bfb34a1e84.jpg?1739659383"
+    },
+    "mana_cost": "{2}{U}",
+    "cmc": 3.0,
+    "type_line": "Creature — Bird Wizard",
+    "oracle_text": "Flying\nWhen Oracle of the Alpha enters the battlefield, conjure the Power Nine into your library, then shuffle.\nWhenever Oracle of the Alpha attacks, scry 1.",
+    "power": "2",
+    "toughness": "3",
+    "colors": [
+      "U"
+    ],
+    "color_identity": [
+      "U"
+    ],
+    "keywords": [
+      "Scry",
+      "Flying",
+      "Conjure"
+    ],
+    "legalities": {
+      "standard": "not_legal",
+      "future": "not_legal",
+      "historic": "legal",
+      "timeless": "legal",
+      "gladiator": "legal",
+      "pioneer": "not_legal",
+      "modern": "not_legal",
+      "legacy": "not_legal",
+      "pauper": "not_legal",
+      "vintage": "not_legal",
+      "penny": "not_legal",
+      "commander": "not_legal",
+      "oathbreaker": "not_legal",
+      "standardbrawl": "not_legal",
+      "brawl": "legal",
+      "alchemy": "not_legal",
+      "paupercommander": "not_legal",
+      "duel": "not_legal",
+      "oldschool": "not_legal",
+      "premodern": "not_legal",
+      "predh": "not_legal"
+    },
+    "games": [
+      "paper"
+    ],
+    "reserved": false,
+    "game_changer": false,
+    "foil": true,
+    "nonfoil": false,
+    "finishes": [
+      "foil"
+    ],
+    "oversized": false,
+    "promo": false,
+    "reprint": true,
+    "variation": false,
+    "set_id": "1e6879fe-2f29-4ad7-8d42-7f5bfb469f4a",
+    "set": "mb2",
+    "set_name": "Mystery Booster 2",
+    "set_type": "masters",
+    "set_uri": "https://api.scryfall.com/sets/1e6879fe-2f29-4ad7-8d42-7f5bfb469f4a",
+    "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Amb2&unique=prints",
+    "scryfall_set_uri": "https://scryfall.com/sets/mb2?utm_source=api",
+    "rulings_uri": "https://api.scryfall.com/cards/a6975357-5d6c-41c8-8fd5-c1bfb34a1e84/rulings",
+    "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3Ab77dcee1-f42e-4c9d-b6b7-6d5885826060&unique=prints",
+    "collector_number": "259",
+    "digital": false,
+    "rarity": "uncommon",
+    "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+    "artist": "Nino Vecia",
+    "artist_ids": [
+      "21466232-678a-4836-89fd-82cb15f52366"
+    ],
+    "illustration_id": "0955d02c-84ab-442a-adb4-eaf175801048",
+    "border_color": "black",
+    "frame": "2015",
+    "security_stamp": "acorn",
+    "full_art": false,
+    "textless": false,
+    "booster": false,
+    "story_spotlight": false,
+    "promo_types": [
+      "alchemy"
+    ],
+    "edhrec_rank": 27838,
+    "prices": {
+      "usd": null,
+      "usd_foil": "165.31",
+      "usd_etched": null,
+      "eur": null,
+      "eur_foil": "230.29",
+      "tix": null
+    },
+    "related_uris": {
+      "gatherer": "https://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=677417&printed=false",
+      "tcgplayer_infinite_articles": "https://partner.tcgplayer.com/c/4931599/1830156/21018?subId1=api&trafcat=tcgplayer.com%2Fsearch%2Farticles&u=https%3A%2F%2Fwww.tcgplayer.com%2Fsearch%2Farticles%3FproductLineName%3Dmagic%26q%3DOracle%2Bof%2Bthe%2BAlpha",
+      "tcgplayer_infinite_decks": "https://partner.tcgplayer.com/c/4931599/1830156/21018?subId1=api&trafcat=tcgplayer.com%2Fsearch%2Fdecks&u=https%3A%2F%2Fwww.tcgplayer.com%2Fsearch%2Fdecks%3FproductLineName%3Dmagic%26q%3DOracle%2Bof%2Bthe%2BAlpha",
+      "edhrec": "https://edhrec.com/route/?cc=Oracle+of+the+Alpha"
+    },
+    "purchase_uris": {
+      "tcgplayer": "https://partner.tcgplayer.com/c/4931599/1830156/21018?subId1=api&u=https%3A%2F%2Fwww.tcgplayer.com%2Fproduct%2F562492%3Fpage%3D1",
+      "cardmarket": "https://www.cardmarket.com/en/Magic/Products?idProduct=789152&referrer=scryfall&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+      "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Oracle+of+the+Alpha&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+    }
+  },
+  {
+    "object": "card",
+    "id": "4df5e7d3-cd49-498e-b2e3-37db891edbbe",
+    "oracle_id": "c091f964-745e-4949-9593-e004eaad1fd2",
+    "multiverse_ids": [],
+    "arena_id": 87115,
+    "name": "A-Thousand-Faced Shadow",
+    "lang": "en",
+    "released_at": "2022-02-18",
+    "uri": "https://api.scryfall.com/cards/4df5e7d3-cd49-498e-b2e3-37db891edbbe",
+    "scryfall_uri": "https://scryfall.com/card/neo/A-86/a-thousand-faced-shadow?utm_source=api",
+    "layout": "normal",
+    "highres_image": true,
+    "image_status": "highres_scan",
+    "image_uris": {
+      "small": "https://cards.scryfall.io/small/front/4/d/4df5e7d3-cd49-498e-b2e3-37db891edbbe.jpg?1681159547",
+      "normal": "https://cards.scryfall.io/normal/front/4/d/4df5e7d3-cd49-498e-b2e3-37db891edbbe.jpg?1681159547",
+      "large": "https://cards.scryfall.io/large/front/4/d/4df5e7d3-cd49-498e-b2e3-37db891edbbe.jpg?1681159547",
+      "png": "https://cards.scryfall.io/png/front/4/d/4df5e7d3-cd49-498e-b2e3-37db891edbbe.png?1681159547",
+      "art_crop": "https://cards.scryfall.io/art_crop/front/4/d/4df5e7d3-cd49-498e-b2e3-37db891edbbe.jpg?1681159547",
+      "border_crop": "https://cards.scryfall.io/border_crop/front/4/d/4df5e7d3-cd49-498e-b2e3-37db891edbbe.jpg?1681159547"
+    },
+    "mana_cost": "{U}",
+    "cmc": 1.0,
+    "type_line": "Creature — Human Ninja",
+    "oracle_text": "Ninjutsu {2}{U} ({2}{U}, Return an unblocked attacker you control to hand: Put this card onto the battlefield from your hand tapped and attacking.)\nFlying\nWhen Thousand-Faced Shadow enters from your hand, if it's attacking, create a token that's a copy of another target attacking creature. The token enters tapped and attacking.",
+    "power": "1",
+    "toughness": "1",
+    "colors": [
+      "U"
+    ],
+    "color_identity": [
+      "U"
+    ],
+    "keywords": [
+      "Flying",
+      "Ninjutsu"
+    ],
+    "all_parts": [
+      {
+        "object": "related_card",
+        "id": "00632c03-be00-4722-85b3-2ce31bba5cc6",
+        "component": "combo_piece",
+        "name": "Thousand-Faced Shadow",
+        "type_line": "Creature — Human Ninja",
+        "uri": "https://api.scryfall.com/cards/00632c03-be00-4722-85b3-2ce31bba5cc6"
+      },
+      {
+        "object": "related_card",
+        "id": "4df5e7d3-cd49-498e-b2e3-37db891edbbe",
+        "component": "combo_piece",
+        "name": "A-Thousand-Faced Shadow",
+        "type_line": "Creature — Human Ninja",
+        "uri": "https://api.scryfall.com/cards/4df5e7d3-cd49-498e-b2e3-37db891edbbe"
+      }
+    ],
+    "legalities": {
+      "standard": "not_legal",
+      "future": "not_legal",
+      "historic": "legal",
+      "timeless": "not_legal",
+      "gladiator": "not_legal",
+      "pioneer": "not_legal",
+      "modern": "not_legal",
+      "legacy": "not_legal",
+      "pauper": "not_legal",
+      "vintage": "not_legal",
+      "penny": "not_legal",
+      "commander": "not_legal",
+      "oathbreaker": "not_legal",
+      "standardbrawl": "not_legal",
+      "brawl": "legal",
+      "alchemy": "not_legal",
+      "paupercommander": "not_legal",
+      "duel": "not_legal",
+      "oldschool": "not_legal",
+      "premodern": "not_legal",
+      "predh": "not_legal"
+    },
+    "games": [
+      "arena"
+    ],
+    "reserved": false,
+    "game_changer": false,
+    "foil": false,
+    "nonfoil": true,
+    "finishes": [
+      "nonfoil"
+    ],
+    "oversized": false,
+    "promo": false,
+    "reprint": false,
+    "variation": false,
+    "set_id": "59a2059f-5482-433f-8761-eb2e17859b71",
+    "set": "neo",
+    "set_name": "Kamigawa: Neon Dynasty",
+    "set_type": "expansion",
+    "set_uri": "https://api.scryfall.com/sets/59a2059f-5482-433f-8761-eb2e17859b71",
+    "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Aneo&unique=prints",
+    "scryfall_set_uri": "https://scryfall.com/sets/neo?utm_source=api",
+    "rulings_uri": "https://api.scryfall.com/cards/4df5e7d3-cd49-498e-b2e3-37db891edbbe/rulings",
+    "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3Ac091f964-745e-4949-9593-e004eaad1fd2&unique=prints",
+    "collector_number": "A-86",
+    "digital": true,
+    "rarity": "rare",
+    "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+    "artist": "Ekaterina Burmak",
+    "artist_ids": [
+      "2a9f3780-fcc8-4ec5-b403-ee1d1370d3b4"
+    ],
+    "illustration_id": "191e3801-5de1-409c-a90d-4261d9ed0625",
+    "border_color": "black",
+    "frame": "2015",
+    "security_stamp": "arena",
+    "full_art": false,
+    "textless": false,
+    "booster": false,
+    "story_spotlight": false,
+    "promo_types": [
+      "rebalanced",
+      "alchemy"
+    ],
+    "prices": {
+      "usd": null,
+      "usd_foil": null,
+      "usd_etched": null,
+      "eur": null,
+      "eur_foil": null,
+      "tix": null
+    },
+    "related_uris": {
+      "tcgplayer_infinite_articles": "https://partner.tcgplayer.com/c/4931599/1830156/21018?subId1=api&trafcat=tcgplayer.com%2Fsearch%2Farticles&u=https%3A%2F%2Fwww.tcgplayer.com%2Fsearch%2Farticles%3FproductLineName%3Dmagic%26q%3DA-Thousand-Faced%2BShadow",
+      "tcgplayer_infinite_decks": "https://partner.tcgplayer.com/c/4931599/1830156/21018?subId1=api&trafcat=tcgplayer.com%2Fsearch%2Fdecks&u=https%3A%2F%2Fwww.tcgplayer.com%2Fsearch%2Fdecks%3FproductLineName%3Dmagic%26q%3DA-Thousand-Faced%2BShadow",
+      "edhrec": "https://edhrec.com/route/?cc=A-Thousand-Faced+Shadow"
+    }
+  },
+  {
+    "object": "card",
+    "id": "63e08eb1-de6e-4f31-a523-86b1e013b1ca",
+    "oracle_id": "a8e707ec-ce77-4bc5-8c76-5ea3e81e8c7f",
+    "multiverse_ids": [],
+    "tcgplayer_id": 623042,
+    "cardmarket_id": 818528,
+    "name": "Toski, Bearer of Secrets",
+    "flavor_name": "Sandy Cheeks, Martial Astronaut",
+    "lang": "en",
+    "released_at": "2025-03-24",
+    "uri": "https://api.scryfall.com/cards/63e08eb1-de6e-4f31-a523-86b1e013b1ca",
+    "scryfall_uri": "https://scryfall.com/card/sld/1930/toski-bearer-of-secrets?utm_source=api",
+    "layout": "normal",
+    "highres_image": true,
+    "image_status": "highres_scan",
+    "image_uris": {
+      "small": "https://cards.scryfall.io/small/front/6/3/63e08eb1-de6e-4f31-a523-86b1e013b1ca.jpg?1759415657",
+      "normal": "https://cards.scryfall.io/normal/front/6/3/63e08eb1-de6e-4f31-a523-86b1e013b1ca.jpg?1759415657",
+      "large": "https://cards.scryfall.io/large/front/6/3/63e08eb1-de6e-4f31-a523-86b1e013b1ca.jpg?1759415657",
+      "png": "https://cards.scryfall.io/png/front/6/3/63e08eb1-de6e-4f31-a523-86b1e013b1ca.png?1759415657",
+      "art_crop": "https://cards.scryfall.io/art_crop/front/6/3/63e08eb1-de6e-4f31-a523-86b1e013b1ca.jpg?1759415657",
+      "border_crop": "https://cards.scryfall.io/border_crop/front/6/3/63e08eb1-de6e-4f31-a523-86b1e013b1ca.jpg?1759415657"
+    },
+    "mana_cost": "{3}{G}",
+    "cmc": 4.0,
+    "type_line": "Legendary Creature — Squirrel",
+    "oracle_text": "This spell can't be countered.\nIndestructible\nToski attacks each combat if able.\nWhenever a creature you control deals combat damage to a player, draw a card.",
+    "printed_text": "This spell can't be countered.\nIndestructible\nSandy Cheeks attacks each combat if able.\nWhenever a creature you control deals combat damage to a player, draw a card.",
+    "power": "1",
+    "toughness": "1",
+    "colors": [
+      "G"
+    ],
+    "color_identity": [
+      "G"
+    ],
+    "keywords": [
+      "Indestructible"
+    ],
+    "legalities": {
+      "standard": "not_legal",
+      "future": "not_legal",
+      "historic": "legal",
+      "timeless": "legal",
+      "gladiator": "legal",
+      "pioneer": "legal",
+      "modern": "legal",
+      "legacy": "legal",
+      "pauper": "not_legal",
+      "vintage": "legal",
+      "penny": "legal",
+      "commander": "legal",
+      "oathbreaker": "legal",
+      "standardbrawl": "not_legal",
+      "brawl": "legal",
+      "alchemy": "not_legal",
+      "paupercommander": "not_legal",
+      "duel": "legal",
+      "oldschool": "not_legal",
+      "premodern": "not_legal",
+      "predh": "not_legal"
+    },
+    "games": [
+      "paper"
+    ],
+    "reserved": false,
+    "game_changer": false,
+    "foil": true,
+    "nonfoil": true,
+    "finishes": [
+      "nonfoil",
+      "foil"
+    ],
+    "oversized": false,
+    "promo": false,
+    "reprint": true,
+    "variation": false,
+    "set_id": "4d92a8a7-ccb0-437d-abdc-9d70fc5ed672",
+    "set": "sld",
+    "set_name": "Secret Lair Drop",
+    "set_type": "box",
+    "set_uri": "https://api.scryfall.com/sets/4d92a8a7-ccb0-437d-abdc-9d70fc5ed672",
+    "set_search_uri": "https://api.scryfall.com/cards/search?order=set&q=e%3Asld&unique=prints",
+    "scryfall_set_uri": "https://scryfall.com/sets/sld?utm_source=api",
+    "rulings_uri": "https://api.scryfall.com/cards/63e08eb1-de6e-4f31-a523-86b1e013b1ca/rulings",
+    "prints_search_uri": "https://api.scryfall.com/cards/search?order=released&q=oracleid%3Aa8e707ec-ce77-4bc5-8c76-5ea3e81e8c7f&unique=prints",
+    "collector_number": "1930",
+    "digital": false,
+    "rarity": "mythic",
+    "card_back_id": "0aeebaf5-8c7d-4636-9e82-8c27447861f7",
+    "artist": "Caleb Meurer",
+    "artist_ids": [
+      "0e744bae-e5c1-4990-acee-74c666009efc"
+    ],
+    "illustration_id": "75b6210f-1ba6-4648-9186-26ccfd5a5a14",
+    "border_color": "borderless",
+    "frame": "2015",
+    "frame_effects": [
+      "legendary"
+    ],
+    "security_stamp": "triangle",
+    "full_art": true,
+    "textless": false,
+    "booster": false,
+    "story_spotlight": false,
+    "promo_types": [
+      "universesbeyond"
+    ],
+    "edhrec_rank": 359,
+    "penny_rank": 2302,
+    "preview": {
+      "source": "Collider",
+      "source_uri": "https://collider.com/spongebob-magic-the-gathering-special-secret-lair-images/",
+      "previewed_at": "2025-03-10"
+    },
+    "prices": {
+      "usd": "5.73",
+      "usd_foil": null,
+      "usd_etched": null,
+      "eur": "4.55",
+      "eur_foil": "5.74",
+      "tix": null
+    },
+    "related_uris": {
+      "tcgplayer_infinite_articles": "https://partner.tcgplayer.com/c/4931599/1830156/21018?subId1=api&trafcat=tcgplayer.com%2Fsearch%2Farticles&u=https%3A%2F%2Fwww.tcgplayer.com%2Fsearch%2Farticles%3FproductLineName%3Dmagic%26q%3DToski%252C%2BBearer%2Bof%2BSecrets",
+      "tcgplayer_infinite_decks": "https://partner.tcgplayer.com/c/4931599/1830156/21018?subId1=api&trafcat=tcgplayer.com%2Fsearch%2Fdecks&u=https%3A%2F%2Fwww.tcgplayer.com%2Fsearch%2Fdecks%3FproductLineName%3Dmagic%26q%3DToski%252C%2BBearer%2Bof%2BSecrets",
+      "edhrec": "https://edhrec.com/route/?cc=Toski%2C+Bearer+of+Secrets"
+    },
+    "purchase_uris": {
+      "tcgplayer": "https://partner.tcgplayer.com/c/4931599/1830156/21018?subId1=api&u=https%3A%2F%2Fwww.tcgplayer.com%2Fproduct%2F623042%3Fpage%3D1",
+      "cardmarket": "https://www.cardmarket.com/en/Magic/Products?idProduct=818528&referrer=scryfall&utm_campaign=card_prices&utm_medium=text&utm_source=scryfall",
+      "cardhoarder": "https://www.cardhoarder.com/cards?affiliate_id=scryfall&data%5Bsearch%5D=Toski%2C+Bearer+of+Secrets&ref=card-profile&utm_campaign=affiliate&utm_medium=card&utm_source=scryfall"
+    }
   }
 ]
