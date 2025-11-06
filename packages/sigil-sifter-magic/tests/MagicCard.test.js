@@ -7,17 +7,19 @@ describe('MagicCard abstract API', () => {
     const card = new DummyCard({ name: 'Test Card' });
 
     const props = [
-        'artists', 'typeLines', 'colors', 'colorIdentity',
-        'frame', 'frameEffects', 'flavorTexts', 'game',
-        'keywords', 'loyalty', 'manaValues', 'produces', 'pts',
-        'rulesTexts', 'rarity', 'set', 'setType', 'watermarks',
+        'artists', 'banned', 'border', 'collectorNumber', 'colors',
+        'colorIdentity', 'formats', 'flavorTexts', 'frame',
+        'frameEffects', 'game', 'keywords', 'loyalty', 'manaValues',
+        'produces', 'pts', 'rarity', 'rulesTexts', 'restricted',
+        'set', 'setType', 'stamp', 'typeLines', 'watermarks',
         'hasIndicator', 'hasWatermark',
         'isBooster', 'isDFC', 'isEtched', 'isFlip', 'isFoil',
         'isFrenchVanilla', 'isFullArt', 'isGlossy', 'isHistoric',
         'isHybrid', 'isLeveler', 'isMDFC', 'isMeld', 'isModal',
         'isNonFoil', 'isParty', 'isPermanent', 'isPhyrexian',
         'isPromo', 'isReprint', 'isReserved', 'isSpell', 'isSplit',
-        'isSpotlight', 'isTextless', 'isTransform', 'isVanilla'
+        'isSpotlight', 'isTextless', 'isTransform',
+        'isUniversesBeyond', 'isVanilla'
     ];
 
     for (const prop of props) {
