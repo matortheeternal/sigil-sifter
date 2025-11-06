@@ -1,5 +1,6 @@
 import AbilityKeyword from './AbilityKeyword.js';
 import ArtistKeyword from './ArtistKeyword.js';
+import BannedKeyword from './BannedKeyword.js';
 import BorderKeyword from './BorderKeyword.js';
 import CardTypeKeyword from './CardTypeKeyword.js';
 import CollectorNumberKeyword from './CollectorNumberKeyword.js';
@@ -21,6 +22,7 @@ import NotKeyword from './NotKeyword.js';
 import PowerKeyword from './PowerKeyword.js';
 import ProducesKeyword from './ProducesKeyword.js';
 import RarityKeyword from './RarityKeyword.js';
+import RestrictedKeyword from './RestrictedKeyword.js';
 import RulesTextKeyword from './RulesTextKeyword.js';
 import SetKeyword from './SetKeyword.js';
 import SetTypeKeyword from './SetTypeKeyword.js';
@@ -30,6 +32,7 @@ import WatermarkKeyword from './WatermarkKeyword.js';
 export {
     AbilityKeyword,
     ArtistKeyword,
+    BannedKeyword,
     BorderKeyword,
     CardTypeKeyword,
     CollectorNumberKeyword,
@@ -51,6 +54,7 @@ export {
     PowerKeyword,
     ProducesKeyword,
     RarityKeyword,
+    RestrictedKeyword,
     RulesTextKeyword,
     SetKeyword,
     SetTypeKeyword,

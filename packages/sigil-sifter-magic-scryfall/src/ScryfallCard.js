@@ -21,6 +21,11 @@ export default class ScryfallCard extends MagicCard {
         }, []);
     }
 
+    get banned() {
+        return Object.keys(this.card.legalities)
+            .filter(key => this.card.legalities[key] === 'banned');
+    }
+
     get border() {
         return this.card.border_color;
     }
@@ -110,12 +115,17 @@ export default class ScryfallCard extends MagicCard {
             }));
     }
 
+    get rarity() {
+        return this.card.rarity || '';
+    }
+
     get rulesTexts() {
         return this.faces.map(face => (face.oracle_text || ''));
     }
 
-    get rarity() {
-        return this.card.rarity || '';
+    get restricted() {
+        return Object.keys(this.card.legalities)
+            .filter(key => this.card.legalities[key] === 'restricted');
     }
 
     get set() {

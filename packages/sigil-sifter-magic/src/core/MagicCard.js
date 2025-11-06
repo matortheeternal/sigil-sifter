@@ -30,6 +30,10 @@ export default class MagicCard {
         throw new NotImplementedError();
     }
 
+    get banned() {
+        throw new NotImplementedError();
+    }
+
     get border() {
         throw new NotImplementedError();
     }
@@ -86,11 +90,15 @@ export default class MagicCard {
         throw new NotImplementedError();
     }
 
-    get rulesTexts() {
+    get rarity() {
         throw new NotImplementedError();
     }
 
-    get rarity() {
+    get restricted() {
+        throw new NotImplementedError();
+    }
+
+    get rulesTexts() {
         throw new NotImplementedError();
     }
 
