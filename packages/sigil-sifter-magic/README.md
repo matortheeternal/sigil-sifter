@@ -1,4 +1,4 @@
-# sigil-sifter-magic
+# @sigil-sifter/magic
 
 This is a module which provides the keywords, expressions, and data extensions to filter Magic: The Gathering cards with sigil-sifter.
 
@@ -47,12 +47,9 @@ sifter.filter(cards, 'black lotus');
 ```
 
 ## implemented keywords
-Pretty much every keyword defined on the [scryfall search syntax](https://scryfall.com/docs/syntax) page is implemented by this module. You can use the `@sigil-sifter/magic-scryfall` module with this module to search downloaded scryfall card data directly.
+Pretty much every keyword defined on the [scryfall search syntax](https://scryfall.com/docs/syntax) page is implemented by this module. You can use the `@sigil-sifter/magic-scryfall` package with this module to search downloaded scryfall card data directly.
 
 ## unimplemented keywords
-- fulloracle, ~ support in oracle text
-- artists
-- illustrations
 
 **TAGGING**
 - otag/oracletag/function
@@ -75,6 +72,9 @@ Pretty much every keyword defined on the [scryfall search syntax](https://scryfa
 - prints
 
 **OTHERS**
+- fulloracle, ~ support in oracle text
+- artists
+- illustrations
 - is:hires
 - new
 - is:reserved

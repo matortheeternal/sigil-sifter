@@ -1,3 +1,5 @@
 node_modules
 scripts/
 coverage/
+packages/*/LICENSE
+packages/sigil-sifter/README.md

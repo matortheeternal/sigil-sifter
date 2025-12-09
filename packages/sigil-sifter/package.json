@@ -21,5 +21,13 @@
     "./keywords": "./src/keywords/index.js",
     "./operators": "./src/operators/index.js",
     "./expressions": "./src/expressions/index.js"
-  }
+  },
+  "scripts": {
+    "prepublishOnly": "cp ../../{README.md,LICENSE} ."
+  },
+  "files": [
+    "src/*",
+    "README.md",
+    "LICENSE"
+  ]
 }
