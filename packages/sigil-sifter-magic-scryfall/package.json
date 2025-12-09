@@ -16,5 +16,10 @@
   "devDependencies": {
     "sigil-sifter": "^1.0.0",
     "@sigil-sifter/magic": "^1.0.0"
-  }
+  },
+  "files": [
+    "src/*",
+    "README.md",
+    "LICENSE"
+  ]
 }

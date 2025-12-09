@@ -21,5 +21,10 @@
   },
   "devDependencies": {
     "sigil-sifter": "^1.0.0"
-  }
+  },
+  "files": [
+    "src/*",
+    "README.md",
+    "LICENSE"
+  ]
 }
