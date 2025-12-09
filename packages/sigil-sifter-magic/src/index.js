@@ -1,4 +1,3 @@
-import MagicCard from './core/MagicCard.js';
 import ColorExtension from './extensions/ColorExtension.js';
 import FormatExtension from './extensions/FormatExtension.js';
 import GameExtension from './extensions/GameExtension.js';
@@ -9,11 +8,6 @@ import SetExtension from './extensions/SetExtension.js';
 import * as keywords from './keywords/index.js';
 
 export default function register(sifter, Card, data = {}) {
-    if (!Card)
-        throw new Error('A valid Card class must be provided.');
-    if (!(Card.prototype instanceof MagicCard))
-        throw new Error('Card class must inherit from MagicCard');
-
     sifter.addKeywords(Object.values(keywords));
 
     sifter.setBaseStringParser((sifter, operator, expression) => {
@@ -24,7 +18,7 @@ export default function register(sifter, Card, data = {}) {
         return keyword;
     });
 
-    sifter.setInputAdapter(Card);
+    if (Card) sifter.setInputAdapter(Card);
 
     sifter.extend(ColorExtension, data);
     sifter.extend(FormatExtension, data);
