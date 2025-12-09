@@ -6,6 +6,6 @@ export default class Template extends StringKeyword {
     }
 
     test(obj) {
-        return super.test(obj.template);
+        return obj.template.some(t => super.test(t));
     }
 }
