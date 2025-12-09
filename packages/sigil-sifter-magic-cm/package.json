@@ -1,0 +1,26 @@
+{
+  "name": "@sigil-sifter/magic-cm",
+  "version": "1.0.0",
+  "description": "",
+  "license": "MIT",
+  "author": "mator",
+  "type": "module",
+  "main": "src/index.js",
+  "peerDependencies": {
+    "sigil-sifter": "^1.0.0",
+    "@sigil-sifter/magic": "^1.0.0"
+  },
+  "devDependencies": {
+    "sigil-sifter": "^1.0.0",
+    "@sigil-sifter/magic": "^1.0.0"
+  },
+  "exports": {
+    ".": "./src/index.js",
+    "./card": "./src/CardMagicianCard.js"
+  },
+  "files": [
+    "src/*",
+    "README.md",
+    "LICENSE"
+  ]
+}

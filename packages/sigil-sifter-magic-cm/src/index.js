@@ -1,5 +1,4 @@
 import Template from './keywords/Template.js';
-import CardMagicianCard from './CardMagicianCard.js';
 
 const keywordsToRemove = [
     'BannedKeyword', 'FormatKeyword', 'GameKeyword', 'RestrictedKeyword',
@@ -33,5 +32,4 @@ export default function register(sifter) {
     removeUnusedKeywords(sifter);
     patchIsKeyword(sifter);
     sifter.addKeywords([Template]);
-    sifter.setInputAdapter(CardMagicianCard);
 }
