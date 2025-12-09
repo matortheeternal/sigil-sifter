@@ -11,12 +11,12 @@ npm i @sigil-sifter/magic-cm
 ```js
 import Sifter from 'sigil-sifter';
 import Magic from '@sigil-sifter/magic';
-import CardMagicianCard from '@sigil-sifter/magic-cm/card';
 import CardMagicianMagic from '@sigil-sifter/magic-cm';
 
-// Register the Magic module with Sigil Sifter using the Card Magician data adapter.
-Magic(sifter, CardMagicianCard);
+// Register the Magic module with Sigil Sifter
+Magic(sifter);
 // Add keywords unique to card magician, and remove keywords it doesn't support
+// also register the Card Magician data adapter
 CardMagicianMagic(sifter);
 
 // cards would be some card magician schema card data

@@ -1,4 +1,5 @@
 import Template from './keywords/Template.js';
+import CardMagicianCard from './CardMagicianCard.js';
 
 const keywordsToRemove = [
     'BannedKeyword', 'FormatKeyword', 'GameKeyword', 'RestrictedKeyword',
@@ -17,11 +18,11 @@ function removeUnusedKeywords(sifter) {
 }
 
 function patchIsKeyword(sifter) {
-    const oldExprs = sifter.keywords.IsKeyword.supportedExpressions;
+    const oldExprs = sifter.keywords.is.supportedExpressions;
     const newExprs = oldExprs.filter(k => {
         return !isExpressionsToRemove.includes(k.name);
     });
-    Object.defineProperty(sifter.keywords.IsKeyword, 'supportedExpressions', {
+    Object.defineProperty(sifter.keywords.is, 'supportedExpressions', {
         configurable: true,
         enumerable: true,
         get: () => newExprs
@@ -32,4 +33,5 @@ export default function register(sifter) {
     removeUnusedKeywords(sifter);
     patchIsKeyword(sifter);
     sifter.addKeywords([Template]);
+    sifter.setInputAdapter(CardMagicianCard);
 }

@@ -27,11 +27,17 @@ export default class CardMagicianCard extends MagicCard {
     }
 
     get collectorNumber() {
-        return parseInt(this.card.front.collectorNumber || '0');
+        return parseInt(
+            this.card.front.collectorNumber ||
+            this.card.front.autoCollectorNumber ||
+            '0'
+        );
     }
 
     get colors() {
-        const colors = this.faces.flatMap(f => f.colors || []);
+        const colors = this.faces.flatMap(f => {
+            return f.colors.map(c => c.char.toUpperCase()) || [];
+        });
         return [...new Set(colors)];
     }
 
