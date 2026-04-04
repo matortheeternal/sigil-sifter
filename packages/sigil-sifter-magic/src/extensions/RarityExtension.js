@@ -15,6 +15,6 @@ export default class RarityExtension {
 
     get rarityExpr() {
         const namesAndChars = this.rarities.flatMap(r => [r.char, r.name]);
-        return new RegExp(`^(${namesAndChars.join('|')})$`, 'i');
+        return new RegExp(`^(${namesAndChars.join('|')})\b`, 'i');
     }
 }

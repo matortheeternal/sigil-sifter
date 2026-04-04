@@ -147,4 +147,9 @@ describe('Rarity keyword', () => {
             expect(res).toEqual([]);
         });
     });
+
+    it('it works before another keyword', () => {
+        const res = sifter.filter(card, 'r:c color=w');
+        expectCardNames(res, ['Serra Angel']);
+    });
 });
