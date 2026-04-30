@@ -14,7 +14,6 @@ beforeAll(() => {
 describe('Format keyword', () => {
     it('matches cards legal in Standard', () => {
         const res = sifter.filter(cards, 'format:standard');
-        debugger;
         expectCardNames(res, [
             'Felidar Retreat', 'Liliana, Dreadhorde General',
             'Sire of Seven Deaths', 'Caretaker\'s Talent',
