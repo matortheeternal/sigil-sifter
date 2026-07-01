@@ -18,15 +18,18 @@ function removeUnusedKeywords(sifter) {
 }
 
 function patchIsKeyword(sifter) {
-    const oldExprs = sifter.keywords.is.supportedExpressions;
-    const newExprs = oldExprs.filter(k => {
-        return !isExpressionsToRemove.includes(k.name);
-    });
-    Object.defineProperty(sifter.keywords.is, 'supportedExpressions', {
-        configurable: true,
-        enumerable: true,
-        get: () => newExprs
-    });
+    const OriginalIsKeyword = sifter.keywords.is;
+    const filteredExpressions = OriginalIsKeyword.supportedExpressions.filter(
+        k => !isExpressionsToRemove.includes(k.name)
+    );
+
+    class PatchedIsKeyword extends OriginalIsKeyword {
+        static get supportedExpressions() {
+            return filteredExpressions;
+        }
+    }
+
+    sifter.keywords.is = PatchedIsKeyword;
 }
 
 export default function register(sifter) {
