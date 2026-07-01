@@ -33,6 +33,7 @@ const GameData = {
     sets: null
 };
 
+const sifter = new Sifter();
 Magic(sifter, CardClass, GameData);
 
 // invoke sifter to filter an array of cards
