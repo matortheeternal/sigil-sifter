@@ -36,7 +36,7 @@ export default class CardMagicianCard extends MagicCard {
 
     get colors() {
         const colors = this.faces.flatMap(f => {
-            return f.colors.map(c => c.char.toUpperCase()) || [];
+            return f.colors?.map?.(c => c.char.toUpperCase()) || [];
         });
         return [...new Set(colors)];
     }
