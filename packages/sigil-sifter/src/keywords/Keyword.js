@@ -16,6 +16,9 @@ export default class Keyword extends Node {
         ];
     }
 
+    /**
+     * @return any[]
+     */
     static get supportedExpressions() {
         throw new NotImplementedError();
     }

@@ -31,7 +31,7 @@ export default class SigilSifter {
             const testObj = this.AdapterClass
                 ? new this.AdapterClass(this, obj)
                 : obj;
-            return compiledFilter.test(testObj)
+            return compiledFilter.test(testObj);
         });
     }
 

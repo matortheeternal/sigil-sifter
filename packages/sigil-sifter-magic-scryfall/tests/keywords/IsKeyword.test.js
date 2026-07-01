@@ -6,6 +6,7 @@ import ScryfallCard from '../../src/ScryfallCard.js';
 import { expectCardNames, expectNotCardNames } from '../helpers.js';
 
 let sifter;
+
 beforeAll(() => {
     sifter = new Sifter();
     Magic(sifter, ScryfallCard);
