@@ -209,3 +209,98 @@ export const OMNUS_EMBLEM = {
     "tags": [],
     "baseName": "Omnus-2"
 };
+
+export const CLOUD_EATER = {
+    "front": {
+        "template": "magic/M15/Main",
+        "colors": [
+            {
+                "char": "w",
+                "name": "white",
+                "sources": {
+                    "normal": true
+                }
+            }
+        ],
+        "colorOverride": [],
+        "name": "Cloud Eater",
+        "manaCost": {
+            "symbols": [
+                {
+                    "raw": "3",
+                    "remainingStr": "WW"
+                },
+                {
+                    "raw": "W",
+                    "remainingStr": "W"
+                },
+                {
+                    "raw": "W",
+                    "remainingStr": ""
+                }
+            ],
+            "remainingStr": ""
+        },
+        "artImage": {
+            "imageUrl": "/project/cards/The%20Cloud%20Eater.jpg",
+            "width": 1920,
+            "height": 1920,
+            "crop": {
+                "width": 1920,
+                "height": 1355,
+                "xOffset": 0,
+                "yOffset": 283
+            }
+        },
+        "superType": "Creature",
+        "subType": "Horror",
+        "flagLeft": "",
+        "flagRight": "",
+        "power": "4",
+        "toughness": "5",
+        "showPT": true,
+        "rarity": "uncommon",
+        "illustrator": "Dmitri Burkov",
+        "autoCollectorNumber": "UW08",
+        "collectorNumber": "",
+        "setCode": "",
+        "language": "",
+        "legalText": "",
+        "showFooterOverrides": false,
+        "faceSymbol": null,
+        "rulesText": "Lifelink\n\nWhenever ~ enters, exile up to one target enchantment, then create a 1/1 colorless Spirit creature token with \"When this token dies, if it wasn't sacrificed you lose 2 life.\"",
+        "flavorText": "There is not a cloud in the sky, for they have eaten them all.",
+        "frame": "auto",
+        "artSize": "auto",
+        "crownStyle": "auto",
+        "nyxStyle": "auto",
+        "vehicleStyle": "auto",
+        "snowStyle": "auto",
+        "scrollsStyle": "auto",
+        "draftStyle": "auto",
+        "miracleStyle": "auto",
+        "ubStyle": "auto",
+        "hybridStyle": [],
+        "hybridBlendStyle": "grey",
+        "meldStyle": "none",
+        "otherFrameOptions": {
+            "avoidCoveringDevoid": true
+        },
+        "chopTop": "1",
+        "chopBottom": "",
+        "maxFontSize": "",
+        "centerText": "never"
+    },
+    "notes": "",
+    "tags": [
+        "triggered-ability",
+        "lifegain",
+        "repeatable-lifegain",
+        "death-trigger",
+        "synergy-sacrifice",
+        "removal",
+        "removal-enchantment",
+        "multiple-bodies"
+    ],
+    "baseName": "Cloud Eater"
+};

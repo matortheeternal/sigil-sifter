@@ -108,6 +108,10 @@ export default class CardMagicianCard extends MagicCard {
         return this.card.front.stamp || '';
     }
 
+    get tags() {
+        return this.card.tags;
+    }
+
     get typeLines() {
         return this.faces.map(face => [
             face.superType,

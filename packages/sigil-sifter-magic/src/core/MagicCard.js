@@ -114,6 +114,10 @@ export default class MagicCard {
         throw new NotImplementedError();
     }
 
+    get tags() {
+        throw new NotImplementedError();
+    }
+
     get typeLines() {
         throw new NotImplementedError();
     }

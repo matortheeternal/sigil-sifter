@@ -27,6 +27,7 @@ import RulesTextKeyword from './RulesTextKeyword.js';
 import SetKeyword from './SetKeyword.js';
 import SetTypeKeyword from './SetTypeKeyword.js';
 import StampKeyword from './StampKeyword.js';
+import TagKeyword from './TagKeyword.js';
 import ToughnessKeyword from './ToughnessKeyword.js';
 import WatermarkKeyword from './WatermarkKeyword.js';
 
@@ -60,6 +61,7 @@ export {
     SetKeyword,
     SetTypeKeyword,
     StampKeyword,
+    TagKeyword,
     ToughnessKeyword,
     WatermarkKeyword,
 }

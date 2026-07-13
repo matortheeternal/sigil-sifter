@@ -53,7 +53,6 @@ Pretty much every keyword defined on the [scryfall search syntax](https://scryfa
 ## unimplemented keywords
 
 **TAGGING**
-- otag/oracletag/function
 - art/atag/arttag
 
 **PRICING**

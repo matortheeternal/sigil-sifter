@@ -11,7 +11,7 @@ describe('MagicCard abstract API', () => {
         'colorIdentity', 'formats', 'flavorTexts', 'frame',
         'frameEffects', 'game', 'keywords', 'loyalty', 'manaValues',
         'produces', 'pts', 'rarity', 'rulesTexts', 'restricted',
-        'set', 'setType', 'stamp', 'typeLines', 'watermarks',
+        'set', 'setType', 'stamp', 'tags', 'typeLines', 'watermarks',
         'hasIndicator', 'hasWatermark',
         'isBooster', 'isDFC', 'isEtched', 'isFlip', 'isFoil',
         'isFrenchVanilla', 'isFullArt', 'isGlossy', 'isHistoric',
