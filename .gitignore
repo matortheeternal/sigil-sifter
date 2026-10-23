@@ -3,3 +3,4 @@ scripts/
 coverage/
 packages/*/LICENSE
 packages/sigil-sifter/README.md
+.idea/
