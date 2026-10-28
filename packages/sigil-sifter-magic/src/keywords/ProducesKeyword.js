@@ -1,5 +1,6 @@
 import { Keyword } from 'sigil-sifter/keywords';
 import ProducesExpression from '../expressions/ProducesExpression.js';
+import ProducesCountExpression from '../expressions/ProducesCountExpression.js';
 
 export default class ProducesKeyword extends Keyword {
     static get keys() {
@@ -7,7 +8,7 @@ export default class ProducesKeyword extends Keyword {
     }
 
     static get supportedExpressions() {
-        return [ProducesExpression];
+        return [ProducesExpression, ProducesCountExpression];
     }
 
     test(card) {

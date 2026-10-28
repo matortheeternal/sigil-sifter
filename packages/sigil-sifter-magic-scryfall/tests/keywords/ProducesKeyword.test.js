@@ -104,4 +104,20 @@ describe('Produces keyword', () => {
             'Timeless Lotus'
         ]);
     });
+
+    it('handles can filter with numbers', () => {
+        const res = sifter.filter(cards, 'produces>0');
+        expectCardNames(res, [
+            'Birds of Paradise',
+            'Sol Ring'
+        ]);
+    });
+
+    it('handles can filter with numbers', () => {
+        const res = sifter.filter(cards, 'produces=1');
+        expectCardNames(res, [
+            'Llanowar Elves',
+            'Sol Ring'
+        ]);
+    });
 });
